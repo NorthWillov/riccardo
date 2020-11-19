@@ -6,9 +6,11 @@
   color: rgba(0, 0, 0);
   margin-right: 20px;
 }
+.navbar {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
 
 img {
   width: 100%;
 }
-
-
