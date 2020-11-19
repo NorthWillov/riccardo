@@ -9,18 +9,22 @@ function App() {
     <div className="App">
       <div className="container">
         <Navbar />
-        {MENU.pizzas.map((pizza) => (
-          <div>
-            <img srcSet={pizza.image}></img>
-            <h1>{pizza.name}</h1>
-            <p>Od {pizza.price.small} pln</p>
-            <div>
-              {pizza.ingredients.map((i) => (
-                <span>{i + " "}</span>
-              ))}
+        <div className="row">
+          {MENU.pizzas.map((pizza) => (
+            <div className="col-md-4" key={pizza.id}>
+              <div className="pizza-card">
+                <img srcSet={pizza.image} alt={pizza.name}></img>
+                <h1>{pizza.name}</h1>
+                <p>Od {pizza.price.small} pln</p>
+                <div>
+                  {pizza.ingredients.map((i) => (
+                    <span key={i}>{i + " "}</span>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
