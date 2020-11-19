@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import logo from "../images/logo.png";
 
 export default function Navbar() {
@@ -28,12 +28,12 @@ export default function Navbar() {
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#">
-              Zamow Online
+              Zamów online
             </a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#">
-              O Nas
+              O nas
             </a>
           </li>
           <li className="nav-item">
