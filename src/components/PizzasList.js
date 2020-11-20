@@ -13,8 +13,8 @@ export default function PizzasList() {
               <h1>{pizza.name}</h1>
               <p>Od {pizza.price.small} pln</p>
               <div>
-                {pizza.ingredients.map((i) => (
-                  <span key={i}>{i + " "}</span>
+                {pizza.ingredients.map((i, idx) => (
+                  <span key={i}>{pizza.ingredients[idx + 1] ? i + ", " : i}</span>
                 ))}
               </div>
             </div>
