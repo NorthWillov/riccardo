@@ -6,15 +6,11 @@ import "../styles/App.css";
 function App() {
   const [cart, setCart] = useState([]);
 
-  const handleClick = (pizza) => {
-    setCart([...cart, pizza]);
-  };
-
   return (
     <div className="App">
       <div className="container-lg">
         <Navbar cart={cart} />
-        <PizzasList cart={cart} handleClick={handleClick} />
+        <PizzasList cart={cart} />
       </div>
     </div>
   );
