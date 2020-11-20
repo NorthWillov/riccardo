@@ -62,7 +62,7 @@ export const MENU = {
     },
     {
       id: 6,
-      name: "Salami",
+      name: "Tono",
       price: {
         small: "16.50",
         medium: "20.90",
@@ -131,7 +131,7 @@ export const MENU = {
     },
     {
       id: 11,
-      name: "Pepperone",
+      name: "Pepperone 🌶",
       price: {
         small: "16.50",
         medium: "22.50",
@@ -150,7 +150,7 @@ export const MENU = {
     },
     {
       id: 12,
-      name: "Forte",
+      name: "Forte 🌶",
       price: {
         small: "16.50",
         medium: "23.50",
@@ -168,7 +168,7 @@ export const MENU = {
     },
     {
       id: 13,
-      name: "Wiejska",
+      name: "Wiejska 🌶",
       price: {
         small: "16.50",
         medium: "23.50",
@@ -231,7 +231,7 @@ export const MENU = {
     },
     {
       id: 17,
-      name: "Jalapeño",
+      name: "Jalapeño 🌶",
       price: {
         small: "17.50",
         medium: "23.50",
@@ -316,7 +316,7 @@ export const MENU = {
     },
     {
       id: 23,
-      name: "Fantazja",
+      name: "Riccardo",
       price: {
         small: "17.50",
         medium: "25.50",
