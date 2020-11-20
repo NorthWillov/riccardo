@@ -1,6 +1,7 @@
 .logo {
-  width: 150px;
+  width: 200px;
   margin-right: 50px;
+  margin-bottom: 20px;
 }
 .navbar-light .navbar-nav .nav-link {
   color: rgba(0, 0, 0);
@@ -13,7 +14,20 @@
 
 img {
   width: 100%;
+  padding-left: 15px;
 }
 .title {
   margin-bottom: 30px;
+}
+.checkout {
+  display: flex;
+  justify-content: space-between;
+}
+.checkout-price {
+  font-size: 25px;
+  margin: 0;
+  font-weight: 700;
+}
+.card {
+  border: none;
 }
