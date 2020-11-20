@@ -24,7 +24,9 @@ img {
 .checkout {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 }
+
 .checkout-price {
   font-size: 25px;
   margin: 0;
@@ -40,4 +42,19 @@ img {
 }
 .cart {
   margin: 8px 0 8px 0;
+}
+
+.modal-body {
+  display: flex;
+  padding: 0;
+}
+.pizzas-choices {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.pizzas-choices-header h4,
+p {
+  margin: 0;
 }

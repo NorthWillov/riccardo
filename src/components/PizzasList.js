@@ -1,4 +1,4 @@
-import React, { useImperativeHandle } from "react";
+import React from "react";
 import { MENU } from "../utils/constants";
 
 export default function PizzasList(props) {
@@ -28,6 +28,8 @@ export default function PizzasList(props) {
                   <button
                     onClick={() => props.handleClick(pizza)}
                     className="btn btn-outline-dark"
+                    data-toggle="modal"
+                    data-target="#exampleModal"
                   >
                     Wybierz
                   </button>
@@ -36,6 +38,144 @@ export default function PizzasList(props) {
             </div>
           </div>
         ))}
+        <div
+          className="modal fade"
+          id="exampleModal"
+          tabIndex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog modal-lg modal-dialog-centered">
+            <div className="modal-content">
+              <div className="modal-body">
+                <div className="container-fluid">
+                  <div className="row">
+                    <div className="col-md-7">
+                      <div className="pizzas-img">
+                        <img srcSet="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg" />
+                      </div>
+                    </div>
+                    <div className="col-md-5">
+                      <div className="pizzas-choices">
+                        <div className="pizzas-choices-header">
+                          <h4>Margherita</h4>
+                          <p>20cm</p>
+                          <p>sos, ser, oregano</p>
+                          <div className="pizza-choices-size">
+                            <div className="form-check form-check-inline">
+                              Rozmiar:
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="size"
+                                id="size1"
+                                value="option1"
+                                defaultChecked
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="size1"
+                              >
+                                20cm
+                              </label>
+                            </div>
+                            <div className="form-check form-check-inline">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="size"
+                                id="size2"
+                                value="option2"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="size2"
+                              >
+                                28cm
+                              </label>
+                            </div>
+                            <div className="form-check form-check-inline">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="size"
+                                id="size3"
+                                value="option3"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="size3"
+                              >
+                                50cm
+                              </label>
+                            </div>
+                          </div>
+                          <div className="pizza-choices-dough">
+                            <div className="form-check form-check-inline">
+                              Ciasto:
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="dough"
+                                id="dough1"
+                                value="option1"
+                                defaultChecked
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="dough1"
+                              >
+                                cieńkie
+                              </label>
+                            </div>
+                            <div className="form-check form-check-inline">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="dough"
+                                id="dough2"
+                                value="option2"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="dough2"
+                              >
+                                średnie
+                              </label>
+                            </div>
+                            <div className="form-check form-check-inline">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="dough"
+                                id="dough3"
+                                value="option3"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="dough3"
+                              >
+                                duże
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="pizzas-choices-footer">
+                          <div className="checkout checkout-modal">
+                            <span>9.50 PLN</span>
+                            <button type="button" className="btn btn-success">
+                              Dodaj do koszyka
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
