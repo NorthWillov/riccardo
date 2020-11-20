@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../images/logo.png";
 
-export default function Navbar() {
+export default function Navbar(props) {
   return (
     <nav className="navbar navbar-expand-lg navbar-light ">
       <a className="navbar-brand" href="#">
@@ -20,7 +20,7 @@ export default function Navbar() {
       </button>
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav">
+        <ul className="navbar-nav mr-auto">
           <li className="nav-item">
             <a className="nav-link" href="#">
               Menu
@@ -47,6 +47,9 @@ export default function Navbar() {
             </a>
           </li>
         </ul>
+        <button onClick={() => console.log(props.cart)} className="btn btn-secondary cart">
+          Koszyk {props.cart.length === 0 ? "" : `| ${props.cart.length} `}
+        </button>
       </div>
     </nav>
   );

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useImperativeHandle } from "react";
 import { MENU } from "../utils/constants";
 
-export default function PizzasList() {
+export default function PizzasList(props) {
   return (
     <>
       <h3 className="title">Pizzy</h3>
@@ -25,9 +25,12 @@ export default function PizzasList() {
                 </p>
                 <div className="checkout">
                   <p className="checkout-price">od {pizza.price.small}pln</p>
-                  <a href="#" className="btn btn-primary">
+                  <button
+                    onClick={() => props.handleClick(pizza)}
+                    className="btn btn-outline-dark"
+                  >
                     Wybierz
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
