@@ -8,7 +8,7 @@ export default function Navbar(props) {
         <img className="logo" srcSet={logo} alt="riccardo-logo" />
       </a>
       <button
-        className="navbar-toggler"
+        className="navbar-toggler mr-1"
         type="button"
         data-toggle="collapse"
         data-target="#navbarSupportedContent"
@@ -49,7 +49,7 @@ export default function Navbar(props) {
         </ul>
         <button
           onClick={() => console.log(props.cart)}
-          className="btn btn-secondary cart"
+          className="btn btn-secondary cart mr-3"
         >
           Koszyk {props.cart.length === 0 ? "" : `| ${props.cart.length} `}
         </button>

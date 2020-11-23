@@ -4,16 +4,14 @@ h6 {
 }
 .logo {
   width: 200px;
-  margin-right: 50px;
-  margin-bottom: 20px;
-  padding-left: 0;
+  padding: 15px;
 }
 .navbar-light .navbar-nav .nav-link {
   color: rgba(0, 0, 0);
   margin-right: 15px;
 }
 .navbar {
-  margin-top: 25px;
+  padding-top: 25px;
   margin-bottom: 40px;
   padding: 0;
 }
