@@ -1,3 +1,8 @@
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
 .logo {
   width: 200px;
   margin-right: 50px;
@@ -25,7 +30,6 @@ img {
   justify-content: space-between;
   align-items: flex-end;
 }
-
 .checkout-price {
   font-size: 25px;
   margin: 0;
@@ -42,10 +46,12 @@ img {
 .cart {
   margin: 8px 0 8px 0;
 }
-
 .modal-body {
   display: flex;
-  padding: 0;
+  padding: 0px 20px 20px 20px;
+}
+.modal-content {
+  border-radius: 1rem;
 }
 .pizzas-choices {
   display: flex;
@@ -57,7 +63,26 @@ img {
 p {
   margin: 0;
 }
+.pizza-choices-size,
+.pizza-choices-dough {
+  margin-top: 10px;
+  text-align: center;
+}
 .modal-price {
   font-size: 28px;
   font-weight: 700;
+}
+.pizzas-img {
+  display: flex;
+  justify-content: center;
+}
+.pizzas-img img {
+  width: 300px;
+}
+button.close {
+  display: flex;
+  justify-content: flex-end;
+}
+.close {
+  margin-right: 7px;
 }

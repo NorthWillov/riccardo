@@ -12,9 +12,29 @@ export default function OrderModal(props) {
     setDough(e.target.value);
   };
 
+  const handleModalClose = (e) => {
+    if (
+      e.target.className === "modal fade" ||
+      e.target.className === "close-btn"
+    ) {
+      setSize("20cm");
+      setDough("cieńkie");
+    }
+  };
+
   const handleModalSubmit = () => {
-    const newItem = { ...props.newPizza, size, dough };
+    const newItem = {
+      ...props.newPizza,
+      size,
+      dough,
+      price:
+        (size === "20cm" && newPizza.price.small) ||
+        (size === "28cm" && newPizza.price.medium) ||
+        (size === "50cm" && newPizza.price.big),
+    };
     props.handleModalSubmit(newItem);
+    setSize("20cm");
+    setDough("cieńkie");
   };
 
   const { newPizza } = props;
@@ -27,26 +47,33 @@ export default function OrderModal(props) {
           tabIndex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
+          onClick={handleModalClose}
         >
           <div className="modal-dialog modal-lg modal-dialog-centered">
             <div className="modal-content">
+              <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                aria-label="Close"
+                onClick={handleModalClose}
+              >
+                <span className="close-btn" aria-hidden="true">
+                  &times;
+                </span>
+              </button>
               <div className="modal-body">
                 <div className="container-fluid">
                   <div className="row">
                     <div className="col-md-7">
                       <div className="pizzas-img">
-                        <img srcSet="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg" />
+                        <img
+                          srcSet="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg"
+                          alt="pizza-img"
+                        />
                       </div>
                     </div>
                     <div className="col-md-5">
-                      <button
-                        type="button"
-                        class="close"
-                        data-dismiss="modal"
-                        aria-label="Close"
-                      >
-                        <span aria-hidden="true">&times;</span>
-                      </button>
                       <div className="pizzas-choices">
                         <div className="pizzas-choices-header">
                           <h4>{newPizza.name}</h4>
@@ -58,9 +85,8 @@ export default function OrderModal(props) {
                               </span>
                             ))}
                           </p>
-
                           <div className="pizza-choices-size">
-                            Rozmiar:
+                            <h6>Rozmiar:</h6>
                             <div
                               className="form-check form-check-inline"
                               onChange={handleSizeChange}
@@ -71,7 +97,8 @@ export default function OrderModal(props) {
                                 name="size"
                                 id="size1"
                                 value="20cm"
-                                defaultChecked={size === "20cm"}
+                                checked={size === "20cm"}
+                                readOnly
                               />
                               <label
                                 className="form-check-label"
@@ -90,7 +117,8 @@ export default function OrderModal(props) {
                                 name="size"
                                 id="size2"
                                 value="28cm"
-                                defaultChecked={size === "28cm"}
+                                checked={size === "28cm"}
+                                readOnly
                               />
                               <label
                                 className="form-check-label"
@@ -109,8 +137,9 @@ export default function OrderModal(props) {
                                 name="size"
                                 id="size3"
                                 value="50cm"
-                                defaultChecked={size === "50cm"}
+                                checked={size === "50cm"}
                                 disabled={dough === "grube"}
+                                readOnly
                               />
                               <label
                                 className="form-check-label"
@@ -122,7 +151,7 @@ export default function OrderModal(props) {
                           </div>
 
                           <div className="pizza-choices-dough">
-                            Ciasto:
+                            <h6>Ciasto:</h6>
                             <div
                               className="form-check form-check-inline"
                               onChange={handleDoughChange}
@@ -133,7 +162,8 @@ export default function OrderModal(props) {
                                 name="dough"
                                 id="dough1"
                                 value="cieńkie"
-                                defaultChecked={dough === "cieńkie"}
+                                checked={dough === "cieńkie"}
+                                readOnly
                               />
                               <label
                                 className="form-check-label"
@@ -152,7 +182,8 @@ export default function OrderModal(props) {
                                 name="dough"
                                 id="dough2"
                                 value="średnie"
-                                defaultChecked={dough === "średnie"}
+                                checked={dough === "średnie"}
+                                readOnly
                               />
                               <label
                                 className="form-check-label"
@@ -171,8 +202,9 @@ export default function OrderModal(props) {
                                 name="dough"
                                 id="dough3"
                                 value="grube"
-                                defaultChecked={dough === "grube"}
+                                checked={dough === "grube"}
                                 disabled={size === "50cm"}
+                                readOnly
                               />
                               <label
                                 className="form-check-label"
@@ -194,10 +226,10 @@ export default function OrderModal(props) {
                             <button
                               onClick={handleModalSubmit}
                               type="button"
-                              class="close"
                               data-dismiss="modal"
                               aria-label="Close"
                               className="btn btn-success"
+                              style={{ marginRight: "-15.88px" }}
                             >
                               Dodaj do koszyka
                             </button>
