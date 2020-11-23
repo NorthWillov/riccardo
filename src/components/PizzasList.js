@@ -31,7 +31,10 @@ export default function PizzasList(props) {
                   ))}
                 </p>
                 <div className="checkout">
-                  <p className="checkout-price">od {pizza.price.small}pln</p>
+                  <p className="checkout-price">
+                    od {pizza.id === 18 ? "23.50" : pizza.price.small}
+                    pln
+                  </p>
                   <button
                     onClick={() => handleClick(pizza)}
                     className="btn btn-outline-dark"

@@ -251,11 +251,9 @@ export const MENU = {
     {
       id: 18,
       name: "Calzone (Pierog)",
-      price: {
-        small: "23.50",
-        medium: "23.50",
-        big: "23.50",
-      },
+      size: "28cm",
+      dough: "średnie",
+      price: "23.50",
       ingredients: ["sos", "ser", "kurczak", "szynka", "pieczarki"],
       image:
         "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",

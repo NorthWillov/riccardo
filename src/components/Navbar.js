@@ -3,7 +3,7 @@ import logo from "../images/logo.png";
 
 export default function Navbar(props) {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light ">
+    <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light">
       <a className="navbar-brand" href="#">
         <img className="logo" srcSet={logo} alt="riccardo-logo" />
       </a>

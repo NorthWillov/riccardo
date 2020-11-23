@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 
 export default function OrderModal(props) {
-  const [size, setSize] = useState(
-    props.newPizza.name === "Calzone (Pierog)" ? "28cm" : "20cm"
-  );
-  const [dough, setDough] = useState(
-    props.newPizza.name === "Calzone (Pierog)" ? "średnie" : "cieńkie"
-  );
+  const [size, setSize] = useState("20cm");
+  const [dough, setDough] = useState("cieńkie");
 
   const handleSizeChange = (e) => {
     setSize(e.target.value);
@@ -19,7 +15,8 @@ export default function OrderModal(props) {
   const handleModalClose = (e) => {
     if (
       e.target.className === "modal fade" ||
-      e.target.className === "close-btn"
+      e.target.className === "close-btn" ||
+      e.target.className === "close"
     ) {
       setSize("20cm");
       setDough("cieńkie");
@@ -27,15 +24,22 @@ export default function OrderModal(props) {
   };
 
   const handleModalSubmit = () => {
-    const newItem = {
-      ...props.newPizza,
-      size,
-      dough,
-      price:
-        (size === "20cm" && newPizza.price.small) ||
-        (size === "28cm" && newPizza.price.medium) ||
-        (size === "50cm" && newPizza.price.big),
-    };
+    let newItem = {};
+
+    if (props.newPizza.id === 18) {
+      newItem = newPizza;
+    } else {
+      newItem = {
+        ...props.newPizza,
+        size,
+        dough,
+        price:
+          (size === "20cm" && newPizza.price.small) ||
+          (size === "28cm" && newPizza.price.medium) ||
+          (size === "50cm" && newPizza.price.big),
+      };
+    }
+
     props.handleModalSubmit(newItem);
     setSize("20cm");
     setDough("cieńkie");
@@ -79,7 +83,11 @@ export default function OrderModal(props) {
                   <div className="pizzas-choices">
                     <div className="pizzas-choices-header">
                       <h4>{newPizza.name}</h4>
-                      <p>{`${size}, ${dough}`}</p>
+                      <p>
+                        {newPizza.id === 18
+                          ? "28cm, średnie"
+                          : `${size}, ${dough}`}
+                      </p>
                       <p>
                         {newPizza.ingredients.map((i, idx) => (
                           <span key={i}>
@@ -117,7 +125,10 @@ export default function OrderModal(props) {
                             name="size"
                             id="size2"
                             value="28cm"
-                            checked={size === "28cm"}
+                            checked={
+                              size === "28cm" ||
+                              newPizza.name === "Calzone (Pierog)"
+                            }
                             readOnly
                           />
                           <label className="form-check-label" htmlFor="size2">
@@ -177,7 +188,10 @@ export default function OrderModal(props) {
                             name="dough"
                             id="dough2"
                             value="średnie"
-                            checked={dough === "średnie"}
+                            checked={
+                              dough === "średnie" ||
+                              newPizza.name === "Calzone (Pierog)"
+                            }
                             readOnly
                           />
                           <label className="form-check-label" htmlFor="dough2">
@@ -210,9 +224,15 @@ export default function OrderModal(props) {
                     <div className="pizzas-choices-footer">
                       <div className="checkout checkout-modal">
                         <span className="modal-price">
-                          {size === "20cm" && newPizza.price.small}
-                          {size === "28cm" && newPizza.price.medium}
-                          {size === "50cm" && newPizza.price.big}
+                          {newPizza.id === 18
+                            ? newPizza.price
+                            : size === "20cm"
+                            ? newPizza.price.small
+                            : size === "28cm"
+                            ? newPizza.price.medium
+                            : size === "50cm"
+                            ? newPizza.price.big
+                            : null}
                           pln
                         </span>
                         <button
