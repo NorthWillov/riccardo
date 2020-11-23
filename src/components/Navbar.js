@@ -47,7 +47,10 @@ export default function Navbar(props) {
             </a>
           </li>
         </ul>
-        <button onClick={() => console.log(props.cart)} className="btn btn-secondary cart">
+        <button
+          onClick={() => console.log(props.cart)}
+          className="btn btn-secondary cart"
+        >
           Koszyk {props.cart.length === 0 ? "" : `| ${props.cart.length} `}
         </button>
       </div>

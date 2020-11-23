@@ -57,3 +57,7 @@ img {
 p {
   margin: 0;
 }
+.modal-price {
+  font-size: 28px;
+  font-weight: 700;
+}

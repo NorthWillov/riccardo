@@ -7,8 +7,14 @@ export default function OrderModal(props) {
   const handleSizeChange = (e) => {
     setSize(e.target.value);
   };
+
   const handleDoughChange = (e) => {
     setDough(e.target.value);
+  };
+
+  const handleModalSubmit = () => {
+    const newItem = { ...props.newPizza, size, dough };
+    props.handleModalSubmit(newItem);
   };
 
   const { newPizza } = props;
@@ -33,12 +39,18 @@ export default function OrderModal(props) {
                       </div>
                     </div>
                     <div className="col-md-5">
+                      <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
                       <div className="pizzas-choices">
                         <div className="pizzas-choices-header">
                           <h4>{newPizza.name}</h4>
-                          <p>
-                            {`${size}, ${dough}`}Î
-                          </p>
+                          <p>{`${size}, ${dough}`}</p>
                           <p>
                             {newPizza.ingredients.map((i, idx) => (
                               <span key={i}>
@@ -59,8 +71,7 @@ export default function OrderModal(props) {
                                 name="size"
                                 id="size1"
                                 value="20cm"
-                                checked={size === "20cm"}
-                                defaultChecked
+                                defaultChecked={size === "20cm"}
                               />
                               <label
                                 className="form-check-label"
@@ -79,7 +90,7 @@ export default function OrderModal(props) {
                                 name="size"
                                 id="size2"
                                 value="28cm"
-                                checked={size === "28cm"}
+                                defaultChecked={size === "28cm"}
                               />
                               <label
                                 className="form-check-label"
@@ -98,7 +109,7 @@ export default function OrderModal(props) {
                                 name="size"
                                 id="size3"
                                 value="50cm"
-                                checked={size === "50cm"}
+                                defaultChecked={size === "50cm"}
                                 disabled={dough === "grube"}
                               />
                               <label
@@ -122,8 +133,7 @@ export default function OrderModal(props) {
                                 name="dough"
                                 id="dough1"
                                 value="cieńkie"
-                                checked={dough === "cieńkie"}
-                                defaultChecked
+                                defaultChecked={dough === "cieńkie"}
                               />
                               <label
                                 className="form-check-label"
@@ -142,7 +152,7 @@ export default function OrderModal(props) {
                                 name="dough"
                                 id="dough2"
                                 value="średnie"
-                                checked={dough === "średnie"}
+                                defaultChecked={dough === "średnie"}
                               />
                               <label
                                 className="form-check-label"
@@ -161,7 +171,7 @@ export default function OrderModal(props) {
                                 name="dough"
                                 id="dough3"
                                 value="grube"
-                                checked={dough === "grube"}
+                                defaultChecked={dough === "grube"}
                                 disabled={size === "50cm"}
                               />
                               <label
@@ -175,8 +185,20 @@ export default function OrderModal(props) {
                         </div>
                         <div className="pizzas-choices-footer">
                           <div className="checkout checkout-modal">
-                            <span>9.50 PLN</span>
-                            <button type="button" className="btn btn-success">
+                            <span className="modal-price">
+                              {size === "20cm" && newPizza.price.small}
+                              {size === "28cm" && newPizza.price.medium}
+                              {size === "50cm" && newPizza.price.big}
+                              pln
+                            </span>
+                            <button
+                              onClick={handleModalSubmit}
+                              type="button"
+                              class="close"
+                              data-dismiss="modal"
+                              aria-label="Close"
+                              className="btn btn-success"
+                            >
                               Dodaj do koszyka
                             </button>
                           </div>
