@@ -60,7 +60,10 @@ img {
 p {
   margin: 0;
 }
-.pizza-choices-size,
+.pizza-choices-size {
+  margin-top: 40px;
+  text-align: center;
+}
 .pizza-choices-dough {
   margin-top: 20px;
   text-align: center;
@@ -73,9 +76,6 @@ p {
   display: flex;
   justify-content: center;
 }
-.pizzas-img img {
-  width: 300px;
-}
 button.close {
   display: flex;
   justify-content: flex-end;
@@ -85,4 +85,7 @@ button.close {
 }
 .checkout-modal {
   margin-top: 50px;
+}
+.bi.bi-cart2 {
+  margin-top: -4px;
 }
