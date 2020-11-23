@@ -45,10 +45,12 @@ export default function PizzasList(props) {
             </div>
           </div>
         ))}
-        <OrderModal
-          newPizza={newPizza}
-          handleModalSubmit={props.handleModalSubmit}
-        />
+        {newPizza && (
+          <OrderModal
+            newPizza={newPizza}
+            handleModalSubmit={props.handleModalSubmit}
+          />
+        )}
       </div>
     </>
   );

@@ -253,6 +253,8 @@ export const MENU = {
       name: "Calzone (Pierog)",
       price: {
         small: "23.50",
+        medium: "23.50",
+        big: "23.50",
       },
       ingredients: ["sos", "ser", "kurczak", "szynka", "pieczarki"],
       image:
