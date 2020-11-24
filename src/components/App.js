@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
 import PizzasList from "./PizzasList";
+import { ToastProvider } from "../contexts/ToastContext";
 import "../styles/App.css";
 
 function App() {
@@ -12,10 +13,13 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar cart={cart} />
-      <div className="container-lg">
-        <PizzasList cart={cart} handleModalSubmit={handleModalSubmit} />
-      </div>
+      <ToastProvider>
+        <Navbar cart={cart} />
+        <div className="container-lg">
+          <PizzasList cart={cart} handleModalSubmit={handleModalSubmit} />
+        </div>
+        ƒ
+      </ToastProvider>
     </div>
   );
 }

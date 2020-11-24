@@ -1,10 +1,35 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import logo from "../images/logo.png";
+import { Toast } from "react-bootstrap";
+import { ToastContext } from "../contexts/ToastContext";
 
 export default function Navbar(props) {
+  const { show, setShow } = useContext(ToastContext);
+
   return (
     <nav className="navbar sticky-top navbar-expand-lg navbar-light">
       <div className="container-lg">
+        <div
+          aria-live="polite"
+          aria-atomic="true"
+          style={{
+            position: "fixed",
+            top: "11%",
+            right: "12.5%",
+          }}
+        >
+          <Toast
+            show={show}
+            onClose={() => setShow(false)}
+            delay={3000}
+            autohide
+          >
+            <Toast.Header>
+              <strong className="mr-auto">+1 item</strong>
+            </Toast.Header>
+          </Toast>
+        </div>
+
         <a className="navbar-brand" href="#">
           <img className="logo" srcSet={logo} alt="riccardo-logo" />
         </a>
@@ -19,7 +44,6 @@ export default function Navbar(props) {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">

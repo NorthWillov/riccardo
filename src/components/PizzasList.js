@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import OrderModal from "./OrderModal";
 import { MENU } from "../utils/constants";
+import { ToastContext } from "../contexts/ToastContext";
 
 export default function PizzasList(props) {
   const [newPizza, setNewPizza] = useState();
+  const { setShow } = useContext(ToastContext);
 
   const handleClick = (pizza) => {
     setNewPizza(pizza);
@@ -51,7 +53,10 @@ export default function PizzasList(props) {
         {newPizza && (
           <OrderModal
             newPizza={newPizza}
-            handleModalSubmit={props.handleModalSubmit}
+            handleModalSubmit={(newItem) => {
+              props.handleModalSubmit(newItem);
+              setShow(true);
+            }}
           />
         )}
       </div>
