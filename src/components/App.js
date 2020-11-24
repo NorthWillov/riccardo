@@ -12,8 +12,8 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar cart={cart} />
       <div className="container-lg">
-        <Navbar cart={cart} />
         <PizzasList cart={cart} handleModalSubmit={handleModalSubmit} />
       </div>
     </div>
