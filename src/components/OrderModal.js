@@ -71,7 +71,7 @@ export default function OrderModal(props) {
           <div className="modal-body">
             <div className="container-fluid">
               <div className="row">
-                <div className="col-md-7">
+                <div className="col-lg-7">
                   <div className="pizzas-img">
                     <img
                       srcSet="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg"
@@ -79,9 +79,9 @@ export default function OrderModal(props) {
                     />
                   </div>
                 </div>
-                <div className="col-md-5">
+                <div className="col-lg-5">
                   <div className="pizzas-choices">
-                    <div className="pizzas-choices-header mt-3">
+                    <div className="pizzas-choices-header mt-3 mb-4">
                       <h4>{newPizza.name}</h4>
                       <p>
                         {newPizza.id === 18
@@ -95,131 +95,82 @@ export default function OrderModal(props) {
                           </span>
                         ))}
                       </p>
-                      <div className="pizza-choices-size">
-                        <h6>Rozmiar:</h6>
-                        <div
-                          className="form-check form-check-inline"
-                          onChange={handleSizeChange}
-                        >
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="size"
-                            id="size1"
-                            value="20cm"
-                            checked={size === "20cm"}
-                            disabled={newPizza.name === "Calzone (Pierog)"}
-                            readOnly
-                          />
-                          <label className="form-check-label" htmlFor="size1">
-                            20cm
-                          </label>
-                        </div>
-                        <div
-                          className="form-check form-check-inline"
-                          onChange={handleSizeChange}
-                        >
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="size"
-                            id="size2"
-                            value="28cm"
-                            checked={
-                              size === "28cm" ||
-                              newPizza.name === "Calzone (Pierog)"
-                            }
-                            readOnly
-                          />
-                          <label className="form-check-label" htmlFor="size2">
-                            28cm
-                          </label>
-                        </div>
-                        <div
-                          className="form-check form-check-inline"
-                          onChange={handleSizeChange}
-                        >
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="size"
-                            id="size3"
-                            value="50cm"
-                            checked={size === "50cm"}
-                            disabled={
-                              dough === "grube" ||
-                              newPizza.name === "Calzone (Pierog)"
-                            }
-                            readOnly
-                          />
-                          <label className="form-check-label" htmlFor="size3">
-                            50cm
-                          </label>
-                        </div>
-                      </div>
-
-                      <div className="pizza-choices-dough">
-                        <h6>Ciasto:</h6>
-                        <div
-                          className="form-check form-check-inline"
-                          onChange={handleDoughChange}
-                        >
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="dough"
-                            id="dough1"
-                            value="cieńkie"
-                            checked={dough === "cieńkie"}
-                            disabled={newPizza.name === "Calzone (Pierog)"}
-                            readOnly
-                          />
-                          <label className="form-check-label" htmlFor="dough1">
-                            cieńkie
-                          </label>
-                        </div>
-                        <div
-                          className="form-check form-check-inline"
-                          onChange={handleDoughChange}
-                        >
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="dough"
-                            id="dough2"
-                            value="średnie"
-                            checked={
-                              dough === "średnie" ||
-                              newPizza.name === "Calzone (Pierog)"
-                            }
-                            readOnly
-                          />
-                          <label className="form-check-label" htmlFor="dough2">
-                            średnie
-                          </label>
-                        </div>
-                        <div
-                          className="form-check form-check-inline"
-                          onChange={handleDoughChange}
-                        >
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="dough"
-                            id="dough3"
-                            value="grube"
-                            checked={dough === "grube"}
-                            disabled={
-                              size === "50cm" ||
-                              newPizza.name === "Calzone (Pierog)"
-                            }
-                            readOnly
-                          />
-                          <label className="form-check-label" htmlFor="dough3">
-                            grube
-                          </label>
-                        </div>
-                      </div>
+                    </div>
+                    <h6>Rozmiar:</h6>
+                    <div className="group" onChange={handleSizeChange}>
+                      <input
+                        type="radio"
+                        name="rb-size"
+                        id="rb1"
+                        checked={size === "20cm"}
+                        value="20cm"
+                        disabled={newPizza.name === "Calzone (Pierog)"}
+                        readOnly
+                      />
+                      <label htmlFor="rb1">20cm</label>
+                      <input
+                        type="radio"
+                        name="rb-size"
+                        id="rb2"
+                        value="28cm"
+                        checked={
+                          size === "28cm" ||
+                          newPizza.name === "Calzone (Pierog)"
+                        }
+                        readOnly
+                      />
+                      <label htmlFor="rb2">28cm</label>
+                      <input
+                        type="radio"
+                        name="rb-size"
+                        id="rb3"
+                        value="50cm"
+                        checked={size === "50cm"}
+                        disabled={
+                          dough === "grube" ||
+                          newPizza.name === "Calzone (Pierog)"
+                        }
+                        readOnly
+                      />
+                      <label htmlFor="rb3">50cm</label>
+                    </div>
+                    <h6>Ciasto:</h6>
+                    <div className="group" onChange={handleDoughChange}>
+                      <input
+                        type="radio"
+                        name="rb-dough"
+                        id="rb4"
+                        value="cieńkie"
+                        checked={dough === "cieńkie"}
+                        disabled={newPizza.name === "Calzone (Pierog)"}
+                        readOnly
+                      />
+                      <label htmlFor="rb4">cieńkie</label>
+                      <input
+                        type="radio"
+                        name="rb-dough"
+                        id="rb5"
+                        value="średnie"
+                        checked={
+                          dough === "średnie" ||
+                          newPizza.name === "Calzone (Pierog)"
+                        }
+                        readOnly
+                      />
+                      <label htmlFor="rb5">średnie</label>
+                      <input
+                        type="radio"
+                        name="rb-dough"
+                        id="rb6"
+                        value="grube"
+                        checked={dough === "grube"}
+                        disabled={
+                          size === "50cm" ||
+                          newPizza.name === "Calzone (Pierog)"
+                        }
+                        readOnly
+                      />
+                      <label htmlFor="rb6">grube</label>
                     </div>
                     <div className="pizzas-choices-footer">
                       <div className="checkout checkout-modal">
