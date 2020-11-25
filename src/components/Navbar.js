@@ -29,7 +29,9 @@ export default function Navbar(props) {
               autohide
             >
               <Toast.Header>
-                <strong style={{ color: "black" }}>+1 {newPizza.name}</strong>
+                <strong style={{ color: "black", fontSize: "15px" }}>
+                  +1 {newPizza.name}
+                </strong>
               </Toast.Header>
             </Toast>
           </div>

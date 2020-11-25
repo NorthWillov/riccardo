@@ -45,3 +45,6 @@ img {
 .cart {
   margin: 8px 0 8px 15px;
 }
+.close {
+  opacity: 1;
+}
