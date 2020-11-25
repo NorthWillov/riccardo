@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { ToastContext } from "../contexts/ToastContext";
+import "../styles/orderModal.css";
 
 export default function OrderModal(props) {
   const [size, setSize] = useState("20cm");
   const [dough, setDough] = useState("cieńkie");
+  const { toggleShow } = useContext(ToastContext);
 
   const handleSizeChange = (e) => {
     setSize(e.target.value);
@@ -43,6 +46,7 @@ export default function OrderModal(props) {
     props.handleModalSubmit(newItem);
     setSize("20cm");
     setDough("cieńkie");
+    toggleShow();
   };
 
   const { newPizza } = props;

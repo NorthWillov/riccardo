@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
 import OrderModal from "./OrderModal";
 import { MENU } from "../utils/constants";
-import { ToastContext } from "../contexts/ToastContext";
 import { NewPizzaContext } from "../contexts/NewPizzaContext";
 
 export default function PizzasList(props) {
   const { newPizza, setNewPizza } = useContext(NewPizzaContext);
-  const { toggleShow } = useContext(ToastContext);
 
   const handleClick = (pizza) => {
     setNewPizza(pizza);
@@ -17,7 +15,7 @@ export default function PizzasList(props) {
       <h3 className="title">Pizzy</h3>
       <div className="row">
         {MENU.pizzas.map((pizza) => (
-          <div className="col-md-6 col-lg-4" key={pizza.name}>
+          <div className="col-sm-6 col-md-6 col-lg-4 col-xl-3" key={pizza.name}>
             <div className="card">
               <img
                 className="card-img-top"
@@ -54,10 +52,7 @@ export default function PizzasList(props) {
         {newPizza && (
           <OrderModal
             newPizza={newPizza}
-            handleModalSubmit={(newItem) => {
-              props.handleModalSubmit(newItem);
-              toggleShow();
-            }}
+            handleModalSubmit={props.handleModalSubmit}
           />
         )}
       </div>

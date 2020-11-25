@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import logo from "../images/logo.png";
 import { Toast } from "react-bootstrap";
 import { ToastContext } from "../contexts/ToastContext";
@@ -23,7 +23,7 @@ export default function Navbar(props) {
           >
             <Toast
               show={show}
-              onClose={() => toggleShow()}
+              onClose={toggleShow}
               delay={3000}
               autohide
             >

@@ -13,16 +13,16 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <ToastProvider>
-        <NewPizzaProvider>
+    <ToastProvider>
+      <NewPizzaProvider>
+        <div className="App">
           <Navbar cart={cart} />
           <div className="container-lg">
             <PizzasList cart={cart} handleModalSubmit={handleModalSubmit} />
           </div>
-        </NewPizzaProvider>
-      </ToastProvider>
-    </div>
+        </div>
+      </NewPizzaProvider>
+    </ToastProvider>
   );
 }
 
