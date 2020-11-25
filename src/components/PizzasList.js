@@ -1,11 +1,12 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import OrderModal from "./OrderModal";
 import { MENU } from "../utils/constants";
 import { ToastContext } from "../contexts/ToastContext";
+import { NewPizzaContext } from "../contexts/NewPizzaContext";
 
 export default function PizzasList(props) {
-  const [newPizza, setNewPizza] = useState();
-  const { setShow } = useContext(ToastContext);
+  const { newPizza, setNewPizza } = useContext(NewPizzaContext);
+  const { toggleShow } = useContext(ToastContext);
 
   const handleClick = (pizza) => {
     setNewPizza(pizza);
@@ -55,7 +56,7 @@ export default function PizzasList(props) {
             newPizza={newPizza}
             handleModalSubmit={(newItem) => {
               props.handleModalSubmit(newItem);
-              setShow(true);
+              toggleShow();
             }}
           />
         )}

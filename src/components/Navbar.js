@@ -2,33 +2,37 @@ import React, { useContext, useState } from "react";
 import logo from "../images/logo.png";
 import { Toast } from "react-bootstrap";
 import { ToastContext } from "../contexts/ToastContext";
+import { NewPizzaContext } from "../contexts/NewPizzaContext";
 
 export default function Navbar(props) {
-  const { show, setShow } = useContext(ToastContext);
+  const { show, toggleShow } = useContext(ToastContext);
+  const { newPizza } = useContext(NewPizzaContext);
 
   return (
     <nav className="navbar sticky-top navbar-expand-lg navbar-light">
       <div className="container-lg">
-        <div
-          aria-live="polite"
-          aria-atomic="true"
-          style={{
-            position: "fixed",
-            top: "11%",
-            right: "12.5%",
-          }}
-        >
-          <Toast
-            show={show}
-            onClose={() => setShow(false)}
-            delay={3000}
-            autohide
+        {newPizza && (
+          <div
+            aria-live="polite"
+            aria-atomic="true"
+            style={{
+              position: "fixed",
+              top: "11%",
+              right: "12.5%",
+            }}
           >
-            <Toast.Header>
-              <strong className="mr-auto">+1 item</strong>
-            </Toast.Header>
-          </Toast>
-        </div>
+            <Toast
+              show={show}
+              onClose={() => toggleShow()}
+              delay={3000}
+              autohide
+            >
+              <Toast.Header>
+                <strong className="mr-auto">+1 {newPizza.name}</strong>
+              </Toast.Header>
+            </Toast>
+          </div>
+        )}
 
         <a className="navbar-brand" href="#">
           <img className="logo" srcSet={logo} alt="riccardo-logo" />
