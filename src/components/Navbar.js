@@ -10,25 +10,26 @@ export default function Navbar(props) {
 
   return (
     <nav className="navbar sticky-top navbar-expand-lg navbar-light">
-      <div className="container-lg">
+      <div style={{ position: "relative" }} className="container-lg">
         {newPizza && (
           <div
             aria-live="polite"
             aria-atomic="true"
             style={{
-              position: "fixed",
-              top: "11%",
-              right: "12.5%",
+              position: "absolute",
+              right: "31px",
+              top: "90px",
             }}
           >
             <Toast
+              transition={null} // GIVES WARNING WHILE TRANSITION IS ON
               show={show}
               onClose={toggleShow}
               delay={3000}
               autohide
             >
               <Toast.Header>
-                <strong className="mr-auto">+1 {newPizza.name}</strong>
+                <strong style={{ color: "black" }}>+1 {newPizza.name}</strong>
               </Toast.Header>
             </Toast>
           </div>
