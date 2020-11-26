@@ -47,6 +47,11 @@ button.close {
 .bi.bi-cart2 {
   margin-top: -4px;
 }
+.bi.bi-dash-circle {
+  color: grey;
+  font-size: 12px;
+  margin-left: 4px;
+}
 /* RADIO CSS */
 .group {
   display: -webkit-box;
@@ -105,9 +110,25 @@ input[type="radio"]:checked + label:before {
   background: lightgrey;
 }
 
-/* Transition */
 label,
 label::before {
   -webkit-transition: 0.25s all ease;
   transition: 0.25s all ease;
+}
+
+/* INGREDIENTS STYLES */
+
+.modal-ingredients {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.modal-ingredients-ingredient {
+  display: block;
+  cursor: pointer;
+  margin-right: 4px;
+}
+.modal-ingredients-ingredient-name {
+  display: inline-block;
+  text-decoration: underline dotted #000;
 }

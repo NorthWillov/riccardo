@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { ToastContext } from "../contexts/ToastContext";
+import { Form } from "react-bootstrap";
 import "../styles/orderModal.css";
 
 export default function OrderModal(props) {
@@ -92,13 +93,49 @@ export default function OrderModal(props) {
                           ? "28cm, średnie"
                           : `${size}, ${dough}`}
                       </p>
-                      <p>
+                      <ul className="modal-ingredients">
                         {newPizza.ingredients.map((i, idx) => (
-                          <span key={i}>
-                            {newPizza.ingredients[idx + 1] ? i + ", " : i}
-                          </span>
+                          <li
+                            key={i}
+                            className="modal-ingredients-ingredient"
+                            onClick={(e) =>
+                              console.log(
+                                `GET RID OF ${e.target.innerHTML.toUpperCase()}`
+                              )
+                            }
+                          >
+                            <span className="modal-ingredients-ingredient-name">
+                              {i}
+                            </span>
+                            <svg
+                              width="1em"
+                              height="1em"
+                              viewBox="0 0 16 16"
+                              className="bi bi-dash-circle"
+                              fill="currentColor"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                              />
+                              <path
+                                fillRule="evenodd"
+                                d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
+                              />
+                            </svg>
+                            {newPizza.ingredients[idx + 1] && ","}
+                          </li>
                         ))}
-                      </p>
+                      </ul>
+                      <Form.Group>
+                        <Form.Control size="sm" as="select">
+                          <option defaultValue>Dodaj składnik</option>
+                          <option>Ser</option>
+                          <option>Krewetki</option>
+                          <option>Bekon</option>
+                        </Form.Control>
+                      </Form.Group>
                     </div>
                     <h6>Rozmiar:</h6>
                     <div className="group" onChange={handleSizeChange}>
