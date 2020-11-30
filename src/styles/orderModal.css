@@ -48,10 +48,12 @@ button.close {
 .bi.bi-cart2 {
   margin-top: -4px;
 }
+.bi.bi-arrow-return-left,
 .bi.bi-dash-circle {
   color: grey;
   font-size: 12px;
   margin-left: 4px;
+  margin-top: -1.4px;
 }
 /* RADIO CSS */
 .group {
@@ -130,6 +132,8 @@ label::before {
   margin-right: 4px;
 }
 .modal-ingredients-ingredient-name {
-  display: inline-block;
   text-decoration: underline dotted #000;
+}
+.modal-ingredients-ingredient-name-deleted {
+  text-decoration: line-through;
 }

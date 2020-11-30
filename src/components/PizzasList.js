@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import OrderModal from "./OrderModal";
 import { MENU } from "../utils/constants";
 import { NewPizzaContext } from "../contexts/NewPizzaContext";
@@ -6,8 +6,10 @@ import { formatter } from "../utils/formatter";
 
 export default function PizzasList(props) {
   const { newPizza, setNewPizza } = useContext(NewPizzaContext);
+  const [currIngredients, setCurrIngredients] = useState([]);
 
   const handleClick = (pizza) => {
+    setCurrIngredients(pizza.ingredients);
     setNewPizza(pizza);
   };
 
@@ -57,6 +59,8 @@ export default function PizzasList(props) {
         ))}
         {newPizza && (
           <OrderModal
+            setCurrIngredients={setCurrIngredients}
+            currIngredients={currIngredients}
             newPizza={newPizza}
             handleModalSubmit={props.handleModalSubmit}
           />

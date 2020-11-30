@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import OrderModalSizeAndDough from "./OrderModalSizeAndDough";
 import { ToastContext } from "../contexts/ToastContext";
 import { Form } from "react-bootstrap";
 import { MENU } from "../utils/constants";
@@ -12,12 +13,20 @@ export default function OrderModal(props) {
   const [extrasSumPrice, setExtrasSumPrice] = useState(0);
   const { toggleShow } = useContext(ToastContext);
 
+  const { newPizza, currIngredients, setCurrIngredients } = props;
+
   const handleSizeChange = (e) => {
     setSize(e.target.value);
   };
 
   const handleDoughChange = (e) => {
     setDough(e.target.value);
+  };
+
+  const handleIngredientClick = (i) => {
+    currIngredients.includes(i)
+      ? setCurrIngredients(currIngredients.filter((ing) => ing !== i))
+      : setCurrIngredients([...currIngredients, i]);
   };
 
   const handleExtraIngredientClick = (e) => {
@@ -30,6 +39,7 @@ export default function OrderModal(props) {
       e.target.value = "Dodaj składnik";
     }
   };
+
   const handleModalClose = (e) => {
     if (
       e.target.className === "modal fade" ||
@@ -39,17 +49,19 @@ export default function OrderModal(props) {
       setSize("20cm");
       setDough("cieńkie");
       setExtras([]);
+      setCurrIngredients([]);
     }
   };
 
   const handleModalSubmit = () => {
     let newItem = {};
 
-    if (props.newPizza.id === 18) {
+    if (newPizza.id === 18) {
       newItem = { ...newPizza, extras };
     } else {
       newItem = {
-        ...props.newPizza,
+        ...newPizza,
+        ingredients: currIngredients,
         size,
         dough,
         extras,
@@ -64,10 +76,10 @@ export default function OrderModal(props) {
     setSize("20cm");
     setDough("cieńkie");
     setExtras([]);
+    setCurrIngredients([]);
     toggleShow();
   };
 
-  const { newPizza } = props;
   return (
     <div
       className="modal fade"
@@ -116,28 +128,52 @@ export default function OrderModal(props) {
                             key={i}
                             value={i}
                             className="modal-ingredients-ingredient"
-                            onClick={() => console.log(i)}
+                            onClick={() => handleIngredientClick(i)}
                           >
-                            <span className="modal-ingredients-ingredient-name">
-                              {i}
-                            </span>
-                            <svg
-                              width="1em"
-                              height="1em"
-                              viewBox="0 0 16 16"
-                              className="bi bi-dash-circle"
-                              fill="currentColor"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
-                              />
-                              <path
-                                fillRule="evenodd"
-                                d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
-                              />
-                            </svg>
+                            {currIngredients.includes(i) ? (
+                              <>
+                                <span className="modal-ingredients-ingredient-name">
+                                  {i}
+                                </span>
+                                <svg
+                                  width="1em"
+                                  height="1em"
+                                  viewBox="0 0 16 16"
+                                  className="bi bi-dash-circle"
+                                  fill="currentColor"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    fillRule="evenodd"
+                                    d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                                  />
+                                  <path
+                                    fillRule="evenodd"
+                                    d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
+                                  />
+                                </svg>
+                              </>
+                            ) : (
+                              <>
+                                <span className="modal-ingredients-ingredient-name-deleted">
+                                  {i}
+                                </span>
+                                <svg
+                                  width="1em"
+                                  height="1em"
+                                  viewBox="0 0 16 16"
+                                  class="bi bi-arrow-return-left"
+                                  fill="currentColor"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"
+                                  />
+                                </svg>
+                              </>
+                            )}
+
                             {newPizza.ingredients[idx + 1] && ","}
                           </li>
                         ))}
@@ -155,7 +191,7 @@ export default function OrderModal(props) {
                                 onClick={() => console.log(el)}
                               >
                                 <span className="modal-ingredients-ingredient-name">
-                                  {el.name}
+                                  {`${el.name} (+${el.price}zł)`}
                                 </span>
                                 <svg
                                   width="1em"
@@ -199,82 +235,15 @@ export default function OrderModal(props) {
                         </Form.Group>
                       </Form>
                     </div>
-                    <h6>Rozmiar:</h6>
-                    <div className="group" onChange={handleSizeChange}>
-                      <input
-                        type="radio"
-                        name="rb-size"
-                        id="rb1"
-                        checked={size === "20cm"}
-                        value="20cm"
-                        disabled={newPizza.name === "Calzone (Pierog)"}
-                        readOnly
-                      />
-                      <label htmlFor="rb1">20cm</label>
-                      <input
-                        type="radio"
-                        name="rb-size"
-                        id="rb2"
-                        value="28cm"
-                        checked={
-                          size === "28cm" ||
-                          newPizza.name === "Calzone (Pierog)"
-                        }
-                        readOnly
-                      />
-                      <label htmlFor="rb2">28cm</label>
-                      <input
-                        type="radio"
-                        name="rb-size"
-                        id="rb3"
-                        value="50cm"
-                        checked={size === "50cm"}
-                        disabled={
-                          dough === "grube" ||
-                          newPizza.name === "Calzone (Pierog)"
-                        }
-                        readOnly
-                      />
-                      <label htmlFor="rb3">50cm</label>
-                    </div>
-                    <h6>Ciasto:</h6>
-                    <div className="group" onChange={handleDoughChange}>
-                      <input
-                        type="radio"
-                        name="rb-dough"
-                        id="rb4"
-                        value="cieńkie"
-                        checked={dough === "cieńkie"}
-                        disabled={newPizza.name === "Calzone (Pierog)"}
-                        readOnly
-                      />
-                      <label htmlFor="rb4">cieńkie</label>
-                      <input
-                        type="radio"
-                        name="rb-dough"
-                        id="rb5"
-                        value="średnie"
-                        checked={
-                          dough === "średnie" ||
-                          newPizza.name === "Calzone (Pierog)"
-                        }
-                        readOnly
-                      />
-                      <label htmlFor="rb5">średnie</label>
-                      <input
-                        type="radio"
-                        name="rb-dough"
-                        id="rb6"
-                        value="grube"
-                        checked={dough === "grube"}
-                        disabled={
-                          size === "50cm" ||
-                          newPizza.name === "Calzone (Pierog)"
-                        }
-                        readOnly
-                      />
-                      <label htmlFor="rb6">grube</label>
-                    </div>
+
+                    <OrderModalSizeAndDough
+                      size={size}
+                      dough={dough}
+                      newPizza={newPizza}
+                      handleSizeChange={handleSizeChange}
+                      handleDoughChange={handleDoughChange}
+                    />
+
                     <div className="pizzas-choices-footer">
                       <div className="checkout checkout-modal">
                         <span className="modal-price">
