@@ -1,11 +1,15 @@
 import React, { useState, useContext } from "react";
 import { ToastContext } from "../contexts/ToastContext";
 import { Form } from "react-bootstrap";
+import { MENU } from "../utils/constants";
+import { formatter } from "../utils/formatter";
 import "../styles/orderModal.css";
 
 export default function OrderModal(props) {
   const [size, setSize] = useState("20cm");
   const [dough, setDough] = useState("cieńkie");
+  const [extras, setExtras] = useState([]);
+  const [extrasSumPrice, setExtrasSumPrice] = useState(0);
   const { toggleShow } = useContext(ToastContext);
 
   const handleSizeChange = (e) => {
@@ -16,6 +20,16 @@ export default function OrderModal(props) {
     setDough(e.target.value);
   };
 
+  const handleExtraIngredientClick = (e) => {
+    if (e.target.value !== "Dodaj składnik") {
+      const newIngredient = MENU.pizzasIngredients.find(
+        (ing) => ing.name === e.target.value
+      );
+      setExtras([...extras, newIngredient]);
+      setExtrasSumPrice(extrasSumPrice + newIngredient.price);
+      e.target.value = "Dodaj składnik";
+    }
+  };
   const handleModalClose = (e) => {
     if (
       e.target.className === "modal fade" ||
@@ -24,6 +38,7 @@ export default function OrderModal(props) {
     ) {
       setSize("20cm");
       setDough("cieńkie");
+      setExtras([]);
     }
   };
 
@@ -31,22 +46,24 @@ export default function OrderModal(props) {
     let newItem = {};
 
     if (props.newPizza.id === 18) {
-      newItem = newPizza;
+      newItem = { ...newPizza, extras };
     } else {
       newItem = {
         ...props.newPizza,
         size,
         dough,
+        extras,
         price:
-          (size === "20cm" && newPizza.price.small) ||
-          (size === "28cm" && newPizza.price.medium) ||
-          (size === "50cm" && newPizza.price.big),
+          (size === "20cm" && newPizza.price["20cm"] + extrasSumPrice) ||
+          (size === "28cm" && newPizza.price["28cm"] + extrasSumPrice) ||
+          (size === "50cm" && newPizza.price["50cm"] + extrasSumPrice),
       };
     }
 
     props.handleModalSubmit(newItem);
     setSize("20cm");
     setDough("cieńkie");
+    setExtras([]);
     toggleShow();
   };
 
@@ -76,7 +93,7 @@ export default function OrderModal(props) {
           <div className="modal-body">
             <div className="container-fluid">
               <div className="row">
-                <div className="col-lg-7">
+                <div style={{ display: "flex" }} className="col-lg-7">
                   <div className="pizzas-img">
                     <img
                       srcSet="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg"
@@ -97,12 +114,9 @@ export default function OrderModal(props) {
                         {newPizza.ingredients.map((i, idx) => (
                           <li
                             key={i}
+                            value={i}
                             className="modal-ingredients-ingredient"
-                            onClick={(e) =>
-                              console.log(
-                                `GET RID OF ${e.target.innerHTML.toUpperCase()}`
-                              )
-                            }
+                            onClick={() => console.log(i)}
                           >
                             <span className="modal-ingredients-ingredient-name">
                               {i}
@@ -128,14 +142,62 @@ export default function OrderModal(props) {
                           </li>
                         ))}
                       </ul>
-                      <Form.Group>
-                        <Form.Control size="sm" as="select">
-                          <option defaultValue>Dodaj składnik</option>
-                          <option>Ser</option>
-                          <option>Krewetki</option>
-                          <option>Bekon</option>
-                        </Form.Control>
-                      </Form.Group>
+                      {extras.length > 0 && (
+                        <React.Fragment>
+                          <h6>Dodatki:</h6>
+
+                          <ul className="modal-ingredients">
+                            {extras.map((el, idx) => (
+                              <li
+                                key={idx}
+                                value={el}
+                                className="modal-ingredients-ingredient"
+                                onClick={() => console.log(el)}
+                              >
+                                <span className="modal-ingredients-ingredient-name">
+                                  {el.name}
+                                </span>
+                                <svg
+                                  width="1em"
+                                  height="1em"
+                                  viewBox="0 0 16 16"
+                                  className="bi bi-dash-circle"
+                                  fill="currentColor"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    fillRule="evenodd"
+                                    d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                                  />
+                                  <path
+                                    fillRule="evenodd"
+                                    d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
+                                  />
+                                </svg>
+                                {extras[idx + 1] && ","}
+                              </li>
+                            ))}
+                          </ul>
+                        </React.Fragment>
+                      )}
+
+                      <Form>
+                        <Form.Group>
+                          <Form.Control
+                            onChange={handleExtraIngredientClick}
+                            size="sm"
+                            as="select"
+                            disabled={extras.length >= 5}
+                          >
+                            <option>Dodaj składnik</option>
+                            {MENU.pizzasIngredients.map((i, idx) => (
+                              <option key={idx} value={i.name}>
+                                {i.name} (+{i.price}pln)
+                              </option>
+                            ))}
+                          </Form.Control>
+                        </Form.Group>
+                      </Form>
                     </div>
                     <h6>Rozmiar:</h6>
                     <div className="group" onChange={handleSizeChange}>
@@ -217,15 +279,21 @@ export default function OrderModal(props) {
                       <div className="checkout checkout-modal">
                         <span className="modal-price">
                           {newPizza.id === 18
-                            ? newPizza.price
+                            ? formatter.format(newPizza.price + extrasSumPrice)
                             : size === "20cm"
-                            ? newPizza.price.small
+                            ? formatter.format(
+                                newPizza.price[size] + extrasSumPrice
+                              )
                             : size === "28cm"
-                            ? newPizza.price.medium
+                            ? formatter.format(
+                                newPizza.price[size] + extrasSumPrice
+                              )
                             : size === "50cm"
-                            ? newPizza.price.big
+                            ? formatter.format(
+                                newPizza.price[size] + extrasSumPrice
+                              )
                             : null}
-                          pln
+                          zł
                         </span>
                         <button
                           onClick={handleModalSubmit}

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import OrderModal from "./OrderModal";
 import { MENU } from "../utils/constants";
 import { NewPizzaContext } from "../contexts/NewPizzaContext";
+import { formatter } from "../utils/formatter";
 
 export default function PizzasList(props) {
   const { newPizza, setNewPizza } = useContext(NewPizzaContext);
@@ -34,7 +35,10 @@ export default function PizzasList(props) {
                   </p>
                   <div className="checkout">
                     <p className="checkout-price">
-                      od {pizza.id === 18 ? "23.50" : pizza.price.small}
+                      od{" "}
+                      {pizza.id === 18
+                        ? formatter.format(pizza.price)
+                        : formatter.format(pizza.price["20cm"])}
                       pln
                     </p>
                     <button

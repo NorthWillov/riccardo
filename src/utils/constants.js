@@ -4,9 +4,9 @@ export const MENU = {
       id: 1,
       name: "Margherita",
       price: {
-        small: "9.50",
-        medium: "16.90",
-        big: "32.50",
+        "20cm": 9.5,
+        "28cm": 16.9,
+        "50cm": 32.5,
       },
       ingredients: ["sos", "ser", "oregano"],
       image:
@@ -16,9 +16,9 @@ export const MENU = {
       id: 2,
       name: "Massima",
       price: {
-        small: "14.50",
-        medium: "17.90",
-        big: "34.50",
+        "20cm": 14.5,
+        "28cm": 17.9,
+        "50cm": 34.5,
       },
       ingredients: ["sos", "ser", "pieczarki", "cebula"],
       image:
@@ -28,9 +28,9 @@ export const MENU = {
       id: 3,
       name: "Capricciosa",
       price: {
-        small: "14.50",
-        medium: "20.90",
-        big: "40.50",
+        "20cm": 14.5,
+        "28cm": 20.9,
+        "50cm": 40.5,
       },
       ingredients: ["sos", "ser", "szynka", "pieczarki"],
       image:
@@ -40,9 +40,9 @@ export const MENU = {
       id: 4,
       name: "Bambino",
       price: {
-        small: "15.50",
-        medium: "20.90",
-        big: "40.50",
+        "20cm": 15.5,
+        "28cm": 20.9,
+        "50cm": 40.5,
       },
       ingredients: ["sos", "ser", "szynka", "ananas"],
       image:
@@ -52,9 +52,9 @@ export const MENU = {
       id: 5,
       name: "Salami",
       price: {
-        small: "15.50",
-        medium: "20.90",
-        big: "41.90",
+        "20cm": 15.5,
+        "28cm": 20.9,
+        "50cm": 41.9,
       },
       ingredients: ["sos", "ser", "salami", "papryka", "ogórek"],
       image:
@@ -64,9 +64,9 @@ export const MENU = {
       id: 6,
       name: "Tono",
       price: {
-        small: "16.50",
-        medium: "20.90",
-        big: "42.50",
+        "20cm": 16.5,
+        "28cm": 20.9,
+        "50cm": 42.5,
       },
       ingredients: ["sos", "ser", "tuńczyk", "czerwona cebula", "feta"],
       image:
@@ -76,9 +76,9 @@ export const MENU = {
       id: 7,
       name: "Gamberetto",
       price: {
-        small: "16.50",
-        medium: "22.90",
-        big: "43.50",
+        "20cm": 16.5,
+        "28cm": 22.9,
+        "50cm": 43.5,
       },
       ingredients: ["sos", "ser", "szynka", "krewetki", "ananas"],
       image:
@@ -88,9 +88,9 @@ export const MENU = {
       id: 8,
       name: "Wegetariana",
       price: {
-        small: "16.50",
-        medium: "21.90",
-        big: "43.50",
+        "20cm": 16.5,
+        "28cm": 21.9,
+        "50cm": 43.5,
       },
       ingredients: [
         "sos",
@@ -109,9 +109,9 @@ export const MENU = {
       id: 9,
       name: "Wiosenna",
       price: {
-        small: "16.50",
-        medium: "21.90",
-        big: "43.50",
+        "20cm": 16.5,
+        "28cm": 21.9,
+        "50cm": 43.5,
       },
       ingredients: ["sos", "ser", "brokuły", "cukinia", "krewetki", "czosnek"],
       image:
@@ -121,9 +121,9 @@ export const MENU = {
       id: 10,
       name: "Broccoli",
       price: {
-        small: "16.50",
-        medium: "21.90",
-        big: "43.50",
+        "20cm": 16.5,
+        "28cm": 21.9,
+        "50cm": 43.5,
       },
       ingredients: ["sos", "ser", "brokuły", "pomidor", "feta", "parmezan"],
       image:
@@ -133,9 +133,9 @@ export const MENU = {
       id: 11,
       name: "Pepperone 🌶",
       price: {
-        small: "16.50",
-        medium: "22.50",
-        big: "44.50",
+        "20cm": 16.5,
+        "28cm": 22.5,
+        "50cm": 44.5,
       },
       ingredients: [
         "sos",
@@ -152,9 +152,9 @@ export const MENU = {
       id: 12,
       name: "Forte 🌶",
       price: {
-        small: "16.50",
-        medium: "23.50",
-        big: "44.50",
+        "20cm": 16.5,
+        "28cm": 23.5,
+        "50cm": 44.5,
       },
       ingredients: [
         "sos",
@@ -170,9 +170,9 @@ export const MENU = {
       id: 13,
       name: "Wiejska 🌶",
       price: {
-        small: "16.50",
-        medium: "23.50",
-        big: "44.50",
+        "20cm": 16.5,
+        "28cm": 23.5,
+        "50cm": 44.5,
       },
       ingredients: ["sos", "ser", "kiełbasa", "cebula", "pieczarki", "tabasco"],
       image:
@@ -182,9 +182,9 @@ export const MENU = {
       id: 14,
       name: "Saporito",
       price: {
-        small: "16.50",
-        medium: "23.50",
-        big: "46.50",
+        "20cm": 16.5,
+        "28cm": 23.5,
+        "50cm": 46.5,
       },
       ingredients: [
         "sos",
@@ -202,9 +202,9 @@ export const MENU = {
       id: 15,
       name: "Szpinakowa",
       price: {
-        small: "16.50",
-        medium: "23.50",
-        big: "46.50",
+        "20cm": 16.5,
+        "28cm": 23.5,
+        "50cm": 46.5,
       },
       ingredients: [
         "sos",
@@ -221,9 +221,9 @@ export const MENU = {
       id: 16,
       name: "Frutti di Mare",
       price: {
-        small: "16.50",
-        medium: "23.50",
-        big: "49.50",
+        "20cm": 16.5,
+        "28cm": 23.5,
+        "50cm": 49.5,
       },
       ingredients: ["sos", "ser", "owoce morze", "kapary", "czosnek", "oliwki"],
       image:
@@ -233,9 +233,9 @@ export const MENU = {
       id: 17,
       name: "Jalapeño 🌶",
       price: {
-        small: "17.50",
-        medium: "23.50",
-        big: "49.50",
+        "20cm": 17.5,
+        "28cm": 23.5,
+        "50cm": 49.5,
       },
       ingredients: [
         "sos",
@@ -253,7 +253,7 @@ export const MENU = {
       name: "Calzone (Pierog)",
       size: "28cm",
       dough: "średnie",
-      price: "23.50",
+      price: 23.5,
       ingredients: ["sos", "ser", "kurczak", "szynka", "pieczarki"],
       image:
         "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
@@ -262,9 +262,9 @@ export const MENU = {
       id: 19,
       name: "Miscela",
       price: {
-        small: "16.50",
-        medium: "23.50",
-        big: "45.50",
+        "20cm": 16.5,
+        "28cm": 23.5,
+        "50cm": 45.5,
       },
       ingredients: ["sos", "ser", "pieczarki", "szynka", "bekon", "oliwki"],
       image:
@@ -274,9 +274,9 @@ export const MENU = {
       id: 20,
       name: "Salmone",
       price: {
-        small: "16.50",
-        medium: "23.50",
-        big: "46.90",
+        "20cm": 16.5,
+        "28cm": 23.5,
+        "50cm": 46.9,
       },
       ingredients: ["sos", "ser", "łosoś wędzony", "ruccola", "parmezan"],
       image:
@@ -286,9 +286,9 @@ export const MENU = {
       id: 21,
       name: "Ricco",
       price: {
-        small: "16.50",
-        medium: "23.50",
-        big: "46.90",
+        "20cm": 16.5,
+        "28cm": 23.5,
+        "50cm": 46.9,
       },
       ingredients: [
         "sos",
@@ -306,9 +306,9 @@ export const MENU = {
       id: 22,
       name: "Fantazja",
       price: {
-        small: "18.50",
-        medium: "25.50",
-        big: "50.90",
+        "20cm": 18.5,
+        "28cm": 25.5,
+        "50cm": 50.9,
       },
       ingredients: ["sos", "ser", "5 własnych składników do wyboru"],
       image:
@@ -318,9 +318,9 @@ export const MENU = {
       id: 23,
       name: "Riccardo",
       price: {
-        small: "17.50",
-        medium: "25.50",
-        big: "50.90",
+        "20cm": 17.5,
+        "28cm": 25.5,
+        "50cm": 50.9,
       },
       ingredients: [
         "sos",
@@ -337,9 +337,9 @@ export const MENU = {
       id: 24,
       name: "Wołowina",
       price: {
-        small: "17.50",
-        medium: "25.50",
-        big: "50.90",
+        "20cm": 17.5,
+        "28cm": 25.5,
+        "50cm": 50.9,
       },
       ingredients: [
         "sos",
@@ -356,13 +356,45 @@ export const MENU = {
       id: 25,
       name: "Bekonowe Jaja",
       price: {
-        small: "16.50",
-        medium: "21.90",
-        big: "43.90",
+        "20cm": 16.5,
+        "28cm": 21.9,
+        "50cm": 43.9,
       },
       ingredients: ["sos", "ser", "bekon", "szczypior", "jaja"],
       image:
         "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
     },
+  ],
+
+  pizzasIngredients: [
+    { name: "ananas", price: 2 },
+    { name: "bekon", price: 3 },
+    { name: "brokuły", price: 2 },
+    { name: "cebula", price: 2 },
+    { name: "czerwona cebula", price: 2 },
+    { name: "cukinia", price: 2 },
+    { name: "czosnek", price: 2 },
+    { name: "feta", price: 3 },
+    { name: "kukurydza", price: 2 },
+    { name: "kapary", price: 2 },
+    { name: "kiełbasa", price: 3 },
+    { name: "kurczak", price: 3 },
+    { name: "krewetki", price: 6 },
+    { name: "łosoś wędzony", price: 6 },
+    { name: "ogórek", price: 2 },
+    { name: "oliwki", price: 2 },
+    { name: "owoce morza", price: 6 },
+    { name: "pieczarki", price: 2 },
+    { name: "papryka", price: 2 },
+    { name: "pomidory", price: 2 },
+    { name: "papryka jalapeño", price: 2 },
+    { name: "pomidory suszone", price: 2 },
+    { name: "parmezan", price: 3 },
+    { name: "ruccola", price: 2 },
+    { name: "ser", price: 3 },
+    { name: "szynka", price: 3 },
+    { name: "salami", price: 3 },
+    { name: "ser pleśniowy", price: 3 },
+    { name: "tuńczyk", price: 6 },
   ],
 };
