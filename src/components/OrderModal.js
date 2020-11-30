@@ -4,6 +4,7 @@ import { ToastContext } from "../contexts/ToastContext";
 import { Form } from "react-bootstrap";
 import { MENU } from "../utils/constants";
 import { formatter } from "../utils/formatter";
+import { v4 as uuidv4 } from "uuid";
 import "../styles/orderModal.css";
 
 export default function OrderModal(props) {
@@ -29,11 +30,17 @@ export default function OrderModal(props) {
       : setCurrIngredients([...currIngredients, i]);
   };
 
-  const handleExtraIngredientClick = (e) => {
+  const handleExtraIngredientClick = (i) => {
+    setExtras(extras.filter((ing) => ing.id !== i.id));
+    setExtrasSumPrice(extrasSumPrice - i.price);
+  };
+
+  const handleExtraIngredientInputClick = (e) => {
     if (e.target.value !== "Dodaj składnik") {
-      const newIngredient = MENU.pizzasIngredients.find(
+      let newIngredient = MENU.pizzasIngredients.find(
         (ing) => ing.name === e.target.value
       );
+      newIngredient = { ...newIngredient, id: uuidv4() };
       setExtras([...extras, newIngredient]);
       setExtrasSumPrice(extrasSumPrice + newIngredient.price);
       e.target.value = "Dodaj składnik";
@@ -125,7 +132,7 @@ export default function OrderModal(props) {
                       <ul className="modal-ingredients">
                         {newPizza.ingredients.map((i, idx) => (
                           <li
-                            key={i}
+                            key={uuidv4()}
                             value={i}
                             className="modal-ingredients-ingredient"
                             onClick={() => handleIngredientClick(i)}
@@ -162,12 +169,12 @@ export default function OrderModal(props) {
                                   width="1em"
                                   height="1em"
                                   viewBox="0 0 16 16"
-                                  class="bi bi-arrow-return-left"
+                                  className="bi bi-arrow-return-left"
                                   fill="currentColor"
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    fill-rule="evenodd"
+                                    fillRule="evenodd"
                                     d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"
                                   />
                                 </svg>
@@ -185,10 +192,9 @@ export default function OrderModal(props) {
                           <ul className="modal-ingredients">
                             {extras.map((el, idx) => (
                               <li
-                                key={idx}
-                                value={el}
+                                key={uuidv4()}
                                 className="modal-ingredients-ingredient"
-                                onClick={() => console.log(el)}
+                                onClick={() => handleExtraIngredientClick(el)}
                               >
                                 <span className="modal-ingredients-ingredient-name">
                                   {`${el.name} (+${el.price}zł)`}
@@ -220,7 +226,7 @@ export default function OrderModal(props) {
                       <Form>
                         <Form.Group>
                           <Form.Control
-                            onChange={handleExtraIngredientClick}
+                            onChange={handleExtraIngredientInputClick}
                             size="sm"
                             as="select"
                             disabled={extras.length >= 5}
