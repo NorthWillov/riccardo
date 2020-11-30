@@ -29,11 +29,13 @@ export default function PizzasList(props) {
                 <div className="card-body">
                   <h5 className="card-title">{pizza.name}</h5>
                   <p className="card-text">
-                    {pizza.ingredients.map((i, idx) => (
-                      <span key={i}>
-                        {pizza.ingredients[idx + 1] ? i + ", " : i}
-                      </span>
-                    ))}
+                    {pizza.id !== 22
+                      ? pizza.ingredients.map((i, idx) => (
+                          <span key={i}>
+                            {pizza.ingredients[idx + 1] ? i + ", " : i}
+                          </span>
+                        ))
+                      : "sos, ser, +5 własnych składników do wyboru"}
                   </p>
                   <div className="checkout">
                     <p className="checkout-price">

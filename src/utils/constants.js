@@ -310,7 +310,7 @@ export const MENU = {
         "28cm": 25.5,
         "50cm": 50.9,
       },
-      ingredients: ["sos", "ser", "5 własnych składników do wyboru"],
+      ingredients: ["sos", "ser"],
       image:
         "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
     },
