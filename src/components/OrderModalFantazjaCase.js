@@ -1,18 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { Form } from "react-bootstrap";
 import { v4 as uuidv4 } from "uuid";
 import { MENU } from "../utils/constants";
 
 function OrderModalFantazjaCase(props) {
-  const [counter, setCounter] = useState(1);
-
   const {
-    extras,
     currIngredients,
     newPizza,
     handleIngredientClick,
     handleFantazjaInputClick,
-    handleExtraIngredientClick,
   } = props;
 
   return (
