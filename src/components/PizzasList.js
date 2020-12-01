@@ -28,7 +28,9 @@ export default function PizzasList(props) {
                   alt={pizza.name}
                 />
                 <div className="card-body">
-                  <h5 className="card-title">{pizza.name}</h5>
+                  <h5 className="card-title">
+                    {pizza.id}. {pizza.name}
+                  </h5>
                   <p className="card-text card-text-pizzas">
                     {pizza.id !== 22
                       ? pizza.ingredients.map((i, idx) => (

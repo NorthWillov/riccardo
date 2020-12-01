@@ -9,6 +9,31 @@ function Routes(props) {
       <Route exact path="/riccardo" render={() => <Landing />} />
       <Route
         exact
+        path="/riccardo/obiade"
+        render={() => <h1>This page is in progress</h1>}
+      />
+      <Route
+        exact
+        path="/riccardo/napoje"
+        render={() => <h1>This page is in progress</h1>}
+      />
+      <Route
+        exact
+        path="/riccardo/about"
+        render={() => <h1>This page is in progress</h1>}
+      />
+      <Route
+        exact
+        path="/riccardo/promocje"
+        render={() => <h1>This page is in progress</h1>}
+      />
+      <Route
+        exact
+        path="/riccardo/contact"
+        render={() => <h1>This page is in progress</h1>}
+      />
+      <Route
+        exact
         path="/riccardo/pizzas"
         render={() => (
           <PizzasList

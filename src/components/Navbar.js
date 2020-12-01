@@ -62,27 +62,27 @@ export default function Navbar(props) {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink exact className="nav-link" to="/riccardo">
+              <NavLink exact className="nav-link" to="/riccardo/obiade">
                 Zestawy obiadowe
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink exact className="nav-link" to="/riccardo">
+              <NavLink exact className="nav-link" to="/riccardo/napoje">
                 Napoje
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink exact className="nav-link" to="/riccardo">
+              <NavLink exact className="nav-link" to="/riccardo/about">
                 O nas
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink exact className="nav-link" to="/riccardo">
+              <NavLink exact className="nav-link" to="/riccardo/promocje">
                 Promocje
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink exact className="nav-link" to="/riccardo">
+              <NavLink exact className="nav-link" to="/riccardo/contact">
                 Kontakt
               </NavLink>
             </li>

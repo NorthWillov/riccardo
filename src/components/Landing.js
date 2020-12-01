@@ -36,7 +36,7 @@ function Landing(props) {
       </Carousel>
       <h3 className="mt-5">Popularne:</h3>
       <div className="row">
-        <div className="col-md-3">
+        <div className="col-6 col-sm-4 col-md-3">
           <div className="popular-card card mb-3">
             <div className="row no-gutters">
               <div className="col-md-5">
@@ -55,7 +55,7 @@ function Landing(props) {
             </div>
           </div>
         </div>
-        <div className="col-md-3">
+        <div className="col-6 col-sm-4 col-md-3">
           <div className="popular-card card mb-3">
             <div className="row no-gutters">
               <div className="col-md-5">
@@ -74,7 +74,7 @@ function Landing(props) {
             </div>
           </div>
         </div>
-        <div className="col-md-3">
+        <div className="col-6 col-sm-4 col-md-3">
           <div className="popular-card card mb-3">
             <div className="row no-gutters">
               <div className="col-md-5">
@@ -93,7 +93,7 @@ function Landing(props) {
             </div>
           </div>
         </div>
-        <div className="col-md-3">
+        <div className="col-6 col-sm-4 col-md-3">
           <div className="popular-card card mb-3">
             <div className="row no-gutters">
               <div className="col-md-5">

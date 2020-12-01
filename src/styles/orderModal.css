@@ -1,3 +1,7 @@
+.modal-pizza-image {
+  width: 100%;
+  padding-left: 15px;
+}
 .modal-body {
   display: flex;
   padding: 0px 20px 20px 20px;

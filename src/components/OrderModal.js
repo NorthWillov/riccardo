@@ -139,6 +139,7 @@ export default function OrderModal(props) {
                 <div style={{ display: "flex" }} className="col-lg-7">
                   <div className="pizzas-img">
                     <img
+                      className="modal-pizza-image"
                       srcSet="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg"
                       alt="pizza-img"
                     />
