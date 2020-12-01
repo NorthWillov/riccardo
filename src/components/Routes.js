@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
+import { Spinner } from "react-bootstrap";
 import Landing from "./Landing";
 import PizzasList from "./PizzasList";
 
@@ -14,27 +15,51 @@ function Routes(props) {
       <Route
         exact
         path="/riccardo/obiade"
-        render={() => <h1>This page is in progress</h1>}
+        render={() => (
+          <h1>
+            This page is in progress{" "}
+            <Spinner animation="grow" variant="primary" />
+          </h1>
+        )}
       />
       <Route
         exact
         path="/riccardo/napoje"
-        render={() => <h1>This page is in progress</h1>}
+        render={() => (
+          <h1>
+            This page is in progress{" "}
+            <Spinner animation="grow" variant="success" />
+          </h1>
+        )}
       />
       <Route
         exact
         path="/riccardo/about"
-        render={() => <h1>This page is in progress</h1>}
+        render={() => (
+          <h1>
+            This page is in progress{" "}
+            <Spinner animation="grow" variant="danger" />
+          </h1>
+        )}
       />
       <Route
         exact
         path="/riccardo/promocje"
-        render={() => <h1>This page is in progress</h1>}
+        render={() => (
+          <h1>
+            This page is in progress{" "}
+            <Spinner animation="grow" variant="warning" />
+          </h1>
+        )}
       />
       <Route
         exact
         path="/riccardo/contact"
-        render={() => <h1>This page is in progress</h1>}
+        render={() => (
+          <h1>
+            This page is in progress <Spinner animation="grow" variant="dark" />
+          </h1>
+        )}
       />
       <Route
         exact
