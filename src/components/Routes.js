@@ -42,7 +42,7 @@ function Routes(props) {
           />
         )}
       />
-      <Redirect to="/riccardo/pizzas" />
+      <Redirect to="/riccardo" />
     </Switch>
   );
 }
