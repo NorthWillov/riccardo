@@ -56,13 +56,18 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <NavLink exact className="nav-link" to="/riccardo">
-                Menu
+              <NavLink exact className="nav-link" to="/riccardo/pizzas">
+                Pizza
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink exact className="nav-link" to="/riccardo">
-                Zamów online
+                Zestawy obiadowe
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink exact className="nav-link" to="/riccardo">
+                Napoje
               </NavLink>
             </li>
             <li className="nav-item">
