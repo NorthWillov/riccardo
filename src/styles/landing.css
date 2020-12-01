@@ -1,1 +1,13 @@
-
+.popular-card {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 1rem;
+  box-shadow: rgba(6, 5, 50, 0.15) 0px 4px 22px -6px;
+}
+.card-body-popular {
+  align-self: center;
+  padding: 0;
+}
+.card-title-popular {
+  margin: 0;
+}

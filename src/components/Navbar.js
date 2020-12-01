@@ -4,6 +4,7 @@ import { Toast } from "react-bootstrap";
 import { ToastContext } from "../contexts/ToastContext";
 import { NewPizzaContext } from "../contexts/NewPizzaContext";
 import { NavLink, Link } from "react-router-dom";
+import "../styles/navbar.css";
 
 export default function Navbar(props) {
   const { show, toggleShow } = useContext(ToastContext);

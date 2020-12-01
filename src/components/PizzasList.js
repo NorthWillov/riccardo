@@ -3,6 +3,7 @@ import OrderModal from "./OrderModal";
 import { MENU } from "../utils/constants";
 import { NewPizzaContext } from "../contexts/NewPizzaContext";
 import { formatter } from "../utils/formatter";
+import "../styles/pizzaList.css";
 
 export default function PizzasList(props) {
   const { newPizza, setNewPizza } = useContext(NewPizzaContext);
@@ -20,7 +21,7 @@ export default function PizzasList(props) {
         {MENU.pizzas.map((pizza) => (
           <React.Fragment key={pizza.name}>
             <div className="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-              <div className="card">
+              <div className="card card-pizzas">
                 <img
                   className="card-img-top"
                   srcSet={pizza.image}
@@ -28,7 +29,7 @@ export default function PizzasList(props) {
                 />
                 <div className="card-body">
                   <h5 className="card-title">{pizza.name}</h5>
-                  <p className="card-text">
+                  <p className="card-text card-text-pizzas">
                     {pizza.id !== 22
                       ? pizza.ingredients.map((i, idx) => (
                           <span key={i}>

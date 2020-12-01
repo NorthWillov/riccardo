@@ -1,0 +1,31 @@
+.card.card-pizzas img {
+  width: 100%;
+  padding-left: 15px;
+}
+.title {
+  margin-bottom: 30px;
+}
+.checkout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.checkout-price {
+  font-size: 20px;
+  margin: 0;
+  font-weight: 700;
+}
+.card-pizzas {
+  border: none;
+  margin-bottom: 30px;
+}
+.card-text-pizzas {
+  height: 60px;
+  margin: 0;
+}
+.cart {
+  margin: 8px 0 8px 15px;
+}
+.close {
+  opacity: 1;
+}
