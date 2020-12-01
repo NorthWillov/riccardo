@@ -77,6 +77,7 @@ export default function OrderModal(props) {
       setDough("cieńkie");
       setExtras([]);
       setFantazjaExtras({});
+      setExtrasSumPrice(0);
       setCurrIngredients([]);
     }
   };
@@ -104,6 +105,7 @@ export default function OrderModal(props) {
     setSize("20cm");
     setDough("cieńkie");
     setExtras([]);
+    setExtrasSumPrice(0);
     setCurrIngredients([]);
     setFantazjaExtras({});
     toggleShow();
