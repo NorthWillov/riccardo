@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Routes from "./Routes";
 import { ToastProvider } from "../contexts/ToastContext";
 import { NewPizzaProvider } from "../contexts/NewPizzaContext";
+import { CurrIngredientsProvider } from "../contexts/CurrIngredientsContext";
 import "../styles/App.css";
 
 function App() {
@@ -15,12 +16,14 @@ function App() {
   return (
     <ToastProvider>
       <NewPizzaProvider>
-        <div className="App">
-          <Navbar cart={cart} />
-          <div className="container-lg">
-            <Routes cart={cart} handleModalSubmit={handleModalSubmit} />
+        <CurrIngredientsProvider>
+          <div className="App">
+            <Navbar cart={cart} />
+            <div className="container-lg">
+              <Routes cart={cart} handleModalSubmit={handleModalSubmit} />
+            </div>
           </div>
-        </div>
+        </CurrIngredientsProvider>
       </NewPizzaProvider>
     </ToastProvider>
   );

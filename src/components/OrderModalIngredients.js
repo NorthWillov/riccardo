@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Form } from "react-bootstrap";
 import { v4 as uuidv4 } from "uuid";
 import { MENU } from "../utils/constants";
+import { NewPizzaContext } from "../contexts/NewPizzaContext";
+import { CurrIngredientsContext } from "../contexts/CurrIngredientsContext";
 
 function OrderModalIngredients(props) {
+  const { newPizza } = useContext(NewPizzaContext);
+  const { currIngredients } = useContext(CurrIngredientsContext);
   const {
     extras,
-    currIngredients,
-    newPizza,
     handleIngredientClick,
     handleExtraIngredientInputClick,
     handleExtraIngredientClick,

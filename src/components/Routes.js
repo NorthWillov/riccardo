@@ -6,7 +6,11 @@ import PizzasList from "./PizzasList";
 function Routes(props) {
   return (
     <Switch>
-      <Route exact path="/riccardo" render={() => <Landing />} />
+      <Route
+        exact
+        path="/riccardo"
+        render={() => <Landing handleModalSubmit={props.handleModalSubmit} />}
+      />
       <Route
         exact
         path="/riccardo/obiade"

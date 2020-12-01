@@ -169,8 +169,6 @@ export default function OrderModal(props) {
                       ) : (
                         <OrderModalIngredients
                           extras={extras}
-                          newPizza={newPizza}
-                          currIngredients={currIngredients}
                           handleIngredientClick={handleIngredientClick}
                           handleExtraIngredientInputClick={
                             handleExtraIngredientInputClick

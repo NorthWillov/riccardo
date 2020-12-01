@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Carousel } from "react-bootstrap";
+import { MENU } from "../utils/constants";
+import { formatter } from "../utils/formatter";
 import officeImg from "../images/office.jpg";
 import studentsImg from "../images/students.jpg";
 import familyImg from "../images/family.jpg";
+import { NewPizzaContext } from "../contexts/NewPizzaContext";
+import { CurrIngredientsContext } from "../contexts/CurrIngredientsContext";
+import OrderModal from "./OrderModal";
 import "../styles/landing.css";
 
 function Landing(props) {
+  const { newPizza, setNewPizza } = useContext(NewPizzaContext);
+  const { currIngredients, setCurrIngredients } = useContext(
+    CurrIngredientsContext
+  );
+
+  const handlePopularClick = (pizza) => {
+    setCurrIngredients(pizza.ingredients);
+    setNewPizza(pizza);
+  };
+
   return (
     <>
       <Carousel>
@@ -37,82 +52,126 @@ function Landing(props) {
       <h3 className="mt-5">Popularne:</h3>
       <div className="row">
         <div className="col-6 col-sm-4 col-md-3">
-          <div className="popular-card card mb-3">
+          <div
+            className="popular-card card mb-3"
+            onClick={() => handlePopularClick(MENU.pizzas[0])}
+            data-toggle="modal"
+            data-target="#exampleModal"
+          >
             <div className="row no-gutters">
               <div className="col-md-5">
                 <img
-                  src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg"
+                  src={MENU.pizzas[0].image}
                   className="card-img"
                   alt="pizza"
                 />
               </div>
               <div className="col-md-7" style={{ display: "flex" }}>
                 <div className="card-body-popular card-body">
-                  <h5 className="card-title-popular card-title">Margherita</h5>
-                  <p className="card-text">Od 9.50zł</p>
+                  <h5 className="card-title-popular card-title">
+                    {MENU.pizzas[0].name}
+                  </h5>
+                  <p className="card-text">
+                    Od {formatter.format(MENU.pizzas[0].price["20cm"])}zł
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className="col-6 col-sm-4 col-md-3">
-          <div className="popular-card card mb-3">
+          <div
+            className="popular-card card mb-3"
+            onClick={() => handlePopularClick(MENU.pizzas[2])}
+            data-toggle="modal"
+            data-target="#exampleModal"
+          >
             <div className="row no-gutters">
               <div className="col-md-5">
                 <img
-                  src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg"
+                  src={MENU.pizzas[2].image}
                   className="card-img"
                   alt="pizza"
                 />
               </div>
               <div className="col-md-7" style={{ display: "flex" }}>
                 <div className="card-body-popular card-body">
-                  <h5 className="card-title-popular card-title">Capricciosa</h5>
-                  <p className="card-text">Od 14.50zł</p>
+                  <h5 className="card-title-popular card-title">
+                    {MENU.pizzas[2].name}
+                  </h5>
+                  <p className="card-text">
+                    Od {formatter.format(MENU.pizzas[2].price["20cm"])}zł
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className="col-6 col-sm-4 col-md-3">
-          <div className="popular-card card mb-3">
+          <div
+            className="popular-card card mb-3"
+            onClick={() => handlePopularClick(MENU.pizzas[13])}
+            data-toggle="modal"
+            data-target="#exampleModal"
+          >
             <div className="row no-gutters">
               <div className="col-md-5">
                 <img
-                  src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg"
+                  src={MENU.pizzas[13].image}
                   className="card-img"
                   alt="pizza"
                 />
               </div>
               <div className="col-md-7" style={{ display: "flex" }}>
                 <div className="card-body-popular card-body">
-                  <h5 className="card-title-popular card-title">Saporito</h5>
-                  <p className="card-text">Od 16.50zł</p>
+                  <h5 className="card-title-popular card-title">
+                    {MENU.pizzas[13].name}
+                  </h5>
+                  <p className="card-text">
+                    Od {formatter.format(MENU.pizzas[13].price["20cm"])}zł
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className="col-6 col-sm-4 col-md-3">
-          <div className="popular-card card mb-3">
+          <div
+            className="popular-card card mb-3"
+            onClick={() => handlePopularClick(MENU.pizzas[10])}
+            data-toggle="modal"
+            data-target="#exampleModal"
+          >
             <div className="row no-gutters">
               <div className="col-md-5">
                 <img
-                  src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg"
+                  src={MENU.pizzas[10].image}
                   className="card-img"
                   alt="pizza"
                 />
               </div>
               <div className="col-md-7" style={{ display: "flex" }}>
                 <div className="card-body-popular card-body">
-                  <h5 className="card-title-popular card-title">Pepperone 🌶</h5>
-                  <p className="card-text">Od 16.50zł</p>
+                  <h5 className="card-title-popular card-title">
+                    {MENU.pizzas[10].name}
+                  </h5>
+                  <p className="card-text">
+                    Od {formatter.format(MENU.pizzas[10].price["20cm"])}zł
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {newPizza && (
+        <OrderModal
+          setCurrIngredients={setCurrIngredients}
+          currIngredients={currIngredients}
+          newPizza={newPizza}
+          handleModalSubmit={props.handleModalSubmit}
+        />
+      )}
     </>
   );
 }

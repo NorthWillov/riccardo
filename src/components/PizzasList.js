@@ -1,13 +1,16 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import OrderModal from "./OrderModal";
 import { MENU } from "../utils/constants";
 import { NewPizzaContext } from "../contexts/NewPizzaContext";
+import { CurrIngredientsContext } from "../contexts/CurrIngredientsContext";
 import { formatter } from "../utils/formatter";
 import "../styles/pizzaList.css";
 
 export default function PizzasList(props) {
   const { newPizza, setNewPizza } = useContext(NewPizzaContext);
-  const [currIngredients, setCurrIngredients] = useState([]);
+  const { currIngredients, setCurrIngredients } = useContext(
+    CurrIngredientsContext
+  );
 
   const handleClick = (pizza) => {
     setCurrIngredients(pizza.ingredients);
