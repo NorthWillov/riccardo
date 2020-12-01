@@ -3,6 +3,7 @@ import logo from "../images/logo.png";
 import { Toast } from "react-bootstrap";
 import { ToastContext } from "../contexts/ToastContext";
 import { NewPizzaContext } from "../contexts/NewPizzaContext";
+import { NavLink, Link } from "react-router-dom";
 
 export default function Navbar(props) {
   const { show, toggleShow } = useContext(ToastContext);
@@ -37,9 +38,10 @@ export default function Navbar(props) {
           </div>
         )}
 
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/riccardo">
           <img className="logo" srcSet={logo} alt="riccardo-logo" />
-        </a>
+        </Link>
+
         <button
           className="navbar-toggler mr-1"
           type="button"
@@ -54,29 +56,29 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <NavLink exact className="nav-link" to="/riccardo">
                 Menu
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <NavLink exact className="nav-link" to="/riccardo">
                 Zamów online
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <NavLink exact className="nav-link" to="/riccardo">
                 O nas
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <NavLink exact className="nav-link" to="/riccardo">
                 Promocje
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <NavLink exact className="nav-link" to="/riccardo">
                 Kontakt
-              </a>
+              </NavLink>
             </li>
           </ul>
           <button
