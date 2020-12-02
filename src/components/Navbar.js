@@ -23,13 +23,7 @@ export default function Navbar(props) {
               top: "90px",
             }}
           >
-            <Toast
-              transition={null} // GIVES WARNING WHILE TRANSITION IS ON
-              show={show}
-              onClose={toggleShow}
-              delay={3000}
-              autohide
-            >
+            <Toast show={show} onClose={toggleShow} delay={3000} autohide>
               <Toast.Header>
                 <span style={{ color: "black", fontSize: "15px" }}>
                   +1 {newPizza.name}
