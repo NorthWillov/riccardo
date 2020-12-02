@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/riccardo/static/css/main.945ba1d6.chunk.css",
-    "main.js": "/riccardo/static/js/main.d41a918f.chunk.js",
-    "main.js.map": "/riccardo/static/js/main.d41a918f.chunk.js.map",
-    "runtime-main.js": "/riccardo/static/js/runtime-main.337ef9f6.js",
-    "runtime-main.js.map": "/riccardo/static/js/runtime-main.337ef9f6.js.map",
+    "main.css": "/riccardo/static/css/main.2c759a60.chunk.css",
+    "main.js": "/riccardo/static/js/main.804a58e0.chunk.js",
+    "main.js.map": "/riccardo/static/js/main.804a58e0.chunk.js.map",
+    "runtime-main.js": "/riccardo/static/js/runtime-main.bf203547.js",
+    "runtime-main.js.map": "/riccardo/static/js/runtime-main.bf203547.js.map",
     "static/css/2.1a02f21c.chunk.css": "/riccardo/static/css/2.1a02f21c.chunk.css",
-    "static/js/2.f1518169.chunk.js": "/riccardo/static/js/2.f1518169.chunk.js",
-    "static/js/2.f1518169.chunk.js.map": "/riccardo/static/js/2.f1518169.chunk.js.map",
-    "static/js/3.9c97a56c.chunk.js": "/riccardo/static/js/3.9c97a56c.chunk.js",
-    "static/js/3.9c97a56c.chunk.js.map": "/riccardo/static/js/3.9c97a56c.chunk.js.map",
+    "static/js/2.2442daac.chunk.js": "/riccardo/static/js/2.2442daac.chunk.js",
+    "static/js/2.2442daac.chunk.js.map": "/riccardo/static/js/2.2442daac.chunk.js.map",
+    "static/js/3.50e3701a.chunk.js": "/riccardo/static/js/3.50e3701a.chunk.js",
+    "static/js/3.50e3701a.chunk.js.map": "/riccardo/static/js/3.50e3701a.chunk.js.map",
     "index.html": "/riccardo/index.html",
     "static/css/2.1a02f21c.chunk.css.map": "/riccardo/static/css/2.1a02f21c.chunk.css.map",
-    "static/css/main.945ba1d6.chunk.css.map": "/riccardo/static/css/main.945ba1d6.chunk.css.map",
-    "static/js/2.f1518169.chunk.js.LICENSE.txt": "/riccardo/static/js/2.f1518169.chunk.js.LICENSE.txt",
+    "static/css/main.2c759a60.chunk.css.map": "/riccardo/static/css/main.2c759a60.chunk.css.map",
+    "static/js/2.2442daac.chunk.js.LICENSE.txt": "/riccardo/static/js/2.2442daac.chunk.js.LICENSE.txt",
     "static/media/family.942d2709.jpg": "/riccardo/static/media/family.942d2709.jpg",
     "static/media/logo.85aa02c7.png": "/riccardo/static/media/logo.85aa02c7.png",
     "static/media/office.3cc651db.jpg": "/riccardo/static/media/office.3cc651db.jpg",
     "static/media/students.eb855f97.jpg": "/riccardo/static/media/students.eb855f97.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.337ef9f6.js",
+    "static/js/runtime-main.bf203547.js",
     "static/css/2.1a02f21c.chunk.css",
-    "static/js/2.f1518169.chunk.js",
-    "static/css/main.945ba1d6.chunk.css",
-    "static/js/main.d41a918f.chunk.js"
+    "static/js/2.2442daac.chunk.js",
+    "static/css/main.2c759a60.chunk.css",
+    "static/js/main.804a58e0.chunk.js"
   ]
 }
