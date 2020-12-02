@@ -1,6 +1,7 @@
 .modal-pizza-image {
   width: 100%;
-  padding-left: 15px;
+  align-self: center;
+  justify-content: center;
 }
 .modal-body {
   display: flex;
@@ -33,11 +34,6 @@ p {
 .modal-price {
   font-size: 28px;
   font-weight: 700;
-}
-.pizzas-img {
-  display: flex;
-  align-self: center;
-  justify-content: center;
 }
 button.close {
   display: flex;
