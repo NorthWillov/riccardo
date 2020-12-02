@@ -12,7 +12,7 @@ export default function Navbar(props) {
 
   return (
     <nav className="navbar sticky-top navbar-expand-lg navbar-light">
-      <div style={{ position: "relative" }} className="container-lg">
+      <div style={{ position: "relative"}} className="container-lg">
         {newPizza && (
           <div
             aria-live="polite"
