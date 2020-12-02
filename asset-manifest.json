@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/riccardo/static/css/main.2c759a60.chunk.css",
-    "main.js": "/riccardo/static/js/main.804a58e0.chunk.js",
-    "main.js.map": "/riccardo/static/js/main.804a58e0.chunk.js.map",
+    "main.css": "/riccardo/static/css/main.945ba1d6.chunk.css",
+    "main.js": "/riccardo/static/js/main.29f62a53.chunk.js",
+    "main.js.map": "/riccardo/static/js/main.29f62a53.chunk.js.map",
     "runtime-main.js": "/riccardo/static/js/runtime-main.bf203547.js",
     "runtime-main.js.map": "/riccardo/static/js/runtime-main.bf203547.js.map",
     "static/css/2.1a02f21c.chunk.css": "/riccardo/static/css/2.1a02f21c.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.50e3701a.chunk.js.map": "/riccardo/static/js/3.50e3701a.chunk.js.map",
     "index.html": "/riccardo/index.html",
     "static/css/2.1a02f21c.chunk.css.map": "/riccardo/static/css/2.1a02f21c.chunk.css.map",
-    "static/css/main.2c759a60.chunk.css.map": "/riccardo/static/css/main.2c759a60.chunk.css.map",
+    "static/css/main.945ba1d6.chunk.css.map": "/riccardo/static/css/main.945ba1d6.chunk.css.map",
     "static/js/2.2442daac.chunk.js.LICENSE.txt": "/riccardo/static/js/2.2442daac.chunk.js.LICENSE.txt",
     "static/media/family.942d2709.jpg": "/riccardo/static/media/family.942d2709.jpg",
     "static/media/logo.85aa02c7.png": "/riccardo/static/media/logo.85aa02c7.png",
@@ -23,7 +23,7 @@
     "static/js/runtime-main.bf203547.js",
     "static/css/2.1a02f21c.chunk.css",
     "static/js/2.2442daac.chunk.js",
-    "static/css/main.2c759a60.chunk.css",
-    "static/js/main.804a58e0.chunk.js"
+    "static/css/main.945ba1d6.chunk.css",
+    "static/js/main.29f62a53.chunk.js"
   ]
 }
