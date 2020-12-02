@@ -23,13 +23,7 @@ export default function Navbar(props) {
               top: "90px",
             }}
           >
-            <Toast
-              transition={null} // GIVES WARNING WHILE TRANSITION IS ON
-              show={show}
-              onClose={toggleShow}
-              delay={3000}
-              autohide
-            >
+            <Toast show={show} onClose={toggleShow} delay={3000} autohide>
               <Toast.Header>
                 <span style={{ color: "black", fontSize: "15px" }}>
                   +1 {newPizza.name}
@@ -57,32 +51,80 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <NavLink exact className="nav-link" to="/riccardo/pizzas">
+              <NavLink
+                data-toggle={window.innerWidth > 992 ? "" : "collapse"}
+                data-target={
+                  window.innerWidth > 992 ? "" : "#navbarSupportedContent"
+                }
+                exact
+                className="nav-link"
+                to="/riccardo/pizzas"
+              >
                 Pizza
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink exact className="nav-link" to="/riccardo/obiade">
+              <NavLink
+                data-toggle={window.innerWidth > 992 ? "" : "collapse"}
+                data-target={
+                  window.innerWidth > 992 ? "" : "#navbarSupportedContent"
+                }
+                exact
+                className="nav-link"
+                to="/riccardo/obiade"
+              >
                 Zestawy obiadowe
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink exact className="nav-link" to="/riccardo/napoje">
+              <NavLink
+                data-toggle={window.innerWidth > 992 ? "" : "collapse"}
+                data-target={
+                  window.innerWidth > 992 ? "" : "#navbarSupportedContent"
+                }
+                exact
+                className="nav-link"
+                to="/riccardo/napoje"
+              >
                 Napoje
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink exact className="nav-link" to="/riccardo/about">
+              <NavLink
+                data-toggle={window.innerWidth > 992 ? "" : "collapse"}
+                data-target={
+                  window.innerWidth > 992 ? "" : "#navbarSupportedContent"
+                }
+                exact
+                className="nav-link"
+                to="/riccardo/about"
+              >
                 O nas
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink exact className="nav-link" to="/riccardo/promocje">
+              <NavLink
+                data-toggle={window.innerWidth > 992 ? "" : "collapse"}
+                data-target={
+                  window.innerWidth > 992 ? "" : "#navbarSupportedContent"
+                }
+                exact
+                className="nav-link"
+                to="/riccardo/promocje"
+              >
                 Promocje
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink exact className="nav-link" to="/riccardo/contact">
+              <NavLink
+                data-toggle={window.innerWidth > 992 ? "" : "collapse"}
+                data-target={
+                  window.innerWidth > 992 ? "" : "#navbarSupportedContent"
+                }
+                exact
+                className="nav-link"
+                to="/riccardo/contact"
+              >
                 Kontakt
               </NavLink>
             </li>
