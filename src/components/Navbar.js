@@ -1,50 +1,18 @@
 import React, { useContext } from "react";
 import logo from "../images/logo.png";
-import { Navbar, Nav, Toast, Container } from "react-bootstrap";
+import { Toast } from "react-bootstrap";
 import { ToastContext } from "../contexts/ToastContext";
 import { NewPizzaContext } from "../contexts/NewPizzaContext";
 import { NavLink, Link } from "react-router-dom";
 import "../styles/navbar.css";
 
-export default function NavbarMenu(props) {
+export default function Navbar(props) {
   const { show, toggleShow } = useContext(ToastContext);
   const { newPizza } = useContext(NewPizzaContext);
 
   return (
-    <Navbar
-      collapseOnSelect
-      sticky="top"
-      expand="lg"
-      bg="light"
-      variant="light"
-    >
-      <Container style={{ position: "relative" }}>
-        <Navbar.Brand href="/riccardo">
-          <img className="logo" srcSet={logo} alt="riccardo-logo" />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="/riccardo/pizzas">Pizza</Nav.Link>
-            <Nav.Link href="/riccardo/obiade">Zestawy obiade</Nav.Link>
-            <Nav.Link href="/riccardo/napoje">Napoje</Nav.Link>
-            <Nav.Link href="/riccardo/about">O nas</Nav.Link>
-            <Nav.Link href="/riccardo/promocje">Promocje</Nav.Link>
-            <Nav.Link href="/riccardo/contact">Kontakt</Nav.Link>
-          </Nav>
-          <Nav>
-            <Nav.Link href="/riccardo">
-              <button
-                onClick={() => console.log(props.cart)}
-                className="btn btn-secondary cart mr-2"
-              >
-                Koszyk{" "}
-                {props.cart.length === 0 ? "" : `| ${props.cart.length} `}
-              </button>
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-
+    <nav className="navbar sticky-top navbar-expand-lg navbar-light">
+      <div style={{ position: "relative" }} className="container-lg">
         {newPizza && (
           <div
             aria-live="polite"
@@ -64,7 +32,111 @@ export default function NavbarMenu(props) {
             </Toast>
           </div>
         )}
-      </Container>
-    </Navbar>
+
+        <Link className="navbar-brand" to="/riccardo">
+          <img className="logo" srcSet={logo} alt="riccardo-logo" />
+        </Link>
+
+        <button
+          className="navbar-toggler mr-1"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item">
+              <NavLink
+                data-toggle={window.innerWidth > 992 ? "" : "collapse"}
+                data-target={
+                  window.innerWidth > 992 ? "" : "#navbarSupportedContent"
+                }
+                exact
+                className="nav-link"
+                to="/riccardo/pizzas"
+              >
+                Pizza
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                data-toggle={window.innerWidth > 992 ? "" : "collapse"}
+                data-target={
+                  window.innerWidth > 992 ? "" : "#navbarSupportedContent"
+                }
+                exact
+                className="nav-link"
+                to="/riccardo/obiade"
+              >
+                Zestawy obiadowe
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                data-toggle={window.innerWidth > 992 ? "" : "collapse"}
+                data-target={
+                  window.innerWidth > 992 ? "" : "#navbarSupportedContent"
+                }
+                exact
+                className="nav-link"
+                to="/riccardo/napoje"
+              >
+                Napoje
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                data-toggle={window.innerWidth > 992 ? "" : "collapse"}
+                data-target={
+                  window.innerWidth > 992 ? "" : "#navbarSupportedContent"
+                }
+                exact
+                className="nav-link"
+                to="/riccardo/about"
+              >
+                O nas
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                data-toggle={window.innerWidth > 992 ? "" : "collapse"}
+                data-target={
+                  window.innerWidth > 992 ? "" : "#navbarSupportedContent"
+                }
+                exact
+                className="nav-link"
+                to="/riccardo/promocje"
+              >
+                Promocje
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                data-toggle={window.innerWidth > 992 ? "" : "collapse"}
+                data-target={
+                  window.innerWidth > 992 ? "" : "#navbarSupportedContent"
+                }
+                exact
+                className="nav-link"
+                to="/riccardo/contact"
+              >
+                Kontakt
+              </NavLink>
+            </li>
+          </ul>
+          <button
+            onClick={() => console.log(props.cart)}
+            className="btn btn-secondary cart mr-3"
+          >
+            Koszyk {props.cart.length === 0 ? "" : `| ${props.cart.length} `}
+          </button>
+        </div>
+      </div>
+    </nav>
   );
 }
