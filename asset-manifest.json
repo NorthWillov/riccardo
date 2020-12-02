@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/riccardo/static/css/main.566704a2.chunk.css",
+    "main.js": "/riccardo/static/js/main.550c70ed.chunk.js",
+    "main.js.map": "/riccardo/static/js/main.550c70ed.chunk.js.map",
+    "runtime-main.js": "/riccardo/static/js/runtime-main.bf203547.js",
+    "runtime-main.js.map": "/riccardo/static/js/runtime-main.bf203547.js.map",
+    "static/css/2.1a02f21c.chunk.css": "/riccardo/static/css/2.1a02f21c.chunk.css",
+    "static/js/2.2442daac.chunk.js": "/riccardo/static/js/2.2442daac.chunk.js",
+    "static/js/2.2442daac.chunk.js.map": "/riccardo/static/js/2.2442daac.chunk.js.map",
+    "static/js/3.50e3701a.chunk.js": "/riccardo/static/js/3.50e3701a.chunk.js",
+    "static/js/3.50e3701a.chunk.js.map": "/riccardo/static/js/3.50e3701a.chunk.js.map",
+    "index.html": "/riccardo/index.html",
+    "static/css/2.1a02f21c.chunk.css.map": "/riccardo/static/css/2.1a02f21c.chunk.css.map",
+    "static/css/main.566704a2.chunk.css.map": "/riccardo/static/css/main.566704a2.chunk.css.map",
+    "static/js/2.2442daac.chunk.js.LICENSE.txt": "/riccardo/static/js/2.2442daac.chunk.js.LICENSE.txt",
+    "static/media/family.942d2709.jpg": "/riccardo/static/media/family.942d2709.jpg",
+    "static/media/logo.85aa02c7.png": "/riccardo/static/media/logo.85aa02c7.png",
+    "static/media/office.3cc651db.jpg": "/riccardo/static/media/office.3cc651db.jpg",
+    "static/media/students.eb855f97.jpg": "/riccardo/static/media/students.eb855f97.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bf203547.js",
+    "static/css/2.1a02f21c.chunk.css",
+    "static/js/2.2442daac.chunk.js",
+    "static/css/main.566704a2.chunk.css",
+    "static/js/main.550c70ed.chunk.js"
+  ]
+}
