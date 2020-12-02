@@ -27,7 +27,7 @@ function Landing(props) {
         <Carousel.Item interval={5000}>
           <img className="d-block w-100" src={officeImg} alt="First slide" />
           <Carousel.Caption>
-            <h3>Rabaty dla firm</h3>
+            <h3 className="mb-0">Rabaty dla firm</h3>
             <p>
               -5% na wszystkie dania. Przy większych zamówieniach negocjujemy
               ceny.
