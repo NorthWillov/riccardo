@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import { Spinner } from "react-bootstrap";
 import Landing from "./Landing";
 import PizzasList from "./PizzasList";
+import About from "./About";
 
 function Routes(props) {
   return (
@@ -32,16 +33,7 @@ function Routes(props) {
           </h1>
         )}
       />
-      <Route
-        exact
-        path="/riccardo/about"
-        render={() => (
-          <h1>
-            This page is in progress{" "}
-            <Spinner animation="grow" variant="danger" />
-          </h1>
-        )}
-      />
+      <Route exact path="/riccardo/about" render={() => <About />} />
       <Route
         exact
         path="/riccardo/promocje"
