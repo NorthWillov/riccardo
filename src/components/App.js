@@ -17,7 +17,7 @@ function App() {
     <ToastProvider>
       <NewPizzaProvider>
         <CurrIngredientsProvider>
-          <div className="App">
+          <div className="App" id="home">
             <MainNavbar cart={cart} />
             <div className="container-lg">
               <Routes cart={cart} handleModalSubmit={handleModalSubmit} />

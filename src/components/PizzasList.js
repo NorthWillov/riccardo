@@ -19,7 +19,9 @@ export default function PizzasList(props) {
 
   return (
     <>
-      <h3 className="title">Pizzy</h3>
+      <h3 className="title mt-5" id="pizzas">
+        Pizzy
+      </h3>
       <div className="row">
         {MENU.pizzas.map((pizza) => (
           <React.Fragment key={pizza.name}>

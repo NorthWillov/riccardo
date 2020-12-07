@@ -8,6 +8,7 @@ import familyImg from "../images/family.jpg";
 import { NewPizzaContext } from "../contexts/NewPizzaContext";
 import { CurrIngredientsContext } from "../contexts/CurrIngredientsContext";
 import OrderModal from "./OrderModal";
+import PizzasList from "./PizzasList";
 import "../styles/landing.css";
 
 function Landing(props) {
@@ -164,6 +165,12 @@ function Landing(props) {
           </div>
         </div>
       </div>
+
+      <PizzasList
+        cart={props.cart}
+        handleModalSubmit={props.handleModalSubmit}
+      />
+
       {newPizza && (
         <OrderModal
           setCurrIngredients={setCurrIngredients}
