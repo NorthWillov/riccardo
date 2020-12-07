@@ -1,4 +1,4 @@
-import lunch from "../images/lunches/food.jpg";
+import lunch from "../images/lunches/lunch.jpg";
 
 export const MENU = {
   pizzas: [

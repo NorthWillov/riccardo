@@ -4,6 +4,10 @@ import { formatter } from "../utils/formatter";
 import "../styles/lunches.css";
 
 function LunchesList(props) {
+  const handleLunchPick = (lunch) => {
+    props.handleLunchModalOpen(lunch);
+  };
+
   return (
     <>
       <h3 className="title pt-5" id="zestawy">
@@ -20,7 +24,7 @@ function LunchesList(props) {
                   alt={lunch.name}
                 />
                 <div className="card-body">
-                  <h5 className="card-title">
+                  <h5 className="card-lunches-title">
                     {lunch.id}. {lunch.name}
                   </h5>
                   <div className="checkout">
@@ -28,6 +32,7 @@ function LunchesList(props) {
                       {formatter.format(lunch.price)}pln
                     </p>
                     <button
+                      onClick={() => handleLunchPick(lunch)}
                       className="btn btn-outline-dark"
                       data-toggle=""
                       data-target=""

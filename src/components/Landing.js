@@ -1,26 +1,34 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Carousel } from "react-bootstrap";
-import { MENU } from "../utils/constants";
-import { formatter } from "../utils/formatter";
 import officeImg from "../images/office.jpg";
 import studentsImg from "../images/students.jpg";
 import familyImg from "../images/family.jpg";
 import { NewPizzaContext } from "../contexts/NewPizzaContext";
 import { CurrIngredientsContext } from "../contexts/CurrIngredientsContext";
-import OrderModal from "./OrderModal";
+import PizzaOrderModal from "./PizzaOrderModal";
 import PizzasList from "./PizzasList";
 import LunchesList from "./LunchesList";
 import "../styles/landing.css";
+import LunchesOrderModal from "./LunchesOrderModal";
+import Popular from "./Popular";
 
 function Landing(props) {
   const { newPizza, setNewPizza } = useContext(NewPizzaContext);
+  const [newLunch, setNewLunch] = useState();
   const { currIngredients, setCurrIngredients } = useContext(
     CurrIngredientsContext
   );
+  const [modalShow, setModalShow] = useState(false);
 
   const handlePopularClick = (pizza) => {
     setCurrIngredients(pizza.ingredients);
     setNewPizza(pizza);
+  };
+
+  const handleLunchModalOpen = (lunch) => {
+    console.log(lunch);
+    setNewLunch(lunch);
+    setModalShow(true);
   };
 
   return (
@@ -51,131 +59,26 @@ function Landing(props) {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <h3 className="mt-5 mb-4">Popularne:</h3>
-      <div className="row">
-        <div className="col-6 col-sm-4 col-md-3">
-          <div
-            className="popular-card card mb-3"
-            onClick={() => handlePopularClick(MENU.pizzas[0])}
-            data-toggle="modal"
-            data-target="#exampleModal"
-          >
-            <div className="row no-gutters">
-              <div className="col-md-5">
-                <img
-                  src={MENU.pizzas[0].image}
-                  className="card-img"
-                  alt="pizza"
-                />
-              </div>
-              <div className="col-md-7" style={{ display: "flex" }}>
-                <div className="card-body-popular card-body">
-                  <h5 className="card-title-popular card-title">
-                    {MENU.pizzas[0].name}
-                  </h5>
-                  <p className="card-text">
-                    Od {formatter.format(MENU.pizzas[0].price["20cm"])}zł
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-6 col-sm-4 col-md-3">
-          <div
-            className="popular-card card mb-3"
-            onClick={() => handlePopularClick(MENU.pizzas[2])}
-            data-toggle="modal"
-            data-target="#exampleModal"
-          >
-            <div className="row no-gutters">
-              <div className="col-md-5">
-                <img
-                  src={MENU.pizzas[2].image}
-                  className="card-img"
-                  alt="pizza"
-                />
-              </div>
-              <div className="col-md-7" style={{ display: "flex" }}>
-                <div className="card-body-popular card-body">
-                  <h5 className="card-title-popular card-title">
-                    {MENU.pizzas[2].name}
-                  </h5>
-                  <p className="card-text">
-                    Od {formatter.format(MENU.pizzas[2].price["20cm"])}zł
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-6 col-sm-4 col-md-3">
-          <div
-            className="popular-card card mb-3"
-            onClick={() => handlePopularClick(MENU.pizzas[13])}
-            data-toggle="modal"
-            data-target="#exampleModal"
-          >
-            <div className="row no-gutters">
-              <div className="col-md-5">
-                <img
-                  src={MENU.pizzas[13].image}
-                  className="card-img"
-                  alt="pizza"
-                />
-              </div>
-              <div className="col-md-7" style={{ display: "flex" }}>
-                <div className="card-body-popular card-body">
-                  <h5 className="card-title-popular card-title">
-                    {MENU.pizzas[13].name}
-                  </h5>
-                  <p className="card-text">
-                    Od {formatter.format(MENU.pizzas[13].price["20cm"])}zł
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-6 col-sm-4 col-md-3">
-          <div
-            className="popular-card card mb-3"
-            onClick={() => handlePopularClick(MENU.pizzas[10])}
-            data-toggle="modal"
-            data-target="#exampleModal"
-          >
-            <div className="row no-gutters">
-              <div className="col-md-5">
-                <img
-                  src={MENU.pizzas[10].image}
-                  className="card-img"
-                  alt="pizza"
-                />
-              </div>
-              <div className="col-md-7" style={{ display: "flex" }}>
-                <div className="card-body-popular card-body">
-                  <h5 className="card-title-popular card-title">
-                    {MENU.pizzas[10].name}
-                  </h5>
-                  <p className="card-text">
-                    Od {formatter.format(MENU.pizzas[10].price["20cm"])}zł
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+      <Popular handlePopularClick={handlePopularClick} />
 
       <PizzasList
         cart={props.cart}
         handleModalSubmit={props.handleModalSubmit}
       />
 
-      <LunchesList />
+      <LunchesList handleLunchModalOpen={handleLunchModalOpen} />
+
+      {newLunch && (
+        <LunchesOrderModal
+          lunch={newLunch}
+          show={modalShow}
+          onHide={() => setModalShow(false)}
+        />
+      )}
 
       {newPizza && (
-        <OrderModal
+        <PizzaOrderModal
           setCurrIngredients={setCurrIngredients}
           currIngredients={currIngredients}
           newPizza={newPizza}

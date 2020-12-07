@@ -1,12 +1,12 @@
 import React, { useState, useContext } from "react";
-import OrderModalSizeAndDough from "./OrderModalSizeAndDough";
-import OrderModalIngredients from "./OrderModalIngredients";
-import OrderModalFantazjaCase from "./OrderModalFantazjaCase";
+import PizzaOrderModalSizeAndDough from "./PizzaOrderModalSizeAndDough";
+import PizzaOrderModalIngredients from "./PizzaOrderModalIngredients";
+import PizzaOrderModalFantazjaCase from "./PizzaOrderModalFantazjaCase";
 import { ToastContext } from "../contexts/ToastContext";
 import { MENU } from "../utils/constants";
 import { formatter } from "../utils/formatter";
 import { v4 as uuidv4 } from "uuid";
-import "../styles/orderModal.css";
+import "../styles/pizzaOrderModal.css";
 
 export default function OrderModal(props) {
   const [size, setSize] = useState("20cm");
@@ -154,7 +154,7 @@ export default function OrderModal(props) {
                       </p>
 
                       {newPizza.id === 22 ? (
-                        <OrderModalFantazjaCase
+                        <PizzaOrderModalFantazjaCase
                           extras={extras}
                           newPizza={newPizza}
                           currIngredients={currIngredients}
@@ -165,7 +165,7 @@ export default function OrderModal(props) {
                           }
                         />
                       ) : (
-                        <OrderModalIngredients
+                        <PizzaOrderModalIngredients
                           extras={extras}
                           handleIngredientClick={handleIngredientClick}
                           handleExtraIngredientInputClick={
@@ -178,13 +178,14 @@ export default function OrderModal(props) {
                       )}
                     </div>
 
-                    <OrderModalSizeAndDough
+                    <PizzaOrderModalSizeAndDough
                       size={size}
                       dough={dough}
                       newPizza={newPizza}
                       handleSizeChange={handleSizeChange}
                       handleDoughChange={handleDoughChange}
                     />
+
                     <div className="pizzas-choices-footer">
                       <div className="checkout checkout-modal">
                         <span className="modal-price">
