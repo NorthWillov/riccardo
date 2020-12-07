@@ -8,7 +8,6 @@ import { CurrIngredientsContext } from "../contexts/CurrIngredientsContext";
 import PizzaOrderModal from "./PizzaOrderModal";
 import PizzasList from "./PizzasList";
 import LunchesList from "./LunchesList";
-import "../styles/landing.css";
 import LunchesOrderModal from "./LunchesOrderModal";
 import Popular from "./Popular";
 
@@ -35,7 +34,11 @@ function Landing(props) {
     <>
       <Carousel>
         <Carousel.Item interval={5000}>
-          <img className="d-block w-100" src={officeImg} alt="First slide" />
+          <img
+            className="d-block w-100"
+            src={officeImg}
+            alt="Rabaty dla firm"
+          />
           <Carousel.Caption>
             <h3 className="mb-0">Rabaty dla firm</h3>
             <p>
@@ -45,14 +48,22 @@ function Landing(props) {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={5000}>
-          <img className="d-block w-100" src={studentsImg} alt="Second slide" />
+          <img
+            className="d-block w-100"
+            src={studentsImg}
+            alt="Studenci jedzą taniej"
+          />
           <Carousel.Caption>
             <h3>Studenci jedzą taniej</h3>
             <p>-5% na wszystkie dania</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={5000}>
-          <img className="d-block w-100" src={familyImg} alt="Third slide" />
+          <img
+            className="d-block w-100"
+            src={familyImg}
+            alt="Rodzinne obiadki"
+          />
           <Carousel.Caption>
             <h3>Rodzinne obiadki</h3>
             <p>-5% przy zamówieniu powyżej 70 zł (w lokalu)</p>

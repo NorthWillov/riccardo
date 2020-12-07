@@ -18,7 +18,7 @@ export default function MainNavbar(props) {
 
   return (
     <Navbar bg="light" expand="lg" sticky="top" collapseOnSelect>
-      <Container style={{ position: "relative" }}>
+      <Container style={{ position: "relative" }} fluid="lg">
         {newPizza && (
           <div
             aria-live="polite"

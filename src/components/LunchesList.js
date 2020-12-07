@@ -1,53 +1,53 @@
 import React from "react";
 import { MENU } from "../utils/constants";
 import { formatter } from "../utils/formatter";
-import "../styles/lunches.css";
+import { Row, Col, Button, Card } from "react-bootstrap";
+import { withStyles } from "@material-ui/styles";
+import styles from "../styles/lunchesListStyles";
 
 function LunchesList(props) {
   const handleLunchPick = (lunch) => {
     props.handleLunchModalOpen(lunch);
   };
 
+  const { classes } = props;
+
   return (
     <>
       <h3 className="title pt-5" id="zestawy">
         Zestawy obiadowe
       </h3>
-      <div className="row">
+      <Row>
         {MENU.lunches.map((lunch) => (
           <React.Fragment key={lunch.name}>
-            <div className="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-              <div className="card card-lunches">
-                <img
-                  className="card-img-top"
-                  srcSet={lunch.image}
-                  alt={lunch.name}
-                />
-                <div className="card-body">
-                  <h5 className="card-lunches-title">
+            <Col sm={6} md={6} lg={4} xl={3}>
+              <Card className="mb-3">
+                <Card.Img variant="top" src={lunch.image} alt={lunch.name} />
+                <Card.Body className={classes.CardBody}>
+                  <Card.Title>
                     {lunch.id}. {lunch.name}
-                  </h5>
-                  <div className="checkout">
-                    <p className="checkout-price">
+                  </Card.Title>
+                </Card.Body>
+                <Card.Footer>
+                  <div className={classes.checkout}>
+                    <p className={classes.checkoutPrice}>
                       {formatter.format(lunch.price)}pln
                     </p>
-                    <button
+                    <Button
+                      variant="outline-dark"
                       onClick={() => handleLunchPick(lunch)}
-                      className="btn btn-outline-dark"
-                      data-toggle=""
-                      data-target=""
                     >
                       Wybierz
-                    </button>
+                    </Button>
                   </div>
-                </div>
-              </div>
-            </div>
+                </Card.Footer>
+              </Card>
+            </Col>
           </React.Fragment>
         ))}
-      </div>
+      </Row>
     </>
   );
 }
 
-export default LunchesList;
+export default withStyles(styles)(LunchesList);

@@ -1,6 +1,7 @@
 import React from "react";
 import { MENU } from "../utils/constants";
 import { formatter } from "../utils/formatter";
+import "../styles/popular.css";
 
 function Popular(props) {
   const { handlePopularClick } = props;

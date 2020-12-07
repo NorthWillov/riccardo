@@ -1,23 +1,2 @@
-.card.card-lunches img {
-  width: 100%;
-}
-.title {
-  margin-bottom: 30px;
-}
-.checkout {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-.checkout-price {
-  font-size: 20px;
-  margin: 0;
-  font-weight: 700;
-}
-.card-lunches {
-  margin-bottom: 30px;
-}
-.card-lunches-title {
-  height: 60px;
-  margin: 0;
-}
+
+
