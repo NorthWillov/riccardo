@@ -10,14 +10,24 @@ import {
 } from "react-bootstrap";
 import { ToastContext } from "../contexts/ToastContext";
 import { NewPizzaContext } from "../contexts/NewPizzaContext";
-import "../styles/navbar.css";
+import { withStyles } from "@material-ui/styles";
+import styles from "../styles/mainNavbarStyles";
 
-export default function MainNavbar(props) {
+function MainNavbar(props) {
   const { show, toggleShow } = useContext(ToastContext);
   const { newPizza } = useContext(NewPizzaContext);
 
+  const { classes } = props;
+
   return (
-    <Navbar bg="light" expand="lg" sticky="top" collapseOnSelect>
+    <Navbar
+      className={classes.navbar}
+      bg="light"
+      variant="light"
+      expand="lg"
+      sticky="top"
+      collapseOnSelect
+    >
       <Container style={{ position: "relative" }} fluid="lg">
         {newPizza && (
           <div
@@ -39,7 +49,7 @@ export default function MainNavbar(props) {
           </div>
         )}
         <Navbar.Brand href="#home">
-          <img className="logo" srcSet={logo} alt="riccardo-logo" />
+          <img className={classes.logo} srcSet={logo} alt="riccardo-logo" />
         </Navbar.Brand>
         <Navbar.Toggle className="mr-2" aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -76,3 +86,5 @@ export default function MainNavbar(props) {
     </Navbar>
   );
 }
+
+export default withStyles(styles)(MainNavbar);
