@@ -3,7 +3,7 @@ import { ToastContext } from "../contexts/ToastContext";
 import { MENU } from "../utils/constants";
 import { formatter } from "../utils/formatter";
 import { v4 as uuidv4 } from "uuid";
-import { Modal, Container, Row, Col, Button } from "react-bootstrap";
+import { Modal, Container, Row, Col, Button, Form } from "react-bootstrap";
 import "../styles/lunchOrderModal.css";
 
 export default function LunchesOrderModal(props) {
@@ -25,7 +25,20 @@ export default function LunchesOrderModal(props) {
             <Col lg={7} style={{ display: "flex" }}>
               <img className="modal-lunch-image" src={props.lunch.image} />
             </Col>
-            <Col lg={5}></Col>
+            <Col lg={5}>
+              <Form>
+                <Form.Group controlId="exampleForm.ControlSelect1">
+                  <Form.Label>dodatek do dania:</Form.Label>
+                  <Form.Control as="select">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </Form.Control>
+                </Form.Group>
+              </Form>
+            </Col>
           </Row>
         </Container>
       </Modal.Body>
