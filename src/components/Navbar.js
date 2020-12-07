@@ -1,18 +1,24 @@
 import React, { useContext } from "react";
 import logo from "../images/logo.png";
-import { Toast } from "react-bootstrap";
+import {
+  Toast,
+  Navbar,
+  NavDropdown,
+  Nav,
+  Container,
+  Button,
+} from "react-bootstrap";
 import { ToastContext } from "../contexts/ToastContext";
 import { NewPizzaContext } from "../contexts/NewPizzaContext";
-import { NavLink, Link } from "react-router-dom";
 import "../styles/navbar.css";
 
-export default function Navbar(props) {
+export default function MainNavbar(props) {
   const { show, toggleShow } = useContext(ToastContext);
   const { newPizza } = useContext(NewPizzaContext);
 
   return (
-    <nav className="navbar sticky-top navbar-expand-lg navbar-light">
-      <div style={{ position: "relative" }} className="container-lg">
+    <Navbar bg="light" expand="lg" sticky="top" collapseOnSelect>
+      <Container style={{ position: "relative" }}>
         {newPizza && (
           <div
             aria-live="polite"
@@ -32,199 +38,40 @@ export default function Navbar(props) {
             </Toast>
           </div>
         )}
-
-        <Link className="navbar-brand" to="/riccardo">
+        <Navbar.Brand href="#home">
           <img className="logo" srcSet={logo} alt="riccardo-logo" />
-        </Link>
-
-        <button
-          className="navbar-toggler mr-1"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item dropdown">
-              <NavLink
-                className="nav-link dropdown-toggle"
-                to="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Menu
-              </NavLink>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <NavLink
-                  data-toggle={window.innerWidth > 992 ? "" : "collapse"}
-                  data-target={
-                    window.innerWidth > 992 ? "" : "#navbarSupportedContent"
-                  }
-                  exact
-                  className="nav-link"
-                  to="/riccardo/pizzas"
-                >
-                  Pizza
-                </NavLink>
-                <NavLink
-                  data-toggle={window.innerWidth > 992 ? "" : "collapse"}
-                  data-target={
-                    window.innerWidth > 992 ? "" : "#navbarSupportedContent"
-                  }
-                  exact
-                  className="nav-link"
-                  to="/riccardo/obiade"
-                >
-                  Zestawy obiadowe
-                </NavLink>
-                <div class="dropdown-divider"></div>
-                <NavLink
-                  data-toggle={window.innerWidth > 992 ? "" : "collapse"}
-                  data-target={
-                    window.innerWidth > 992 ? "" : "#navbarSupportedContent"
-                  }
-                  exact
-                  className="nav-link"
-                  to="/riccardo/pizzas"
-                >
-                  Makarony
-                </NavLink>
-                <NavLink
-                  data-toggle={window.innerWidth > 992 ? "" : "collapse"}
-                  data-target={
-                    window.innerWidth > 992 ? "" : "#navbarSupportedContent"
-                  }
-                  exact
-                  className="nav-link"
-                  to="/riccardo/pizzas"
-                >
-                  Sałatki
-                </NavLink>
-                <NavLink
-                  data-toggle={window.innerWidth > 992 ? "" : "collapse"}
-                  data-target={
-                    window.innerWidth > 992 ? "" : "#navbarSupportedContent"
-                  }
-                  exact
-                  className="nav-link"
-                  to="/riccardo/pizzas"
-                >
-                  Naleśniki na słodko
-                </NavLink>
-                <NavLink
-                  data-toggle={window.innerWidth > 992 ? "" : "collapse"}
-                  data-target={
-                    window.innerWidth > 992 ? "" : "#navbarSupportedContent"
-                  }
-                  exact
-                  className="nav-link"
-                  to="/riccardo/pizzas"
-                >
-                  Naleśniki na słono
-                </NavLink>
-
-                <NavLink
-                  data-toggle={window.innerWidth > 992 ? "" : "collapse"}
-                  data-target={
-                    window.innerWidth > 992 ? "" : "#navbarSupportedContent"
-                  }
-                  exact
-                  className="nav-link"
-                  to="/riccardo/obiade"
-                >
-                  Startery
-                </NavLink>
-                <NavLink
-                  data-toggle={window.innerWidth > 992 ? "" : "collapse"}
-                  data-target={
-                    window.innerWidth > 992 ? "" : "#navbarSupportedContent"
-                  }
-                  exact
-                  className="nav-link"
-                  to="/riccardo/obiade"
-                >
-                  Sosy
-                </NavLink>
-                <NavLink
-                  data-toggle={window.innerWidth > 992 ? "" : "collapse"}
-                  data-target={
-                    window.innerWidth > 992 ? "" : "#navbarSupportedContent"
-                  }
-                  exact
-                  className="nav-link"
-                  to="/riccardo/obiade"
-                >
-                  Startery
-                </NavLink>
-                <NavLink
-                  data-toggle={window.innerWidth > 992 ? "" : "collapse"}
-                  data-target={
-                    window.innerWidth > 992 ? "" : "#navbarSupportedContent"
-                  }
-                  exact
-                  className="nav-link"
-                  to="/riccardo/napoje"
-                >
-                  Napoje
-                </NavLink>
-              </div>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                data-toggle={window.innerWidth > 992 ? "" : "collapse"}
-                data-target={
-                  window.innerWidth > 992 ? "" : "#navbarSupportedContent"
-                }
-                exact
-                className="nav-link"
-                to="/riccardo/about"
-              >
-                O nas
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                data-toggle={window.innerWidth > 992 ? "" : "collapse"}
-                data-target={
-                  window.innerWidth > 992 ? "" : "#navbarSupportedContent"
-                }
-                exact
-                className="nav-link"
-                to="/riccardo/promocje"
-              >
-                Promocje
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                data-toggle={window.innerWidth > 992 ? "" : "collapse"}
-                data-target={
-                  window.innerWidth > 992 ? "" : "#navbarSupportedContent"
-                }
-                exact
-                className="nav-link"
-                to="/riccardo/contact"
-              >
-                Kontakt
-              </NavLink>
-            </li>
-          </ul>
-          <button
-            onClick={() => console.log(props.cart)}
-            className="btn btn-secondary cart mr-3"
-          >
-            Koszyk {props.cart.length === 0 ? "" : `| ${props.cart.length} `}
-          </button>
-        </div>
-      </div>
-    </nav>
+        </Navbar.Brand>
+        <Navbar.Toggle className="mr-2" aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <NavDropdown title="Menu" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#pizzas">Pizza</NavDropdown.Item>
+              <NavDropdown.Item href="#zestawy">
+                Zestawy obiadowe
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#makarony">Makarony</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#salatki">Sałatki</NavDropdown.Item>
+              <NavDropdown.Item href="#nalesniki">Naleśniki</NavDropdown.Item>
+              <NavDropdown.Item href="#sosy">Sosy</NavDropdown.Item>
+              <NavDropdown.Item href="#startery">Startery</NavDropdown.Item>
+              <NavDropdown.Item href="#Napoje">Napoje</NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link href="#about">O nas</Nav.Link>
+            <Nav.Link href="#promocje">Promocje</Nav.Link>
+            <Nav.Link href="#contact">Kontakt</Nav.Link>
+          </Nav>
+          <Nav>
+            <Button
+              className="mr-3 ml-2"
+              style={{ maxWidth: "120px" }}
+              variant="dark"
+            >
+              Koszyk {props.cart.length === 0 ? "" : `| ${props.cart.length} `}
+            </Button>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }

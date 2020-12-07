@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";
+import MainNavbar from "./Navbar";
 import Routes from "./Routes";
 import { ToastProvider } from "../contexts/ToastContext";
 import { NewPizzaProvider } from "../contexts/NewPizzaContext";
@@ -18,7 +18,7 @@ function App() {
       <NewPizzaProvider>
         <CurrIngredientsProvider>
           <div className="App">
-            <Navbar cart={cart} />
+            <MainNavbar cart={cart} />
             <div className="container-lg">
               <Routes cart={cart} handleModalSubmit={handleModalSubmit} />
             </div>
