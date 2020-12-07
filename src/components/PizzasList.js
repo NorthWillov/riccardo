@@ -19,7 +19,7 @@ export default function PizzasList(props) {
 
   return (
     <>
-      <h3 className="title mt-5" id="pizzas">
+      <h3 className="title pt-5" id="pizzas">
         Pizzy
       </h3>
       <div className="row">
@@ -67,14 +67,6 @@ export default function PizzasList(props) {
             </div>
           </React.Fragment>
         ))}
-        {newPizza && (
-          <OrderModal
-            setCurrIngredients={setCurrIngredients}
-            currIngredients={currIngredients}
-            newPizza={newPizza}
-            handleModalSubmit={props.handleModalSubmit}
-          />
-        )}
       </div>
     </>
   );

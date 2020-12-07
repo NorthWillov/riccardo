@@ -9,6 +9,7 @@ import { NewPizzaContext } from "../contexts/NewPizzaContext";
 import { CurrIngredientsContext } from "../contexts/CurrIngredientsContext";
 import OrderModal from "./OrderModal";
 import PizzasList from "./PizzasList";
+import LunchesList from "./LunchesList";
 import "../styles/landing.css";
 
 function Landing(props) {
@@ -50,7 +51,7 @@ function Landing(props) {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <h3 className="mt-5">Popularne:</h3>
+      <h3 className="mt-5 mb-4">Popularne:</h3>
       <div className="row">
         <div className="col-6 col-sm-4 col-md-3">
           <div
@@ -170,6 +171,8 @@ function Landing(props) {
         cart={props.cart}
         handleModalSubmit={props.handleModalSubmit}
       />
+
+      <LunchesList />
 
       {newPizza && (
         <OrderModal

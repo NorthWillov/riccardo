@@ -1,6 +1,5 @@
-.card.card-pizzas img {
+.card.card-lunches img {
   width: 100%;
-  padding-left: 15px;
 }
 .title {
   margin-bottom: 30px;
@@ -15,11 +14,10 @@
   margin: 0;
   font-weight: 700;
 }
-.card-pizzas {
+.card-lunches {
   margin-bottom: 30px;
 }
-.card-text-pizzas {
+.card-title {
   height: 60px;
   margin: 0;
 }
-

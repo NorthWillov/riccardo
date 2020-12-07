@@ -1,3 +1,5 @@
+import lunch from "../images/lunches/food.jpg";
+
 export const MENU = {
   pizzas: [
     {
@@ -396,5 +398,74 @@ export const MENU = {
     { name: "salami", price: 3 },
     { name: "ser pleśniowy", price: 3 },
     { name: "tuńczyk", price: 6 },
+  ],
+
+  lunches: [
+    { id: 2, name: "Schab z grilowanym boczkiem", price: 24.5, image: lunch },
+    { id: 3, name: "Pierś z grilowanym boczkiem", price: 24.5, image: lunch },
+    { id: 4, name: "Karkówka z grilla", price: 23.9, image: lunch },
+    { id: 5, name: "Dorsz (filet)", price: 28.5, image: lunch },
+    { id: 6, name: "Schabowy", price: 23.9, image: lunch },
+    { id: 7, name: "Pierś z kurczaka", price: 23.9, image: lunch },
+    {
+      id: 8,
+      name: "Szwajcar (pierś lub schab z serem)",
+      price: 24.9,
+      image: lunch,
+    },
+    {
+      id: 9,
+      name: "Zrazy wieprzowe",
+      price: 25.5,
+      image: lunch,
+    },
+    {
+      id: 10,
+      name: "Pierś hawajska",
+      price: 24.9,
+      image: lunch,
+    },
+    {
+      id: 11,
+      name: "Placek po węgiersku 🌶",
+      price: 24.9,
+      image: lunch,
+    },
+    {
+      id: 12,
+      name: "Schab chłopa",
+      price: 24.9,
+      image: lunch,
+    },
+    {
+      id: 13,
+      name: "De volaille",
+      price: 24.9,
+      image: lunch,
+    },
+    {
+      id: 14,
+      name: "Pierś z pieczarkami i serem",
+      price: 24.9,
+      image: lunch,
+    },
+    {
+      id: 15,
+      name: "Warzywa zasmażane z kurczakiem",
+      price: 20.9,
+      image: lunch,
+    },
+    {
+      id: 16,
+      name: "Pierś z jajkiem sadzonym",
+      price: 23.9,
+      image: lunch,
+    },
+    {
+      id: 17,
+      name: "Pierś w sosie śmietanowo-serowym",
+      price: 24.9,
+      image: lunch,
+    },
   ],
 };

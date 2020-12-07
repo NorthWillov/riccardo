@@ -63,6 +63,7 @@ export default function MainNavbar(props) {
           </Nav>
           <Nav>
             <Button
+              onClick={() => console.log(props.cart)}
               className="mr-3 ml-2"
               style={{ maxWidth: "120px" }}
               variant="dark"

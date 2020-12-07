@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import MainNavbar from "./Navbar";
+import MainNavbar from "./MainNavbar";
 import Routes from "./Routes";
 import { ToastProvider } from "../contexts/ToastContext";
 import { NewPizzaProvider } from "../contexts/NewPizzaContext";
