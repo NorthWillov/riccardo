@@ -50,44 +50,132 @@ export default function Navbar(props) {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
-            <li className="nav-item">
+            <li className="nav-item dropdown">
               <NavLink
-                data-toggle={window.innerWidth > 992 ? "" : "collapse"}
-                data-target={
-                  window.innerWidth > 992 ? "" : "#navbarSupportedContent"
-                }
-                exact
-                className="nav-link"
-                to="/riccardo/pizzas"
+                className="nav-link dropdown-toggle"
+                to="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
               >
-                Pizza
+                Menu
               </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                data-toggle={window.innerWidth > 992 ? "" : "collapse"}
-                data-target={
-                  window.innerWidth > 992 ? "" : "#navbarSupportedContent"
-                }
-                exact
-                className="nav-link"
-                to="/riccardo/obiade"
-              >
-                Zestawy obiadowe
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                data-toggle={window.innerWidth > 992 ? "" : "collapse"}
-                data-target={
-                  window.innerWidth > 992 ? "" : "#navbarSupportedContent"
-                }
-                exact
-                className="nav-link"
-                to="/riccardo/napoje"
-              >
-                Napoje
-              </NavLink>
+              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <NavLink
+                  data-toggle={window.innerWidth > 992 ? "" : "collapse"}
+                  data-target={
+                    window.innerWidth > 992 ? "" : "#navbarSupportedContent"
+                  }
+                  exact
+                  className="nav-link"
+                  to="/riccardo/pizzas"
+                >
+                  Pizza
+                </NavLink>
+                <NavLink
+                  data-toggle={window.innerWidth > 992 ? "" : "collapse"}
+                  data-target={
+                    window.innerWidth > 992 ? "" : "#navbarSupportedContent"
+                  }
+                  exact
+                  className="nav-link"
+                  to="/riccardo/obiade"
+                >
+                  Zestawy obiadowe
+                </NavLink>
+                <div class="dropdown-divider"></div>
+                <NavLink
+                  data-toggle={window.innerWidth > 992 ? "" : "collapse"}
+                  data-target={
+                    window.innerWidth > 992 ? "" : "#navbarSupportedContent"
+                  }
+                  exact
+                  className="nav-link"
+                  to="/riccardo/pizzas"
+                >
+                  Makarony
+                </NavLink>
+                <NavLink
+                  data-toggle={window.innerWidth > 992 ? "" : "collapse"}
+                  data-target={
+                    window.innerWidth > 992 ? "" : "#navbarSupportedContent"
+                  }
+                  exact
+                  className="nav-link"
+                  to="/riccardo/pizzas"
+                >
+                  Sałatki
+                </NavLink>
+                <NavLink
+                  data-toggle={window.innerWidth > 992 ? "" : "collapse"}
+                  data-target={
+                    window.innerWidth > 992 ? "" : "#navbarSupportedContent"
+                  }
+                  exact
+                  className="nav-link"
+                  to="/riccardo/pizzas"
+                >
+                  Naleśniki na słodko
+                </NavLink>
+                <NavLink
+                  data-toggle={window.innerWidth > 992 ? "" : "collapse"}
+                  data-target={
+                    window.innerWidth > 992 ? "" : "#navbarSupportedContent"
+                  }
+                  exact
+                  className="nav-link"
+                  to="/riccardo/pizzas"
+                >
+                  Naleśniki na słono
+                </NavLink>
+
+                <NavLink
+                  data-toggle={window.innerWidth > 992 ? "" : "collapse"}
+                  data-target={
+                    window.innerWidth > 992 ? "" : "#navbarSupportedContent"
+                  }
+                  exact
+                  className="nav-link"
+                  to="/riccardo/obiade"
+                >
+                  Startery
+                </NavLink>
+                <NavLink
+                  data-toggle={window.innerWidth > 992 ? "" : "collapse"}
+                  data-target={
+                    window.innerWidth > 992 ? "" : "#navbarSupportedContent"
+                  }
+                  exact
+                  className="nav-link"
+                  to="/riccardo/obiade"
+                >
+                  Sosy
+                </NavLink>
+                <NavLink
+                  data-toggle={window.innerWidth > 992 ? "" : "collapse"}
+                  data-target={
+                    window.innerWidth > 992 ? "" : "#navbarSupportedContent"
+                  }
+                  exact
+                  className="nav-link"
+                  to="/riccardo/obiade"
+                >
+                  Startery
+                </NavLink>
+                <NavLink
+                  data-toggle={window.innerWidth > 992 ? "" : "collapse"}
+                  data-target={
+                    window.innerWidth > 992 ? "" : "#navbarSupportedContent"
+                  }
+                  exact
+                  className="nav-link"
+                  to="/riccardo/napoje"
+                >
+                  Napoje
+                </NavLink>
+              </div>
             </li>
             <li className="nav-item">
               <NavLink
