@@ -3,9 +3,11 @@ import { MENU } from "../utils/constants";
 import { NewPizzaContext } from "../contexts/NewPizzaContext";
 import { CurrIngredientsContext } from "../contexts/CurrIngredientsContext";
 import { formatter } from "../utils/formatter";
-import "../styles/pizzaList.css";
+import { Row, Col, Button, Card } from "react-bootstrap";
+import { withStyles } from "@material-ui/styles";
+import styles from "../styles/pizzaListStyles";
 
-export default function PizzasList(props) {
+function PizzasList(props) {
   const { setNewPizza } = useContext(NewPizzaContext);
   const { setCurrIngredients } = useContext(CurrIngredientsContext);
 
@@ -14,26 +16,29 @@ export default function PizzasList(props) {
     setNewPizza(pizza);
   };
 
+  const { classes } = props;
+
   return (
     <>
       <h3 className="title pt-5" id="pizzas">
         Pizzy
       </h3>
-      <div className="row">
+      <Row>
         {MENU.pizzas.map((pizza) => (
           <React.Fragment key={pizza.name}>
-            <div className="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-              <div className="card card-pizzas">
-                <img
-                  className="card-img-top"
-                  srcSet={pizza.image}
+            <Col sm={6} md={6} lg={4} xl={3}>
+              <Card className="mb-3">
+                <Card.Img
+                  className="pl-3"
+                  variant="top"
+                  src={pizza.image}
                   alt={pizza.name}
                 />
-                <div className="card-body">
-                  <h5 className="card-title">
+                <Card.Body className={classes.CardBody}>
+                  <Card.Title>
                     {pizza.id}. {pizza.name}
-                  </h5>
-                  <p className="card-text card-text-pizzas">
+                  </Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">
                     {pizza.id !== 22
                       ? pizza.ingredients.map((i, idx) => (
                           <span key={i}>
@@ -41,30 +46,34 @@ export default function PizzasList(props) {
                           </span>
                         ))
                       : "sos, ser, +5 własnych składników do wyboru"}
-                  </p>
-                  <div className="checkout">
-                    <p className="checkout-price">
+                  </Card.Subtitle>
+                </Card.Body>
+                <Card.Footer>
+                  <div className={classes.checkout}>
+                    <p className={classes.checkoutPrice}>
                       od{" "}
                       {pizza.id === 18
                         ? formatter.format(pizza.price)
                         : formatter.format(pizza.price["20cm"])}
                       pln
                     </p>
-                    <button
+                    <Button
                       onClick={() => handleClick(pizza)}
-                      className="btn btn-outline-dark"
+                      variant="outline-dark"
                       data-toggle="modal"
                       data-target="#exampleModal"
                     >
                       Wybierz
-                    </button>
+                    </Button>
                   </div>
-                </div>
-              </div>
-            </div>
+                </Card.Footer>
+              </Card>
+            </Col>
           </React.Fragment>
         ))}
-      </div>
+      </Row>
     </>
   );
 }
+
+export default withStyles(styles)(PizzasList);
