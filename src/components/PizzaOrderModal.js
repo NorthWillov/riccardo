@@ -104,6 +104,7 @@ function PizzaOrderModal(props) {
     }
 
     props.handleModalSubmit(newItem);
+    props.onHide();
     setSize("20cm");
     setDough("cieńkie");
     setExtras([]);
@@ -121,50 +122,89 @@ function PizzaOrderModal(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          {newPizza.name}
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
         <Row>
           <Col lg={7}>
             <img className={classes.modalPizzaImage} src={newPizza.image} />
           </Col>
-          <Col lg={5}>
-            <p>{newPizza.id === 18 ? "28cm, średnie" : `${size}, ${dough}`}</p>
-            {newPizza.id === 22 ? (
-              <PizzaOrderModalFantazjaCase
-                extras={extras}
-                newPizza={newPizza}
-                currIngredients={currIngredients}
-                handleIngredientClick={handleIngredientClick}
-                handleFantazjaInputClick={handleFantazjaInputClick}
-                handleExtraIngredientClick={handleExtraIngredientClick}
-              />
-            ) : (
-              <PizzaOrderModalIngredients
-                extras={extras}
-                handleIngredientClick={handleIngredientClick}
-                handleExtraIngredientInputClick={
-                  handleExtraIngredientInputClick
-                }
-                handleExtraIngredientClick={handleExtraIngredientClick}
-              />
-            )}
+          <Col
+            lg={5}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+            }}
+          >
+            <div>
+              <Modal.Title>{newPizza.name}</Modal.Title>
+              <p>
+                {newPizza.id === 18 ? "28cm, średnie" : `${size}, ${dough}`}
+              </p>
+              {newPizza.id === 22 ? (
+                <PizzaOrderModalFantazjaCase
+                  extras={extras}
+                  newPizza={newPizza}
+                  currIngredients={currIngredients}
+                  handleIngredientClick={handleIngredientClick}
+                  handleFantazjaInputClick={handleFantazjaInputClick}
+                  handleExtraIngredientClick={handleExtraIngredientClick}
+                />
+              ) : (
+                <PizzaOrderModalIngredients
+                  extras={extras}
+                  handleIngredientClick={handleIngredientClick}
+                  handleExtraIngredientInputClick={
+                    handleExtraIngredientInputClick
+                  }
+                  handleExtraIngredientClick={handleExtraIngredientClick}
+                />
+              )}
 
-            <PizzaOrderModalSizeAndDough
-              size={size}
-              dough={dough}
-              newPizza={newPizza}
-              handleSizeChange={handleSizeChange}
-              handleDoughChange={handleDoughChange}
-            />
+              <PizzaOrderModalSizeAndDough
+                size={size}
+                dough={dough}
+                newPizza={newPizza}
+                handleSizeChange={handleSizeChange}
+                handleDoughChange={handleDoughChange}
+              />
+            </div>
+
+            <div className={classes.checkout}>
+              <span className={classes.modalPrice}>
+                {newPizza.id === 18
+                  ? formatter.format(newPizza.price + extrasSumPrice)
+                  : size === "20cm"
+                  ? formatter.format(newPizza.price[size] + extrasSumPrice)
+                  : size === "28cm"
+                  ? formatter.format(newPizza.price[size] + extrasSumPrice)
+                  : size === "50cm"
+                  ? formatter.format(newPizza.price[size] + extrasSumPrice)
+                  : null}
+                zł
+              </span>
+              <Button
+                variant="success"
+                onClick={handleModalSubmit}
+                type="button"
+              >
+                Dodaj{" "}
+                <svg
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  className={`bi bi-cart2 ${classes.icon}`}
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"
+                  />
+                </svg>
+              </Button>
+            </div>
           </Col>
         </Row>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer>
+      </Modal.Header>
     </Modal>
 
     // <div
@@ -243,47 +283,47 @@ function PizzaOrderModal(props) {
 
     //                 <div className="pizzas-choices-footer">
     //                   <div className="checkout checkout-modal">
-    //                     <span className="modal-price">
-    //                       {newPizza.id === 18
-    //                         ? formatter.format(newPizza.price + extrasSumPrice)
-    //                         : size === "20cm"
-    //                         ? formatter.format(
-    //                             newPizza.price[size] + extrasSumPrice
-    //                           )
-    //                         : size === "28cm"
-    //                         ? formatter.format(
-    //                             newPizza.price[size] + extrasSumPrice
-    //                           )
-    //                         : size === "50cm"
-    //                         ? formatter.format(
-    //                             newPizza.price[size] + extrasSumPrice
-    //                           )
-    //                         : null}
-    //                       zł
-    //                     </span>
-    //                     <button
-    //                       onClick={handleModalSubmit}
-    //                       type="button"
-    //                       data-dismiss="modal"
-    //                       aria-label="Close"
-    //                       className="btn btn-success"
-    //                       style={{ marginRight: "-15.88px" }}
-    //                     >
-    //                       Dodaj{" "}
-    //                       <svg
-    //                         width="1em"
-    //                         height="1em"
-    //                         viewBox="0 0 16 16"
-    //                         className="bi bi-cart2"
-    //                         fill="currentColor"
-    //                         xmlns="http://www.w3.org/2000/svg"
-    //                       >
-    //                         <path
-    //                           fillRule="evenodd"
-    //                           d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"
-    //                         />
-    //                       </svg>
-    //                     </button>
+    // <span className="modal-price">
+    //   {newPizza.id === 18
+    //     ? formatter.format(newPizza.price + extrasSumPrice)
+    //     : size === "20cm"
+    //     ? formatter.format(
+    //         newPizza.price[size] + extrasSumPrice
+    //       )
+    //     : size === "28cm"
+    //     ? formatter.format(
+    //         newPizza.price[size] + extrasSumPrice
+    //       )
+    //     : size === "50cm"
+    //     ? formatter.format(
+    //         newPizza.price[size] + extrasSumPrice
+    //       )
+    //     : null}
+    //   zł
+    // </span>
+    // <button
+    //   onClick={handleModalSubmit}
+    //   type="button"
+    //   data-dismiss="modal"
+    //   aria-label="Close"
+    //   className="btn btn-success"
+    //   style={{ marginRight: "-15.88px" }}
+    // >
+    //   Dodaj{" "}
+    //   <svg
+    //     width="1em"
+    //     height="1em"
+    //     viewBox="0 0 16 16"
+    //     className="bi bi-cart2"
+    //     fill="currentColor"
+    //     xmlns="http://www.w3.org/2000/svg"
+    //   >
+    //     <path
+    //       fillRule="evenodd"
+    //       d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"
+    //     />
+    //   </svg>
+    // </button>
     //                   </div>
     //                 </div>
     //               </div>

@@ -13,7 +13,7 @@ function PizzaOrderModalSizeAndDough(props) {
   } = props;
 
   return (
-    <>
+    <div className={classes.root}>
       <h6>Rozmiar:</h6>
       <div className={classes.group} onChange={handleSizeChange}>
         <input
@@ -26,7 +26,9 @@ function PizzaOrderModalSizeAndDough(props) {
           disabled={newPizza.name === "Calzone (Pierog)"}
           readOnly
         />
-        <label className={classes.label} htmlFor="rb1">20cm</label>
+        <label className={classes.label} htmlFor="rb1">
+          20cm
+        </label>
         <input
           className={classes.input}
           type="radio"
@@ -36,7 +38,9 @@ function PizzaOrderModalSizeAndDough(props) {
           checked={size === "28cm" || newPizza.name === "Calzone (Pierog)"}
           readOnly
         />
-        <label className={classes.label} htmlFor="rb2">28cm</label>
+        <label className={classes.label} htmlFor="rb2">
+          28cm
+        </label>
         <input
           className={classes.input}
           type="radio"
@@ -47,7 +51,9 @@ function PizzaOrderModalSizeAndDough(props) {
           disabled={dough === "grube" || newPizza.name === "Calzone (Pierog)"}
           readOnly
         />
-        <label className={classes.label} htmlFor="rb3">50cm</label>
+        <label className={classes.label} htmlFor="rb3">
+          50cm
+        </label>
       </div>
       <h6>Ciasto:</h6>
       <div className={classes.group} onChange={handleDoughChange}>
@@ -61,7 +67,9 @@ function PizzaOrderModalSizeAndDough(props) {
           disabled={newPizza.name === "Calzone (Pierog)"}
           readOnly
         />
-        <label className={classes.label} htmlFor="rb4">cieńkie</label>
+        <label className={classes.label} htmlFor="rb4">
+          cieńkie
+        </label>
         <input
           className={classes.input}
           type="radio"
@@ -71,7 +79,9 @@ function PizzaOrderModalSizeAndDough(props) {
           checked={dough === "średnie" || newPizza.name === "Calzone (Pierog)"}
           readOnly
         />
-        <label className={classes.label} htmlFor="rb5">średnie</label>
+        <label className={classes.label} htmlFor="rb5">
+          średnie
+        </label>
         <input
           className={classes.input}
           type="radio"
@@ -82,9 +92,11 @@ function PizzaOrderModalSizeAndDough(props) {
           disabled={size === "50cm" || newPizza.name === "Calzone (Pierog)"}
           readOnly
         />
-        <label className={classes.label}ƒ htmlFor="rb6">grube</label>
+        <label className={classes.label} ƒ htmlFor="rb6">
+          grube
+        </label>
       </div>
-    </>
+    </div>
   );
 }
 

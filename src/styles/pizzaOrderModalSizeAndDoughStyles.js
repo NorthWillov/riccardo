@@ -1,8 +1,12 @@
 export default {
+  root: {
+    textAlign: "center",
+  },
   group: {
     display: "flex",
     alignItems: "center",
-    marginBottom: "2em",
+    justifyContent: "center",
+    marginBottom: "0.5rem",
   },
   input: {
     position: "absolute",

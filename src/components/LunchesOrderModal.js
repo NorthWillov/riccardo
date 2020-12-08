@@ -4,10 +4,13 @@ import { MENU } from "../utils/constants";
 import { formatter } from "../utils/formatter";
 import { v4 as uuidv4 } from "uuid";
 import { Modal, Container, Row, Col, Button, Form } from "react-bootstrap";
-import "../styles/lunchOrderModal.css";
+import { withStyles } from "@material-ui/styles";
+import styles from "../styles/lunchesOrderModalStyles";
 
-export default function LunchesOrderModal(props) {
+function LunchesOrderModal(props) {
   const { toggleShow } = useContext(ToastContext);
+
+  const { classes } = props;
 
   return (
     <Modal
@@ -23,7 +26,10 @@ export default function LunchesOrderModal(props) {
         <Container>
           <Row>
             <Col lg={7} style={{ display: "flex" }}>
-              <img className="modal-lunch-image" src={props.lunch.image} />
+              <img
+                className={classes.modalLunchImage}
+                src={props.lunch.image}
+              />
             </Col>
             <Col lg={5}>
               <Form>
@@ -51,3 +57,5 @@ export default function LunchesOrderModal(props) {
     </Modal>
   );
 }
+
+export default withStyles(styles)(LunchesOrderModal);
