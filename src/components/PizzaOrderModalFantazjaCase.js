@@ -2,6 +2,8 @@ import React from "react";
 import { Form } from "react-bootstrap";
 import { v4 as uuidv4 } from "uuid";
 import { MENU } from "../utils/constants";
+import { withStyles } from "@material-ui/styles";
+import styles from "../styles/pizzaOrderModalIngredientsStyles";
 
 function OrderModalFantazjaCase(props) {
   const {
@@ -9,26 +11,29 @@ function OrderModalFantazjaCase(props) {
     newPizza,
     handleIngredientClick,
     handleFantazjaInputClick,
+    classes,
   } = props;
 
   return (
     <>
-      <ul className="modal-ingredients">
+      <ul className={classes.modalIngredients}>
         {newPizza.ingredients.map((i, idx) => (
           <li
             key={uuidv4()}
             value={i}
-            className="modal-ingredients-ingredient"
+            className={classes.modalIngredientsIngredient}
             onClick={() => handleIngredientClick(i)}
           >
             {currIngredients.includes(i) ? (
               <>
-                <span className="modal-ingredients-ingredient-name">{i}</span>
+                <span className={classes.modalIngredientsIngredientName}>
+                  {i}
+                </span>
                 <svg
                   width="1em"
                   height="1em"
                   viewBox="0 0 16 16"
-                  className="bi bi-dash-circle"
+                  className={`bi bi-dash-circle ${classes.icons}`}
                   fill="currentColor"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -44,14 +49,14 @@ function OrderModalFantazjaCase(props) {
               </>
             ) : (
               <>
-                <span className="modal-ingredients-ingredient-name-deleted">
+                <span className={classes.modalIngredientsIngredientNameDeleted}>
                   {i}
                 </span>
                 <svg
                   width="1em"
                   height="1em"
                   viewBox="0 0 16 16"
-                  className="bi bi-arrow-return-left"
+                  className={`bi bi-arrow-return-left ${classes.icons}`}
                   fill="currentColor"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -145,4 +150,4 @@ function OrderModalFantazjaCase(props) {
   );
 }
 
-export default OrderModalFantazjaCase;
+export default withStyles(styles)(OrderModalFantazjaCase);

@@ -1,13 +1,23 @@
 import React from "react";
+import { withStyles } from "@material-ui/styles";
+import styles from "../styles/pizzaOrderModalSizeAndDoughStyles";
 
-function OrderModalSizeAndDough(props) {
-  const { size, dough, newPizza, handleSizeChange, handleDoughChange } = props;
+function PizzaOrderModalSizeAndDough(props) {
+  const {
+    size,
+    dough,
+    newPizza,
+    handleSizeChange,
+    handleDoughChange,
+    classes,
+  } = props;
 
   return (
     <>
       <h6>Rozmiar:</h6>
-      <div className="group" onChange={handleSizeChange}>
+      <div className={classes.group} onChange={handleSizeChange}>
         <input
+          className={classes.input}
           type="radio"
           name="rb-size"
           id="rb1"
@@ -16,8 +26,9 @@ function OrderModalSizeAndDough(props) {
           disabled={newPizza.name === "Calzone (Pierog)"}
           readOnly
         />
-        <label htmlFor="rb1">20cm</label>
+        <label className={classes.label} htmlFor="rb1">20cm</label>
         <input
+          className={classes.input}
           type="radio"
           name="rb-size"
           id="rb2"
@@ -25,8 +36,9 @@ function OrderModalSizeAndDough(props) {
           checked={size === "28cm" || newPizza.name === "Calzone (Pierog)"}
           readOnly
         />
-        <label htmlFor="rb2">28cm</label>
+        <label className={classes.label} htmlFor="rb2">28cm</label>
         <input
+          className={classes.input}
           type="radio"
           name="rb-size"
           id="rb3"
@@ -35,11 +47,12 @@ function OrderModalSizeAndDough(props) {
           disabled={dough === "grube" || newPizza.name === "Calzone (Pierog)"}
           readOnly
         />
-        <label htmlFor="rb3">50cm</label>
+        <label className={classes.label} htmlFor="rb3">50cm</label>
       </div>
       <h6>Ciasto:</h6>
-      <div className="group" onChange={handleDoughChange}>
+      <div className={classes.group} onChange={handleDoughChange}>
         <input
+          className={classes.input}
           type="radio"
           name="rb-dough"
           id="rb4"
@@ -48,8 +61,9 @@ function OrderModalSizeAndDough(props) {
           disabled={newPizza.name === "Calzone (Pierog)"}
           readOnly
         />
-        <label htmlFor="rb4">cieńkie</label>
+        <label className={classes.label} htmlFor="rb4">cieńkie</label>
         <input
+          className={classes.input}
           type="radio"
           name="rb-dough"
           id="rb5"
@@ -57,8 +71,9 @@ function OrderModalSizeAndDough(props) {
           checked={dough === "średnie" || newPizza.name === "Calzone (Pierog)"}
           readOnly
         />
-        <label htmlFor="rb5">średnie</label>
+        <label className={classes.label} htmlFor="rb5">średnie</label>
         <input
+          className={classes.input}
           type="radio"
           name="rb-dough"
           id="rb6"
@@ -67,10 +82,10 @@ function OrderModalSizeAndDough(props) {
           disabled={size === "50cm" || newPizza.name === "Calzone (Pierog)"}
           readOnly
         />
-        <label htmlFor="rb6">grube</label>
+        <label className={classes.label}ƒ htmlFor="rb6">grube</label>
       </div>
     </>
   );
 }
 
-export default OrderModalSizeAndDough;
+export default withStyles(styles)(PizzaOrderModalSizeAndDough);

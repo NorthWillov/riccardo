@@ -14,6 +14,7 @@ function PizzasList(props) {
   const handleClick = (pizza) => {
     setCurrIngredients(pizza.ingredients);
     setNewPizza(pizza);
+    props.setPizzaModalShow();
   };
 
   const { classes } = props;
@@ -60,8 +61,6 @@ function PizzasList(props) {
                     <Button
                       onClick={() => handleClick(pizza)}
                       variant="outline-dark"
-                      data-toggle="modal"
-                      data-target="#exampleModal"
                     >
                       Wybierz
                     </Button>

@@ -1,8 +1,3 @@
-.modal-pizza-image {
-  width: 100%;
-  align-self: center;
-  justify-content: center;
-}
 .modal-body {
   display: flex;
   padding: 0px 20px 20px 20px;
@@ -35,48 +30,41 @@ p {
   font-size: 28px;
   font-weight: 700;
 }
-button.close {
-  display: flex;
-  justify-content: flex-end;
-}
-.close {
-  margin-right: 7px;
-}
 .checkout-modal {
   margin-top: 50px;
 }
 .bi.bi-cart2 {
   margin-top: -4px;
 }
-.bi.bi-arrow-return-left,
+/* .bi.bi-arrow-return-left,
 .bi.bi-dash-circle {
   color: grey;
   font-size: 12px;
   margin-left: 4px;
   margin-top: -1.4px;
-}
+} */
 /* RADIO CSS */
-.group {
+/* .group {
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
   align-items: center;
   justify-content: center;
-}
+} */
 
-input[type="radio"] {
+/* input[type="radio"] {
   position: absolute;
   opacity: 0;
   z-index: -1;
-}
-input[type="radio"]:disabled + label:before {
+} */
+/* input[type="radio"]:disabled + label:before {
   border: 1px solid lightgrey;
 }
 input[type="radio"]:disabled + label {
   color: lightgrey;
-}
+} */
 
-label {
+/* label {
   position: relative;
   margin-right: 1em;
   padding-left: 2em;
@@ -84,8 +72,8 @@ label {
   line-height: 2;
   cursor: pointer;
   z-index: 1;
-}
-label:before {
+} */
+/* label:before {
   box-sizing: border-box;
   content: " ";
   position: absolute;
@@ -97,9 +85,9 @@ label:before {
   border: 1px solid grey;
   border-radius: 0.25em;
   z-index: -1;
-}
+} */
 
-input[type="radio"] + label::before {
+/* input[type="radio"] + label::before {
   border-radius: 1em;
 }
 
@@ -117,10 +105,10 @@ label,
 label::before {
   -webkit-transition: 0.25s all ease;
   transition: 0.25s all ease;
-}
+} */
 
 /* INGREDIENTS STYLES */
-
+/* 
 .modal-ingredients {
   padding: 0;
   display: flex;
@@ -136,4 +124,4 @@ label::before {
 }
 .modal-ingredients-ingredient-name-deleted {
   text-decoration: line-through;
-}
+} */

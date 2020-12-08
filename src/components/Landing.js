@@ -17,7 +17,8 @@ function Landing(props) {
   const { currIngredients, setCurrIngredients } = useContext(
     CurrIngredientsContext
   );
-  const [modalShow, setModalShow] = useState(false);
+  const [lunchModalShow, setLunchModalShow] = useState(false);
+  const [pizzaModalShow, setPizzaModalShow] = useState(false);
 
   const handlePopularClick = (pizza) => {
     setCurrIngredients(pizza.ingredients);
@@ -27,7 +28,7 @@ function Landing(props) {
   const handleLunchModalOpen = (lunch) => {
     console.log(lunch);
     setNewLunch(lunch);
-    setModalShow(true);
+    setLunchModalShow(true);
   };
 
   return (
@@ -76,6 +77,7 @@ function Landing(props) {
       <PizzasList
         cart={props.cart}
         handleModalSubmit={props.handleModalSubmit}
+        setPizzaModalShow={() => setPizzaModalShow(true)}
       />
 
       <LunchesList handleLunchModalOpen={handleLunchModalOpen} />
@@ -83,16 +85,18 @@ function Landing(props) {
       {newLunch && (
         <LunchesOrderModal
           lunch={newLunch}
-          show={modalShow}
-          onHide={() => setModalShow(false)}
+          show={lunchModalShow}
+          onHide={() => setLunchModalShow(false)}
         />
       )}
 
       {newPizza && (
         <PizzaOrderModal
+          newPizza={newPizza}
+          show={pizzaModalShow}
+          onHide={() => setPizzaModalShow(false)}
           setCurrIngredients={setCurrIngredients}
           currIngredients={currIngredients}
-          newPizza={newPizza}
           handleModalSubmit={props.handleModalSubmit}
         />
       )}

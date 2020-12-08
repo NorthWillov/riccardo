@@ -4,8 +4,10 @@ import { v4 as uuidv4 } from "uuid";
 import { MENU } from "../utils/constants";
 import { NewPizzaContext } from "../contexts/NewPizzaContext";
 import { CurrIngredientsContext } from "../contexts/CurrIngredientsContext";
+import { withStyles } from "@material-ui/styles";
+import styles from "../styles/pizzaOrderModalIngredientsStyles";
 
-function OrderModalIngredients(props) {
+function PizzaOrderModalIngredients(props) {
   const { newPizza } = useContext(NewPizzaContext);
   const { currIngredients } = useContext(CurrIngredientsContext);
   const {
@@ -13,26 +15,29 @@ function OrderModalIngredients(props) {
     handleIngredientClick,
     handleExtraIngredientInputClick,
     handleExtraIngredientClick,
+    classes,
   } = props;
 
   return (
     <>
-      <ul className="modal-ingredients">
+      <ul className={classes.modalIngredients}>
         {newPizza.ingredients.map((i, idx) => (
           <li
             key={uuidv4()}
             value={i}
-            className="modal-ingredients-ingredient"
+            className={classes.modalIngredientsIngredient}
             onClick={() => handleIngredientClick(i)}
           >
             {currIngredients.includes(i) ? (
               <>
-                <span className="modal-ingredients-ingredient-name">{i}</span>
+                <span className={classes.modalIngredientsIngredientName}>
+                  {i}
+                </span>
                 <svg
                   width="1em"
                   height="1em"
                   viewBox="0 0 16 16"
-                  className="bi bi-dash-circle"
+                  className={`bi bi-dash-circle ${classes.icons}`}
                   fill="currentColor"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -48,14 +53,14 @@ function OrderModalIngredients(props) {
               </>
             ) : (
               <>
-                <span className="modal-ingredients-ingredient-name-deleted">
+                <span className={classes.modalIngredientsIngredientNameDeleted}>
                   {i}
                 </span>
                 <svg
                   width="1em"
                   height="1em"
                   viewBox="0 0 16 16"
-                  className="bi bi-arrow-return-left"
+                  className={`bi bi-arrow-return-left ${classes.icons}`}
                   fill="currentColor"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -75,14 +80,14 @@ function OrderModalIngredients(props) {
         <React.Fragment>
           <h6>Dodatki:</h6>
 
-          <ul className="modal-ingredients">
+          <ul className={classes.modalIngredients}>
             {extras.map((el, idx) => (
               <li
                 key={uuidv4()}
-                className="modal-ingredients-ingredient"
+                className={classes.modalIngredientsIngredient}
                 onClick={() => handleExtraIngredientClick(el)}
               >
-                <span className="modal-ingredients-ingredient-name">
+                <span className={classes.modalIngredientsIngredientName}>
                   {el.name}
                 </span>
                 <span>{`+(${el.price}zł)`}</span>
@@ -90,7 +95,7 @@ function OrderModalIngredients(props) {
                   width="1em"
                   height="1em"
                   viewBox="0 0 16 16"
-                  className="bi bi-dash-circle"
+                  className={`bi bi-dash-circle ${classes.icons}`}
                   fill="currentColor"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -130,4 +135,4 @@ function OrderModalIngredients(props) {
   );
 }
 
-export default OrderModalIngredients;
+export default withStyles(styles)(PizzaOrderModalIngredients);
