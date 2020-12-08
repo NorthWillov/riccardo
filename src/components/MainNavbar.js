@@ -10,10 +10,12 @@ import {
 } from "react-bootstrap";
 import { ToastContext } from "../contexts/ToastContext";
 import { NewPizzaContext } from "../contexts/NewPizzaContext";
+import { CartContext } from "../contexts/CartContext";
 import { withStyles } from "@material-ui/styles";
 import styles from "../styles/mainNavbarStyles";
 
 function MainNavbar(props) {
+  const { cart } = useContext(CartContext);
   const { show, toggleShow } = useContext(ToastContext);
   const { newPizza } = useContext(NewPizzaContext);
 
@@ -73,12 +75,12 @@ function MainNavbar(props) {
           </Nav>
           <Nav>
             <Button
-              onClick={() => console.log(props.cart)}
+              onClick={() => console.log(cart)}
               className="mr-3 ml-2"
               style={{ maxWidth: "120px" }}
               variant="dark"
             >
-              Koszyk {props.cart.length === 0 ? "" : `| ${props.cart.length} `}
+              Koszyk {cart.length === 0 ? "" : `| ${cart.length} `}
             </Button>
           </Nav>
         </Navbar.Collapse>

@@ -3,27 +3,15 @@ import { Carousel } from "react-bootstrap";
 import officeImg from "../images/office.jpg";
 import studentsImg from "../images/students.jpg";
 import familyImg from "../images/family.jpg";
-import { NewPizzaContext } from "../contexts/NewPizzaContext";
 import { CurrIngredientsContext } from "../contexts/CurrIngredientsContext";
-import PizzaOrderModal from "./PizzaOrderModal";
 import PizzasList from "./PizzasList";
 import LunchesList from "./LunchesList";
 import LunchesOrderModal from "./LunchesOrderModal";
 import Popular from "./Popular";
 
 function Landing(props) {
-  const { newPizza, setNewPizza } = useContext(NewPizzaContext);
   const [newLunch, setNewLunch] = useState();
-  const { currIngredients, setCurrIngredients } = useContext(
-    CurrIngredientsContext
-  );
   const [lunchModalShow, setLunchModalShow] = useState(false);
-  const [pizzaModalShow, setPizzaModalShow] = useState(false);
-
-  const handlePopularClick = (pizza) => {
-    setCurrIngredients(pizza.ingredients);
-    setNewPizza(pizza);
-  };
 
   const handleLunchModalOpen = (lunch) => {
     console.log(lunch);
@@ -72,13 +60,9 @@ function Landing(props) {
         </Carousel.Item>
       </Carousel>
 
-      <Popular handlePopularClick={handlePopularClick} />
+      {/* <Popular handlePopularClick={handlePopularClick} /> */}
 
-      <PizzasList
-        cart={props.cart}
-        handleModalSubmit={props.handleModalSubmit}
-        setPizzaModalShow={() => setPizzaModalShow(true)}
-      />
+      <PizzasList />
 
       <LunchesList handleLunchModalOpen={handleLunchModalOpen} />
 
@@ -87,17 +71,6 @@ function Landing(props) {
           lunch={newLunch}
           show={lunchModalShow}
           onHide={() => setLunchModalShow(false)}
-        />
-      )}
-
-      {newPizza && (
-        <PizzaOrderModal
-          newPizza={newPizza}
-          show={pizzaModalShow}
-          onHide={() => setPizzaModalShow(false)}
-          setCurrIngredients={setCurrIngredients}
-          currIngredients={currIngredients}
-          handleModalSubmit={props.handleModalSubmit}
         />
       )}
     </>

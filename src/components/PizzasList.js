@@ -1,20 +1,22 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { MENU } from "../utils/constants";
 import { NewPizzaContext } from "../contexts/NewPizzaContext";
 import { CurrIngredientsContext } from "../contexts/CurrIngredientsContext";
 import { formatter } from "../utils/formatter";
 import { Row, Col, Button, Card } from "react-bootstrap";
+import PizzaOrderModal from "./PizzaOrderModal";
 import { withStyles } from "@material-ui/styles";
 import styles from "../styles/pizzaListStyles";
 
 function PizzasList(props) {
-  const { setNewPizza } = useContext(NewPizzaContext);
+  const { newPizza, setNewPizza } = useContext(NewPizzaContext);
   const { setCurrIngredients } = useContext(CurrIngredientsContext);
+  const [pizzaModalShow, setPizzaModalShow] = useState(false);
 
   const handleClick = (pizza) => {
     setCurrIngredients(pizza.ingredients);
     setNewPizza(pizza);
-    props.setPizzaModalShow();
+    setPizzaModalShow(true);
   };
 
   const { classes } = props;
@@ -71,6 +73,13 @@ function PizzasList(props) {
           </React.Fragment>
         ))}
       </Row>
+
+      {newPizza && (
+        <PizzaOrderModal
+          show={pizzaModalShow}
+          onHide={() => setPizzaModalShow(false)}
+        />
+      )}
     </>
   );
 }

@@ -11,10 +11,7 @@ function Routes(props) {
         exact
         path="/riccardo"
         render={() => (
-          <Landing
-            cart={props.cart}
-            handleModalSubmit={props.handleModalSubmit}
-          />
+          <Landing />
         )}
       />
       <Route exact path="/riccardo/about" render={() => <About />} />

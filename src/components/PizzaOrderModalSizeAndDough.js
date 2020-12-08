@@ -92,7 +92,7 @@ function PizzaOrderModalSizeAndDough(props) {
           disabled={size === "50cm" || newPizza.name === "Calzone (Pierog)"}
           readOnly
         />
-        <label className={classes.label} ƒ htmlFor="rb6">
+        <label className={classes.label} htmlFor="rb6">
           grube
         </label>
       </div>
