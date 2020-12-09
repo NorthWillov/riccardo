@@ -2,17 +2,18 @@ import React from "react";
 import { MENU } from "../utils/constants";
 import { formatter } from "../utils/formatter";
 import { Row, Col, Card } from "react-bootstrap";
-import "../styles/popular.css";
+import { withStyles } from "@material-ui/styles";
+import styles from "../styles/popularStyles";
 
 function Popular(props) {
-  const { handlePizzaClick } = props;
+  const { handlePizzaClick, classes } = props;
   return (
     <>
       <h3 className="mt-5 mb-4">Popularne:</h3>
       <Row>
         <Col xs={6} sm={4} md={3}>
           <Card
-            className="popular-card mb-3"
+            className={classes.popularCard}
             onClick={() => handlePizzaClick(MENU.pizzas[0])}
           >
             <Row noGutters="true">
@@ -20,8 +21,8 @@ function Popular(props) {
                 <Card.Img src={MENU.pizzas[0].image} alt="pizza" />
               </Col>
               <Col md={7} style={{ display: "flex" }}>
-                <Card.Body className="card-body-popular">
-                  <Card.Title className="card-title-popular">
+                <Card.Body className={classes.cardBodyPopular}>
+                  <Card.Title className={classes.cardTitlePopular}>
                     {MENU.pizzas[0].name}
                   </Card.Title>
                   <Card.Text>
@@ -35,7 +36,7 @@ function Popular(props) {
 
         <Col xs={6} sm={4} md={3}>
           <Card
-            className="popular-card mb-3"
+            className={classes.popularCard}
             onClick={() => handlePizzaClick(MENU.pizzas[2])}
           >
             <Row noGutters="true">
@@ -43,8 +44,8 @@ function Popular(props) {
                 <Card.Img src={MENU.pizzas[2].image} alt="pizza" />
               </Col>
               <Col md={7} style={{ display: "flex" }}>
-                <Card.Body className="card-body-popular">
-                  <Card.Title className="card-title-popular">
+                <Card.Body className={classes.cardBodyPopular}>
+                  <Card.Title className={classes.cardTitlePopular}>
                     {MENU.pizzas[2].name}
                   </Card.Title>
                   <Card.Text>
@@ -57,7 +58,7 @@ function Popular(props) {
         </Col>
         <Col xs={6} sm={4} md={3}>
           <Card
-            className="popular-card mb-3"
+            className={classes.popularCard}
             onClick={() => handlePizzaClick(MENU.pizzas[13])}
           >
             <Row noGutters="true">
@@ -65,8 +66,8 @@ function Popular(props) {
                 <Card.Img src={MENU.pizzas[13].image} alt="pizza" />
               </Col>
               <Col md={7} style={{ display: "flex" }}>
-                <Card.Body className="card-body-popular">
-                  <Card.Title className="card-title-popular">
+                <Card.Body className={classes.cardBodyPopular}>
+                  <Card.Title className={classes.cardTitlePopular}>
                     {MENU.pizzas[13].name}
                   </Card.Title>
                   <Card.Text>
@@ -79,7 +80,7 @@ function Popular(props) {
         </Col>
         <Col xs={6} sm={4} md={3}>
           <Card
-            className="popular-card mb-3"
+            className={classes.popularCard}
             onClick={() => handlePizzaClick(MENU.pizzas[10])}
           >
             <Row noGutters="true">
@@ -87,8 +88,8 @@ function Popular(props) {
                 <Card.Img src={MENU.pizzas[10].image} alt="pizza" />
               </Col>
               <Col md={7} style={{ display: "flex" }}>
-                <Card.Body className="card-body-popular">
-                  <Card.Title className="card-title-popular">
+                <Card.Body className={classes.cardBodyPopular} ƒ>
+                  <Card.Title className={classes.cardTitlePopular}>
                     {MENU.pizzas[10].name}
                   </Card.Title>
                   <Card.Text>
@@ -104,4 +105,4 @@ function Popular(props) {
   );
 }
 
-export default Popular;
+export default withStyles(styles)(Popular);
