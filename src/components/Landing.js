@@ -8,24 +8,31 @@ import LunchesList from "./LunchesList";
 import LunchesOrderModal from "./LunchesOrderModal";
 import { CurrIngredientsContext } from "../contexts/CurrIngredientsContext";
 import { NewPizzaContext } from "../contexts/NewPizzaContext";
+import { NewLunchContext } from "../contexts/NewLunchContext";
+import { ToastContext } from "../contexts/ToastContext";
 import PizzaOrderModal from "./PizzaOrderModal";
 import Popular from "./Popular";
 
 function Landing(props) {
-  const [newLunch, setNewLunch] = useState();
   const [lunchModalShow, setLunchModalShow] = useState(false);
   const [pizzaModalShow, setPizzaModalShow] = useState(false);
 
+  const { newLunch, setNewLunch } = useContext(NewLunchContext);
   const { newPizza, setNewPizza } = useContext(NewPizzaContext);
   const { setCurrIngredients } = useContext(CurrIngredientsContext);
+  const { show, toggleShow } = useContext(ToastContext);
 
   const handlePizzaClick = (pizza) => {
+    show && toggleShow();
+    setNewLunch();
     setCurrIngredients(pizza.ingredients);
     setNewPizza(pizza);
     setPizzaModalShow(true);
   };
 
   const handleLunchModalOpen = (lunch) => {
+    show && toggleShow();
+    setNewPizza();
     setNewLunch(lunch);
     setLunchModalShow(true);
   };

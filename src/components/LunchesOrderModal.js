@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { formatter } from "../utils/formatter";
 import { Modal, Row, Col, Button, Form } from "react-bootstrap";
 import { CartContext } from "../contexts/CartContext";
+import { ToastContext } from "../contexts/ToastContext";
 import { withStyles } from "@material-ui/styles";
 import styles from "../styles/lunchesOrderModalStyles";
 
@@ -9,6 +10,7 @@ function LunchesOrderModal(props) {
   const [lunchAddition, setLunchAddition] = useState({});
 
   const { cart, setCart } = useContext(CartContext);
+  const { toggleShow } = useContext(ToastContext);
 
   const { classes, lunch } = props;
 
@@ -21,6 +23,7 @@ function LunchesOrderModal(props) {
     let newLunch = { ...lunch, ...lunchAddition };
     setCart([...cart, newLunch]);
     setLunchAddition({});
+    toggleShow();
   };
 
   return (

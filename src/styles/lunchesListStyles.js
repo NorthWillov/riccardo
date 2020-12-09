@@ -1,4 +1,4 @@
-export default {
+const styles = {
   checkout: {
     display: "flex",
     justifyContent: "space-between",
@@ -13,3 +13,5 @@ export default {
     height: "100px",
   },
 };
+
+export default styles;

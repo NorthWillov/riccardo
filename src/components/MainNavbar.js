@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 import { ToastContext } from "../contexts/ToastContext";
 import { NewPizzaContext } from "../contexts/NewPizzaContext";
+import { NewLunchContext } from "../contexts/NewLunchContext";
 import { CartContext } from "../contexts/CartContext";
 import { withStyles } from "@material-ui/styles";
 import styles from "../styles/mainNavbarStyles";
@@ -18,6 +19,7 @@ function MainNavbar(props) {
   const { cart } = useContext(CartContext);
   const { show, toggleShow } = useContext(ToastContext);
   const { newPizza } = useContext(NewPizzaContext);
+  const { newLunch } = useContext(NewLunchContext);
 
   const { classes } = props;
 
@@ -31,7 +33,7 @@ function MainNavbar(props) {
       collapseOnSelect
     >
       <Container style={{ position: "relative" }} fluid="lg">
-        {newPizza && (
+        {(newLunch || newPizza) && (
           <div
             aria-live="polite"
             aria-atomic="true"
@@ -44,7 +46,8 @@ function MainNavbar(props) {
             <Toast show={show} onClose={toggleShow} delay={3000} autohide>
               <Toast.Header>
                 <span style={{ color: "black", fontSize: "15px" }}>
-                  +1 {newPizza.name}
+                  {newPizza && `+1 ${newPizza.name}`}
+                  {newLunch && `+1 ${newLunch.name}`}
                 </span>
               </Toast.Header>
             </Toast>
