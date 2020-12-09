@@ -1,4 +1,4 @@
-export default {
+const styles = {
   logo: {
     width: "200px",
     padding: "15px",
@@ -9,3 +9,5 @@ export default {
     borderBottom: "1px solid lightgrey",
   },
 };
+
+export default styles;

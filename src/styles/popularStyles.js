@@ -1,4 +1,4 @@
-export default {
+const styles = {
   popularCard: {
     cursor: "pointer",
     padding: "10px",
@@ -19,3 +19,5 @@ export default {
     fontWeight: "400",
   },
 };
+
+export default styles;

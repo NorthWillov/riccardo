@@ -1,4 +1,4 @@
-export default {
+const styles = {
   modalLunchImage: {
     width: "100%",
     alignSelf: "center",
@@ -17,3 +17,5 @@ export default {
     justifyContent: "space-between",
   },
 };
+
+export default styles;

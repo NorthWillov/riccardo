@@ -1,4 +1,4 @@
-export default {
+const styles = {
   modalIngredients: {
     padding: "0",
     display: "flex",
@@ -22,3 +22,5 @@ export default {
     marginTop: "-1.4px",
   },
 };
+
+export default styles;

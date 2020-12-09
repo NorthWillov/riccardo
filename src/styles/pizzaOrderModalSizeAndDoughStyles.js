@@ -1,4 +1,4 @@
-export default {
+const styles = {
   root: {
     textAlign: "center",
   },
@@ -57,3 +57,5 @@ export default {
     },
   },
 };
+
+export default styles;
