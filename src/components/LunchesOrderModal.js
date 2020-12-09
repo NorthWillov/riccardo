@@ -55,7 +55,7 @@ function LunchesOrderModal(props) {
 
               {lunch.id === 8 && (
                 <Form.Group controlId="exampleForm.ControlSelect1">
-                  <Form.Label>zodzaj mięsa:</Form.Label>
+                  <Form.Label>rodzaj mięsa:</Form.Label>
                   <Form.Control
                     name="meat"
                     as="select"

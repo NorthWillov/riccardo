@@ -128,9 +128,9 @@ function PizzaOrderModal(props) {
     >
       <Modal.Body>
         <Row>
-          <Col lg={7}>
+          <Col lg={7} style={{ display: "flex" }}>
             <img
-              className={classes.modalPizzaImage}
+              className={`ml-2 ${classes.modalPizzaImage}`}
               src={newPizza.image}
               alt="pizza"
             />
