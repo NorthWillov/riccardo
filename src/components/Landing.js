@@ -26,7 +26,6 @@ function Landing(props) {
   };
 
   const handleLunchModalOpen = (lunch) => {
-    console.log(lunch);
     setNewLunch(lunch);
     setLunchModalShow(true);
   };

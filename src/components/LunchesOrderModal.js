@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { formatter } from "../utils/formatter";
 import { Modal, Row, Col, Button, Form } from "react-bootstrap";
+import { CartContext } from "../contexts/CartContext";
 import { withStyles } from "@material-ui/styles";
 import styles from "../styles/lunchesOrderModalStyles";
 
 function LunchesOrderModal(props) {
+  const [lunchAddition, setLunchAddition] = useState({});
+
+  const { cart, setCart } = useContext(CartContext);
+
   const { classes, lunch } = props;
+
+  const handleInputClick = (e) => {
+    setLunchAddition({ ...lunchAddition, [e.target.name]: e.target.value });
+  };
+
+  const handleClick = (lunch) => {
+    props.onHide();
+    let newLunch = { ...lunch, ...lunchAddition };
+    setCart([...cart, newLunch]);
+    setLunchAddition({});
+  };
 
   return (
     <Modal
@@ -36,21 +52,31 @@ function LunchesOrderModal(props) {
 
               <Form.Group controlId="exampleForm.ControlSelect1">
                 <Form.Label>dodatek do dania:</Form.Label>
-                <Form.Control as="select">
-                  <option>ziemniaki opiekane</option>
-                  <option>ziemniaki</option>
-                  <option>kasza</option>
-                  <option>ryż</option>
-                  <option>frytki</option>
+                <Form.Control
+                  name="first"
+                  as="select"
+                  onChange={handleInputClick}
+                >
+                  <option value="ziemniaki opiekane">ziemniaki opiekane</option>
+                  <option value="ziemniaki">ziemniaki</option>
+                  <option value="kasza">kasza</option>
+                  <option value="ryż">ryż</option>
+                  <option value="frytki">frytki</option>
                 </Form.Control>
               </Form.Group>
               <Form.Group controlId="exampleForm.ControlSelect2">
                 <Form.Label>dodatek warzywny:</Form.Label>
-                <Form.Control as="select">
-                  <option>duszona kapusta</option>
-                  <option>marchewka na ciepło</option>
-                  <option>buraczki na ciepło</option>
-                  <option>zestaw surówek</option>
+                <Form.Control
+                  name="second"
+                  as="select"
+                  onChange={handleInputClick}
+                >
+                  <option value="duszona kapusta">duszona kapusta</option>
+                  <option value="marchewka na ciepło">
+                    marchewka na ciepło
+                  </option>
+                  <option value="buraczki na ciepło">buraczki na ciepło</option>
+                  <option value="zestaw surówek">zestaw surówek</option>
                 </Form.Control>
               </Form.Group>
             </Form>
@@ -58,7 +84,11 @@ function LunchesOrderModal(props) {
               <span className={classes.modalPrice}>
                 {formatter.format(lunch.price)}zł
               </span>
-              <Button variant="success" onClick={props.onHide} type="button">
+              <Button
+                variant="success"
+                onClick={() => handleClick(lunch)}
+                type="button"
+              >
                 Dodaj{" "}
                 <svg
                   width="1em"
