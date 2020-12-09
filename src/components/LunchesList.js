@@ -6,11 +6,11 @@ import { withStyles } from "@material-ui/styles";
 import styles from "../styles/lunchesListStyles";
 
 function LunchesList(props) {
+  const { classes } = props;
+
   const handleLunchPick = (lunch) => {
     props.handleLunchModalOpen(lunch);
   };
-
-  const { classes } = props;
 
   return (
     <>

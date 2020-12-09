@@ -1,16 +1,11 @@
-import React, { useState, useContext } from "react";
-import { ToastContext } from "../contexts/ToastContext";
-import { MENU } from "../utils/constants";
+import React from "react";
 import { formatter } from "../utils/formatter";
-import { v4 as uuidv4 } from "uuid";
-import { Modal, Container, Row, Col, Button, Form } from "react-bootstrap";
+import { Modal, Row, Col, Button, Form } from "react-bootstrap";
 import { withStyles } from "@material-ui/styles";
 import styles from "../styles/lunchesOrderModalStyles";
 
 function LunchesOrderModal(props) {
-  const { toggleShow } = useContext(ToastContext);
-
-  const { classes } = props;
+  const { classes, lunch } = props;
 
   return (
     <Modal
@@ -20,40 +15,69 @@ function LunchesOrderModal(props) {
       size="lg"
     >
       <Modal.Header closeButton>
-        <h4>{props.lunch.name}</h4>
+        <Row>
+          <Col lg={7} style={{ display: "flex" }}>
+            <img
+              className={classes.modalLunchImage}
+              src={lunch.image}
+              alt="obiad"
+            />
+          </Col>
+          <Col
+            lg={5}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+            }}
+          >
+            <Form>
+              <h4>{lunch.name}</h4>
+
+              <Form.Group controlId="exampleForm.ControlSelect1">
+                <Form.Label>dodatek do dania:</Form.Label>
+                <Form.Control as="select">
+                  <option>ziemniaki opiekane</option>
+                  <option>ziemniaki</option>
+                  <option>kasza</option>
+                  <option>ryż</option>
+                  <option>frytki</option>
+                </Form.Control>
+              </Form.Group>
+              <Form.Group controlId="exampleForm.ControlSelect2">
+                <Form.Label>dodatek warzywny:</Form.Label>
+                <Form.Control as="select">
+                  <option>duszona kapusta</option>
+                  <option>marchewka na ciepło</option>
+                  <option>buraczki na ciepło</option>
+                  <option>zestaw surówek</option>
+                </Form.Control>
+              </Form.Group>
+            </Form>
+            <div className={classes.checkout}>
+              <span className={classes.modalPrice}>
+                {formatter.format(lunch.price)}zł
+              </span>
+              <Button variant="success" onClick={props.onHide} type="button">
+                Dodaj{" "}
+                <svg
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  className={`bi bi-cart2 ${classes.icon}`}
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"
+                  />
+                </svg>
+              </Button>
+            </div>
+          </Col>
+        </Row>
       </Modal.Header>
-      <Modal.Body>
-        <Container>
-          <Row>
-            <Col lg={7} style={{ display: "flex" }}>
-              <img
-                className={classes.modalLunchImage}
-                src={props.lunch.image}
-              />
-            </Col>
-            <Col lg={5}>
-              <Form>
-                <Form.Group controlId="exampleForm.ControlSelect1">
-                  <Form.Label>dodatek do dania:</Form.Label>
-                  <Form.Control as="select">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </Form.Control>
-                </Form.Group>
-              </Form>
-            </Col>
-          </Row>
-        </Container>
-      </Modal.Body>
-      <Modal.Footer>
-        <span className="modal-price">
-          {formatter.format(props.lunch.price)}zł
-        </span>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer>
     </Modal>
   );
 }
