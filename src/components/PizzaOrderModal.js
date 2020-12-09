@@ -19,6 +19,7 @@ function PizzaOrderModal(props) {
   const [extras, setExtras] = useState([]);
   const [extrasSumPrice, setExtrasSumPrice] = useState(0);
   const [fantazjaExtras, setFantazjaExtras] = useState({});
+  
   const { toggleShow } = useContext(ToastContext);
   const { cart, setCart } = useContext(CartContext);
   const { currIngredients, setCurrIngredients } = useContext(

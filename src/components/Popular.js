@@ -1,6 +1,7 @@
 import React from "react";
 import { MENU } from "../utils/constants";
 import { formatter } from "../utils/formatter";
+import { Row, Col, Card } from "react-bootstrap";
 import "../styles/popular.css";
 
 function Popular(props) {
@@ -8,120 +9,97 @@ function Popular(props) {
   return (
     <>
       <h3 className="mt-5 mb-4">Popularne:</h3>
-      <div className="row">
-        <div className="col-6 col-sm-4 col-md-3">
-          <div
-            className="popular-card card mb-3"
+      <Row>
+        <Col xs={6} sm={4} md={3}>
+          <Card
+            className="popular-card mb-3"
             onClick={() => handlePizzaClick(MENU.pizzas[0])}
-            data-toggle="modal"
-            data-target="#exampleModal"
           >
-            <div className="row no-gutters">
-              <div className="col-md-5">
-                <img
-                  src={MENU.pizzas[0].image}
-                  className="card-img"
-                  alt="pizza"
-                />
-              </div>
-              <div className="col-md-7" style={{ display: "flex" }}>
-                <div className="card-body-popular card-body">
-                  <h5 className="card-title-popular card-title">
+            <Row noGutters="true">
+              <Col md={5}>
+                <Card.Img src={MENU.pizzas[0].image} alt="pizza" />
+              </Col>
+              <Col md={7} style={{ display: "flex" }}>
+                <Card.Body className="card-body-popular">
+                  <Card.Title className="card-title-popular">
                     {MENU.pizzas[0].name}
-                  </h5>
-                  <p className="card-text">
+                  </Card.Title>
+                  <Card.Text>
                     Od {formatter.format(MENU.pizzas[0].price["20cm"])}zł
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-6 col-sm-4 col-md-3">
-          <div
-            className="popular-card card mb-3"
+                  </Card.Text>
+                </Card.Body>
+              </Col>
+            </Row>
+          </Card>
+        </Col>
+
+        <Col xs={6} sm={4} md={3}>
+          <Card
+            className="popular-card mb-3"
             onClick={() => handlePizzaClick(MENU.pizzas[2])}
-            data-toggle="modal"
-            data-target="#exampleModal"
           >
-            <div className="row no-gutters">
-              <div className="col-md-5">
-                <img
-                  src={MENU.pizzas[2].image}
-                  className="card-img"
-                  alt="pizza"
-                />
-              </div>
-              <div className="col-md-7" style={{ display: "flex" }}>
-                <div className="card-body-popular card-body">
-                  <h5 className="card-title-popular card-title">
+            <Row noGutters="true">
+              <Col md={5}>
+                <Card.Img src={MENU.pizzas[2].image} alt="pizza" />
+              </Col>
+              <Col md={7} style={{ display: "flex" }}>
+                <Card.Body className="card-body-popular">
+                  <Card.Title className="card-title-popular">
                     {MENU.pizzas[2].name}
-                  </h5>
-                  <p className="card-text">
+                  </Card.Title>
+                  <Card.Text>
                     Od {formatter.format(MENU.pizzas[2].price["20cm"])}zł
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-6 col-sm-4 col-md-3">
-          <div
-            className="popular-card card mb-3"
+                  </Card.Text>
+                </Card.Body>
+              </Col>
+            </Row>
+          </Card>
+        </Col>
+        <Col xs={6} sm={4} md={3}>
+          <Card
+            className="popular-card mb-3"
             onClick={() => handlePizzaClick(MENU.pizzas[13])}
-            data-toggle="modal"
-            data-target="#exampleModal"
           >
-            <div className="row no-gutters">
-              <div className="col-md-5">
-                <img
-                  src={MENU.pizzas[13].image}
-                  className="card-img"
-                  alt="pizza"
-                />
-              </div>
-              <div className="col-md-7" style={{ display: "flex" }}>
-                <div className="card-body-popular card-body">
-                  <h5 className="card-title-popular card-title">
+            <Row noGutters="true">
+              <Col md={5}>
+                <Card.Img src={MENU.pizzas[13].image} alt="pizza" />
+              </Col>
+              <Col md={7} style={{ display: "flex" }}>
+                <Card.Body className="card-body-popular">
+                  <Card.Title className="card-title-popular">
                     {MENU.pizzas[13].name}
-                  </h5>
-                  <p className="card-text">
+                  </Card.Title>
+                  <Card.Text>
                     Od {formatter.format(MENU.pizzas[13].price["20cm"])}zł
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-6 col-sm-4 col-md-3">
-          <div
-            className="popular-card card mb-3"
+                  </Card.Text>
+                </Card.Body>
+              </Col>
+            </Row>
+          </Card>
+        </Col>
+        <Col xs={6} sm={4} md={3}>
+          <Card
+            className="popular-card mb-3"
             onClick={() => handlePizzaClick(MENU.pizzas[10])}
-            data-toggle="modal"
-            data-target="#exampleModal"
           >
-            <div className="row no-gutters">
-              <div className="col-md-5">
-                <img
-                  src={MENU.pizzas[10].image}
-                  className="card-img"
-                  alt="pizza"
-                />
-              </div>
-              <div className="col-md-7" style={{ display: "flex" }}>
-                <div className="card-body-popular card-body">
-                  <h5 className="card-title-popular card-title">
+            <Row noGutters="true">
+              <Col md={5}>
+                <Card.Img src={MENU.pizzas[10].image} alt="pizza" />
+              </Col>
+              <Col md={7} style={{ display: "flex" }}>
+                <Card.Body className="card-body-popular">
+                  <Card.Title className="card-title-popular">
                     {MENU.pizzas[10].name}
-                  </h5>
-                  <p className="card-text">
+                  </Card.Title>
+                  <Card.Text>
                     Od {formatter.format(MENU.pizzas[10].price["20cm"])}zł
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+                  </Card.Text>
+                </Card.Body>
+              </Col>
+            </Row>
+          </Card>
+        </Col>
+      </Row>
     </>
   );
 }
