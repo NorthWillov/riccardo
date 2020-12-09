@@ -1,24 +1,11 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import { MENU } from "../utils/constants";
-import { NewPizzaContext } from "../contexts/NewPizzaContext";
-import { CurrIngredientsContext } from "../contexts/CurrIngredientsContext";
 import { formatter } from "../utils/formatter";
 import { Row, Col, Button, Card } from "react-bootstrap";
-import PizzaOrderModal from "./PizzaOrderModal";
 import { withStyles } from "@material-ui/styles";
 import styles from "../styles/pizzaListStyles";
 
 function PizzasList(props) {
-  const { newPizza, setNewPizza } = useContext(NewPizzaContext);
-  const { setCurrIngredients } = useContext(CurrIngredientsContext);
-  const [pizzaModalShow, setPizzaModalShow] = useState(false);
-
-  const handleClick = (pizza) => {
-    setCurrIngredients(pizza.ingredients);
-    setNewPizza(pizza);
-    setPizzaModalShow(true);
-  };
-
   const { classes } = props;
 
   return (
@@ -61,7 +48,7 @@ function PizzasList(props) {
                       pln
                     </p>
                     <Button
-                      onClick={() => handleClick(pizza)}
+                      onClick={() => props.handlePizzaClick(pizza)}
                       variant="outline-dark"
                     >
                       Wybierz
@@ -73,13 +60,6 @@ function PizzasList(props) {
           </React.Fragment>
         ))}
       </Row>
-
-      {newPizza && (
-        <PizzaOrderModal
-          show={pizzaModalShow}
-          onHide={() => setPizzaModalShow(false)}
-        />
-      )}
     </>
   );
 }

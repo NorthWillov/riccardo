@@ -3,15 +3,27 @@ import { Carousel } from "react-bootstrap";
 import officeImg from "../images/office.jpg";
 import studentsImg from "../images/students.jpg";
 import familyImg from "../images/family.jpg";
-import { CurrIngredientsContext } from "../contexts/CurrIngredientsContext";
 import PizzasList from "./PizzasList";
 import LunchesList from "./LunchesList";
 import LunchesOrderModal from "./LunchesOrderModal";
+import { CurrIngredientsContext } from "../contexts/CurrIngredientsContext";
+import { NewPizzaContext } from "../contexts/NewPizzaContext";
+import PizzaOrderModal from "./PizzaOrderModal";
 import Popular from "./Popular";
 
 function Landing(props) {
   const [newLunch, setNewLunch] = useState();
   const [lunchModalShow, setLunchModalShow] = useState(false);
+  const [pizzaModalShow, setPizzaModalShow] = useState(false);
+
+  const { newPizza, setNewPizza } = useContext(NewPizzaContext);
+  const { setCurrIngredients } = useContext(CurrIngredientsContext);
+
+  const handlePizzaClick = (pizza) => {
+    setCurrIngredients(pizza.ingredients);
+    setNewPizza(pizza);
+    setPizzaModalShow(true);
+  };
 
   const handleLunchModalOpen = (lunch) => {
     console.log(lunch);
@@ -60,11 +72,18 @@ function Landing(props) {
         </Carousel.Item>
       </Carousel>
 
-      {/* <Popular handlePopularClick={handlePopularClick} /> */}
+      <Popular handlePizzaClick={handlePizzaClick} />
 
-      <PizzasList />
+      <PizzasList handlePizzaClick={handlePizzaClick} />
 
       <LunchesList handleLunchModalOpen={handleLunchModalOpen} />
+
+      {newPizza && (
+        <PizzaOrderModal
+          show={pizzaModalShow}
+          onHide={() => setPizzaModalShow(false)}
+        />
+      )}
 
       {newLunch && (
         <LunchesOrderModal

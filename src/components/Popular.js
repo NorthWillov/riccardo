@@ -4,7 +4,7 @@ import { formatter } from "../utils/formatter";
 import "../styles/popular.css";
 
 function Popular(props) {
-  const { handlePopularClick } = props;
+  const { handlePizzaClick } = props;
   return (
     <>
       <h3 className="mt-5 mb-4">Popularne:</h3>
@@ -12,7 +12,7 @@ function Popular(props) {
         <div className="col-6 col-sm-4 col-md-3">
           <div
             className="popular-card card mb-3"
-            onClick={() => handlePopularClick(MENU.pizzas[0])}
+            onClick={() => handlePizzaClick(MENU.pizzas[0])}
             data-toggle="modal"
             data-target="#exampleModal"
           >
@@ -40,7 +40,7 @@ function Popular(props) {
         <div className="col-6 col-sm-4 col-md-3">
           <div
             className="popular-card card mb-3"
-            onClick={() => handlePopularClick(MENU.pizzas[2])}
+            onClick={() => handlePizzaClick(MENU.pizzas[2])}
             data-toggle="modal"
             data-target="#exampleModal"
           >
@@ -68,7 +68,7 @@ function Popular(props) {
         <div className="col-6 col-sm-4 col-md-3">
           <div
             className="popular-card card mb-3"
-            onClick={() => handlePopularClick(MENU.pizzas[13])}
+            onClick={() => handlePizzaClick(MENU.pizzas[13])}
             data-toggle="modal"
             data-target="#exampleModal"
           >
@@ -96,7 +96,7 @@ function Popular(props) {
         <div className="col-6 col-sm-4 col-md-3">
           <div
             className="popular-card card mb-3"
-            onClick={() => handlePopularClick(MENU.pizzas[10])}
+            onClick={() => handlePizzaClick(MENU.pizzas[10])}
             data-toggle="modal"
             data-target="#exampleModal"
           >
