@@ -50,35 +50,58 @@ function LunchesOrderModal(props) {
             <Form>
               <h4>{lunch.name}</h4>
 
-              <Form.Group controlId="exampleForm.ControlSelect1">
-                <Form.Label>dodatek do dania:</Form.Label>
-                <Form.Control
-                  name="first"
-                  as="select"
-                  onChange={handleInputClick}
-                >
-                  <option value="ziemniaki opiekane">ziemniaki opiekane</option>
-                  <option value="ziemniaki">ziemniaki</option>
-                  <option value="kasza">kasza</option>
-                  <option value="ryż">ryż</option>
-                  <option value="frytki">frytki</option>
-                </Form.Control>
-              </Form.Group>
-              <Form.Group controlId="exampleForm.ControlSelect2">
-                <Form.Label>dodatek warzywny:</Form.Label>
-                <Form.Control
-                  name="second"
-                  as="select"
-                  onChange={handleInputClick}
-                >
-                  <option value="duszona kapusta">duszona kapusta</option>
-                  <option value="marchewka na ciepło">
-                    marchewka na ciepło
-                  </option>
-                  <option value="buraczki na ciepło">buraczki na ciepło</option>
-                  <option value="zestaw surówek">zestaw surówek</option>
-                </Form.Control>
-              </Form.Group>
+              {lunch.id === 8 && (
+                <Form.Group controlId="exampleForm.ControlSelect1">
+                  <Form.Label>zodzaj mięsa:</Form.Label>
+                  <Form.Control
+                    name="meat"
+                    as="select"
+                    onChange={handleInputClick}
+                  >
+                    <option value="schab">schab</option>
+                    <option value="piers">pierś</option>
+                  </Form.Control>
+                </Form.Group>
+              )}
+
+              {lunch.id !== 11 && (
+                <Form.Group controlId="exampleForm.ControlSelect1">
+                  <Form.Label>dodatek do dania:</Form.Label>
+                  <Form.Control
+                    name="first"
+                    as="select"
+                    onChange={handleInputClick}
+                  >
+                    <option value="ziemniaki opiekane">
+                      ziemniaki opiekane
+                    </option>
+                    <option value="ziemniaki">ziemniaki</option>
+                    <option value="kasza">kasza</option>
+                    <option value="ryż">ryż</option>
+                    <option value="frytki">frytki</option>
+                  </Form.Control>
+                </Form.Group>
+              )}
+
+              {lunch.id !== 15 && (
+                <Form.Group controlId="exampleForm.ControlSelect2">
+                  <Form.Label>dodatek warzywny:</Form.Label>
+                  <Form.Control
+                    name="second"
+                    as="select"
+                    onChange={handleInputClick}
+                  >
+                    <option value="duszona kapusta">duszona kapusta</option>
+                    <option value="marchewka na ciepło">
+                      marchewka na ciepło
+                    </option>
+                    <option value="buraczki na ciepło">
+                      buraczki na ciepło
+                    </option>
+                    <option value="zestaw surówek">zestaw surówek</option>
+                  </Form.Control>
+                </Form.Group>
+              )}
             </Form>
             <div className={classes.checkout}>
               <span className={classes.modalPrice}>

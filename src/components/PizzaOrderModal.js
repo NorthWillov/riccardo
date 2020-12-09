@@ -19,7 +19,7 @@ function PizzaOrderModal(props) {
   const [extras, setExtras] = useState([]);
   const [extrasSumPrice, setExtrasSumPrice] = useState(0);
   const [fantazjaExtras, setFantazjaExtras] = useState({});
-  
+
   const { toggleShow } = useContext(ToastContext);
   const { cart, setCart } = useContext(CartContext);
   const { currIngredients, setCurrIngredients } = useContext(
@@ -129,7 +129,11 @@ function PizzaOrderModal(props) {
       <Modal.Header closeButton>
         <Row>
           <Col lg={7}>
-            <img className={classes.modalPizzaImage} src={newPizza.image} />
+            <img
+              className={classes.modalPizzaImage}
+              src={newPizza.image}
+              alt="pizza"
+            />
           </Col>
           <Col
             lg={5}
