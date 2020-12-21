@@ -5,6 +5,7 @@ import studentsImg from "../images/students.jpg";
 import familyImg from "../images/family.jpg";
 import PizzasList from "./PizzasList";
 import LunchesList from "./LunchesList";
+import MakaronsList from "./MakaronsList";
 import LunchesOrderModal from "./LunchesOrderModal";
 import { CurrIngredientsContext } from "../contexts/CurrIngredientsContext";
 import { NewPizzaContext } from "../contexts/NewPizzaContext";
@@ -83,6 +84,8 @@ function Landing(props) {
       <PizzasList handlePizzaClick={handlePizzaClick} />
 
       <LunchesList handleLunchModalOpen={handleLunchModalOpen} />
+
+      <MakaronsList />
 
       {newPizza && (
         <PizzaOrderModal
