@@ -9,8 +9,7 @@ import {
   Button,
 } from "react-bootstrap";
 import { ToastContext } from "../contexts/ToastContext";
-import { NewPizzaContext } from "../contexts/NewPizzaContext";
-import { NewLunchContext } from "../contexts/NewLunchContext";
+import { NewItemContext } from "../contexts/NewItemContext";
 import { CartContext } from "../contexts/CartContext";
 import { withStyles } from "@material-ui/styles";
 import styles from "../styles/mainNavbarStyles";
@@ -18,8 +17,7 @@ import styles from "../styles/mainNavbarStyles";
 function MainNavbar(props) {
   const { cart } = useContext(CartContext);
   const { show, toggleShow } = useContext(ToastContext);
-  const { newPizza } = useContext(NewPizzaContext);
-  const { newLunch } = useContext(NewLunchContext);
+  const { newItem } = useContext(NewItemContext);
 
   const { classes } = props;
 
@@ -33,7 +31,7 @@ function MainNavbar(props) {
       collapseOnSelect
     >
       <Container style={{ position: "relative" }} fluid="lg">
-        {(newLunch || newPizza) && (
+        {newItem && (
           <div
             aria-live="polite"
             aria-atomic="true"
@@ -46,8 +44,7 @@ function MainNavbar(props) {
             <Toast show={show} onClose={toggleShow} delay={3000} autohide>
               <Toast.Header>
                 <span style={{ color: "black", fontSize: "15px" }}>
-                  {newPizza && `+1 ${newPizza.name}`}
-                  {newLunch && `+1 ${newLunch.name}`}
+                  {newItem && `+1 ${newItem.name}`}
                 </span>
               </Toast.Header>
             </Toast>

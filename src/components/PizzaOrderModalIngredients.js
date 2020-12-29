@@ -2,13 +2,13 @@ import React, { useContext } from "react";
 import { Form } from "react-bootstrap";
 import { v4 as uuidv4 } from "uuid";
 import { MENU } from "../utils/constants";
-import { NewPizzaContext } from "../contexts/NewPizzaContext";
+import { NewItemContext } from "../contexts/NewItemContext";
 import { CurrIngredientsContext } from "../contexts/CurrIngredientsContext";
 import { withStyles } from "@material-ui/styles";
 import styles from "../styles/pizzaOrderModalIngredientsStyles";
 
 function PizzaOrderModalIngredients(props) {
-  const { newPizza } = useContext(NewPizzaContext);
+  const { newItem } = useContext(NewItemContext);
   const { currIngredients } = useContext(CurrIngredientsContext);
   const {
     extras,
@@ -21,7 +21,7 @@ function PizzaOrderModalIngredients(props) {
   return (
     <>
       <ul className={classes.modalIngredients}>
-        {newPizza.ingredients.map((i, idx) => (
+        {newItem.ingredients.map((i, idx) => (
           <li
             key={uuidv4()}
             value={i}
@@ -72,7 +72,7 @@ function PizzaOrderModalIngredients(props) {
               </>
             )}
 
-            {newPizza.ingredients[idx + 1] && ","}
+            {newItem.ingredients[idx + 1] && ","}
           </li>
         ))}
       </ul>

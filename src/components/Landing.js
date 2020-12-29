@@ -8,8 +8,7 @@ import LunchesList from "./LunchesList";
 import MakaronsList from "./MakaronsList";
 import LunchesOrderModal from "./LunchesOrderModal";
 import { CurrIngredientsContext } from "../contexts/CurrIngredientsContext";
-import { NewPizzaContext } from "../contexts/NewPizzaContext";
-import { NewLunchContext } from "../contexts/NewLunchContext";
+import { NewItemContext } from "../contexts/NewItemContext";
 import { ToastContext } from "../contexts/ToastContext";
 import PizzaOrderModal from "./PizzaOrderModal";
 import Popular from "./Popular";
@@ -18,25 +17,26 @@ function Landing(props) {
   const [lunchModalShow, setLunchModalShow] = useState(false);
   const [pizzaModalShow, setPizzaModalShow] = useState(false);
 
-  const { newLunch, setNewLunch } = useContext(NewLunchContext);
-  const { newPizza, setNewPizza } = useContext(NewPizzaContext);
+  const { newItem, setNewItem } = useContext(NewItemContext);
   const { setCurrIngredients } = useContext(CurrIngredientsContext);
   const { show, toggleShow } = useContext(ToastContext);
 
-  const handlePizzaClick = (pizza) => {
+  const handlePizzaClick = (item) => {
     show && toggleShow();
-    setNewLunch();
-    setCurrIngredients(pizza.ingredients);
-    setNewPizza(pizza);
+    setCurrIngredients(item.ingredients);
+    setNewItem(item);
     setPizzaModalShow(true);
   };
 
-  const handleLunchModalOpen = (lunch) => {
+  const handleLunchModalOpen = (item) => {
     show && toggleShow();
-    setNewPizza();
-    setNewLunch(lunch);
+    setNewItem(item);
     setLunchModalShow(true);
   };
+
+  // const handleMakaronClick = (makaron) => {
+  //   show && toggleShow();
+  // };
 
   return (
     <>
@@ -87,19 +87,18 @@ function Landing(props) {
 
       <MakaronsList />
 
-      {newPizza && (
-        <PizzaOrderModal
-          show={pizzaModalShow}
-          onHide={() => setPizzaModalShow(false)}
-        />
-      )}
-
-      {newLunch && (
-        <LunchesOrderModal
-          lunch={newLunch}
-          show={lunchModalShow}
-          onHide={() => setLunchModalShow(false)}
-        />
+      {newItem && (
+        <>
+          <PizzaOrderModal
+            show={pizzaModalShow}
+            onHide={() => setPizzaModalShow(false)}
+          />
+          <LunchesOrderModal
+            lunch={newItem}
+            show={lunchModalShow}
+            onHide={() => setLunchModalShow(false)}
+          />
+        </>
       )}
     </>
   );

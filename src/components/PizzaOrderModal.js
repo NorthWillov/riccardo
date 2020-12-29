@@ -3,7 +3,7 @@ import PizzaOrderModalSizeAndDough from "./PizzaOrderModalSizeAndDough";
 import PizzaOrderModalIngredients from "./PizzaOrderModalIngredients";
 import PizzaOrderModalFantazjaCase from "./PizzaOrderModalFantazjaCase";
 import { CurrIngredientsContext } from "../contexts/CurrIngredientsContext";
-import { NewPizzaContext } from "../contexts/NewPizzaContext";
+import { NewItemContext } from "../contexts/NewItemContext";
 import { CartContext } from "../contexts/CartContext";
 import { ToastContext } from "../contexts/ToastContext";
 import { Modal, Button, Row, Col } from "react-bootstrap";
@@ -25,7 +25,7 @@ function PizzaOrderModal(props) {
   const { currIngredients, setCurrIngredients } = useContext(
     CurrIngredientsContext
   );
-  const { newPizza } = useContext(NewPizzaContext);
+  const { newItem } = useContext(NewItemContext);
 
   const { classes } = props;
 
@@ -89,25 +89,25 @@ function PizzaOrderModal(props) {
   };
 
   const handleModalSubmit = () => {
-    let newItem = {};
+    let newPosItem = {};
 
-    if (newPizza.id === 18) {
-      newItem = { ...newPizza, extras };
+    if (newItem.id === 18) {
+      newPosItem = { ...newItem, extras };
     } else {
-      newItem = {
-        ...newPizza,
+      newPosItem = {
+        ...newItem,
         ingredients: currIngredients,
         size,
         dough,
-        extras: newPizza.id === 22 ? Object.values(fantazjaExtras) : extras,
+        extras: newItem.id === 22 ? Object.values(fantazjaExtras) : extras,
         price:
-          (size === "20cm" && newPizza.price["20cm"] + extrasSumPrice) ||
-          (size === "28cm" && newPizza.price["28cm"] + extrasSumPrice) ||
-          (size === "50cm" && newPizza.price["50cm"] + extrasSumPrice),
+          (size === "20cm" && newItem.price["20cm"] + extrasSumPrice) ||
+          (size === "28cm" && newItem.price["28cm"] + extrasSumPrice) ||
+          (size === "50cm" && newItem.price["50cm"] + extrasSumPrice),
       };
     }
 
-    setCart([...cart, newItem]);
+    setCart([...cart, newPosItem]);
     props.onHide();
     setSize("20cm");
     setDough("cieńkie");
@@ -131,7 +131,7 @@ function PizzaOrderModal(props) {
           <Col lg={7} style={{ display: "flex" }}>
             <img
               className={`ml-2 ${classes.modalPizzaImage}`}
-              src={newPizza.image}
+              src={newItem.image}
               alt="pizza"
             />
           </Col>
@@ -144,14 +144,12 @@ function PizzaOrderModal(props) {
             }}
           >
             <div>
-              <Modal.Title>{newPizza.name}</Modal.Title>
-              <p>
-                {newPizza.id === 18 ? "28cm, średnie" : `${size}, ${dough}`}
-              </p>
-              {newPizza.id === 22 ? (
+              <Modal.Title>{newItem.name}</Modal.Title>
+              <p>{newItem.id === 18 ? "28cm, średnie" : `${size}, ${dough}`}</p>
+              {newItem.id === 22 ? (
                 <PizzaOrderModalFantazjaCase
                   extras={extras}
-                  newPizza={newPizza}
+                  newItem={newItem}
                   currIngredients={currIngredients}
                   handleIngredientClick={handleIngredientClick}
                   handleFantazjaInputClick={handleFantazjaInputClick}
@@ -171,7 +169,7 @@ function PizzaOrderModal(props) {
               <PizzaOrderModalSizeAndDough
                 size={size}
                 dough={dough}
-                newPizza={newPizza}
+                newItem={newItem}
                 handleSizeChange={handleSizeChange}
                 handleDoughChange={handleDoughChange}
               />
@@ -199,14 +197,14 @@ function PizzaOrderModal(props) {
                 Wroć
               </Button>
               <span className={classes.modalPrice}>
-                {newPizza.id === 18
-                  ? formatter.format(newPizza.price + extrasSumPrice)
+                {newItem.id === 18
+                  ? formatter.format(newItem.price + extrasSumPrice)
                   : size === "20cm"
-                  ? formatter.format(newPizza.price[size] + extrasSumPrice)
+                  ? formatter.format(newItem.price[size] + extrasSumPrice)
                   : size === "28cm"
-                  ? formatter.format(newPizza.price[size] + extrasSumPrice)
+                  ? formatter.format(newItem.price[size] + extrasSumPrice)
                   : size === "50cm"
-                  ? formatter.format(newPizza.price[size] + extrasSumPrice)
+                  ? formatter.format(newItem.price[size] + extrasSumPrice)
                   : null}
                 zł
               </span>

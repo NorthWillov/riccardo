@@ -8,7 +8,7 @@ import styles from "../styles/pizzaOrderModalIngredientsStyles";
 function OrderModalFantazjaCase(props) {
   const {
     currIngredients,
-    newPizza,
+    newItem,
     handleIngredientClick,
     handleFantazjaInputClick,
     classes,
@@ -17,7 +17,7 @@ function OrderModalFantazjaCase(props) {
   return (
     <>
       <ul className={classes.modalIngredients}>
-        {newPizza.ingredients.map((i, idx) => (
+        {newItem.ingredients.map((i, idx) => (
           <li
             key={uuidv4()}
             value={i}
@@ -68,7 +68,7 @@ function OrderModalFantazjaCase(props) {
               </>
             )}
 
-            {newPizza.ingredients[idx + 1] && ","}
+            {newItem.ingredients[idx + 1] && ","}
           </li>
         ))}
       </ul>
