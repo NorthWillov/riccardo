@@ -1,4 +1,5 @@
 import lunch from "../images/lunches/lunch.jpg";
+import spaghetti from "../images/lunches/spaghetti.jpg";
 
 export const MENU = {
   pizzas: [
@@ -527,6 +528,56 @@ export const MENU = {
       image: lunch,
       first: "ziemniaki opiekane",
       second: "duszona kapusta",
+    },
+  ],
+  makarons: [
+    {
+      id: 1,
+      name: "Spaghetti Carbonarra",
+      image: spaghetti,
+      price: 21,
+    },
+    {
+      id: 2,
+      name: "Spaghetti Bolognese",
+      image: spaghetti,
+      price: 21,
+    },
+    {
+      id: 3,
+      name: "Makaron Papparadelle z kurczakiem",
+      image: spaghetti,
+      price: 23.5,
+    },
+    {
+      id: 4,
+      name: "Makaron Pappardelle z krewetkami",
+      image: spaghetti,
+      price: 24.5,
+    },
+    {
+      id: 5,
+      name: "Makaron z pesto bazyliowym z kurczakiemi",
+      image: spaghetti,
+      price: 22.5,
+    },
+    {
+      id: 6,
+      name: "Makaron z pesto bazyliowym z krewetkami",
+      image: spaghetti,
+      price: 23.5,
+    },
+    {
+      id: 7,
+      name: "Makaron ze szpinakiem i kurczakiem",
+      image: spaghetti,
+      price: 22.5,
+    },
+    {
+      id: 8,
+      name: "Makaron ze szpinakiem i krewetkami",
+      image: spaghetti,
+      price: 24.5,
     },
   ],
 };
