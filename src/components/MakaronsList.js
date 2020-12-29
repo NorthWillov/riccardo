@@ -10,7 +10,7 @@ function MakaronsList(props) {
 
   return (
     <div id="makarony">
-      <h3>Makarony:</h3>
+      <h3 className="pt-5 mb-4">Makarony:</h3>
       <Row>
         {MENU.makarons.map((makaron) => (
           <React.Fragment key={makaron.name}>

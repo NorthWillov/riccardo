@@ -14,8 +14,8 @@ function LunchesList(props) {
 
   return (
     <>
-      <h3 className="title pt-5" id="zestawy">
-        Zestawy obiadowe
+      <h3 className="title pt-5 mb-4" id="zestawy">
+        Zestawy obiadowe:
       </h3>
       <Row>
         {MENU.lunches.map((lunch) => (

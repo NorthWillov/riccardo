@@ -10,8 +10,8 @@ function PizzasList(props) {
 
   return (
     <>
-      <h3 className="title pt-5" id="pizzas">
-        Pizzy
+      <h3 className="title pt-5 mb-4" id="pizzas">
+        Pizzy:
       </h3>
       <Row>
         {MENU.pizzas.map((pizza) => (
