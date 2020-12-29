@@ -12,7 +12,7 @@ function Popular(props) {
   const { handlePizzaClick, classes } = props;
   return (
     <>
-      <h3 className="mt-5 mb-4">Popularne:</h3>
+      <h3 className="pt-5 mb-4">Popularne:</h3>
       <Row>
         {MENU.pizzas.map((pizza) =>
           popularItemsId.includes(pizza.id) ? (
