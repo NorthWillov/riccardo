@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from "../contexts/CartContext";
+import { ToastContext } from "../contexts/ToastContext";
 import { MENU } from "../utils/constants";
 import { formatter } from "../utils/formatter";
 import { Row, Col, Button, Card } from "react-bootstrap";
@@ -6,7 +8,16 @@ import { withStyles } from "@material-ui/styles";
 import styles from "../styles/lunchesListStyles";
 
 function MakaronsList(props) {
+  const { cart, setCart } = useContext(CartContext);
+  const { toggleShow } = useContext(ToastContext);
+
   const { classes } = props;
+
+  const handleMakaronPick = (makaron) => {
+    console.log(makaron);
+    setCart([...cart, makaron]);
+    toggleShow();
+  };
 
   return (
     <div id="makarony">
@@ -33,7 +44,7 @@ function MakaronsList(props) {
                     </p>
                     <Button
                       variant="outline-dark"
-                      // onClick={() => handleLunchPick(makaron)}
+                      onClick={() => handleMakaronPick(makaron)}
                     >
                       Wybierz
                     </Button>
