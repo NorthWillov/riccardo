@@ -6,16 +6,19 @@ import familyImg from "../images/family.jpg";
 import PizzasList from "./PizzasList";
 import LunchesList from "./LunchesList";
 import MakaronsList from "./MakaronsList";
+import SaladsList from "./SaladsList";
+import PizzaOrderModal from "./PizzaOrderModal";
+import SaladsOrderModal from "./SaladsOrderModal";
 import LunchesOrderModal from "./LunchesOrderModal";
 import { CurrIngredientsContext } from "../contexts/CurrIngredientsContext";
 import { NewItemContext } from "../contexts/NewItemContext";
 import { ToastContext } from "../contexts/ToastContext";
-import PizzaOrderModal from "./PizzaOrderModal";
 import Popular from "./Popular";
 
 function Landing(props) {
   const [lunchModalShow, setLunchModalShow] = useState(false);
   const [pizzaModalShow, setPizzaModalShow] = useState(false);
+  const [saladModalShow, setSaladModalShow] = useState(false);
 
   const { newItem, setNewItem } = useContext(NewItemContext);
   const { setCurrIngredients } = useContext(CurrIngredientsContext);
@@ -34,9 +37,11 @@ function Landing(props) {
     setLunchModalShow(true);
   };
 
-  // const handleMakaronClick = (makaron) => {
-  //   show && toggleShow();
-  // };
+  const handleSaladModalOpen = (item) => {
+    show && toggleShow();
+    setNewItem(item);
+    setSaladModalShow(true);
+  };
 
   return (
     <>
@@ -87,6 +92,8 @@ function Landing(props) {
 
       <MakaronsList />
 
+      <SaladsList handleSaladModalOpen={handleSaladModalOpen} />
+
       {newItem && (
         <>
           <PizzaOrderModal
@@ -97,6 +104,11 @@ function Landing(props) {
             lunch={newItem}
             show={lunchModalShow}
             onHide={() => setLunchModalShow(false)}
+          />
+          <SaladsOrderModal
+            salad={newItem}
+            show={saladModalShow}
+            onHide={() => setSaladModalShow(false)}
           />
         </>
       )}

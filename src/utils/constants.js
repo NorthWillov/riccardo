@@ -1,5 +1,6 @@
 import lunch from "../images/lunches/lunch.jpg";
 import spaghetti from "../images/lunches/spaghetti.jpg";
+import salad from "../images/lunches/salad.jpg";
 
 export const MENU = {
   pizzas: [
@@ -578,6 +579,51 @@ export const MENU = {
       name: "Makaron ze szpinakiem i krewetkami",
       image: spaghetti,
       price: 24.5,
+    },
+  ],
+  salads: [
+    {
+      id: 1,
+      name: "Sałatka Cezar",
+      desc: "z jajkiem oraz chrupiącym boczkiem i sosem musztardowym",
+      image: salad,
+      sous: "vinaigrette",
+      price: 22.5,
+    },
+    {
+      id: 2,
+      name: "Sałatka Grecka",
+      desc:
+        "podstawowa, z kurczakiem, z krewetkami lub z wędzonym łososiem, polecamy sos vinaigrette",
+      image: salad,
+      sous: "vinaigrette",
+      price: 23.5,
+      meat: "podstawowa",
+    },
+    {
+      id: 3,
+      name: "Sałatka Kolorowa",
+      desc:
+        "mix sałat z kurczak w ziołach, pomarańcza, grejpfrut, orzechy i sosem vinaigrette",
+      image: salad,
+      sous: "vinaigrette",
+      price: 21.5,
+    },
+    {
+      id: 4,
+      name: "Sałatka Brokułowa",
+      desc: "z brokułami, jajkiem, pomidorem i sosem czosnkowym",
+      image: salad,
+      sous: "vinaigrette",
+      price: 19.4,
+    },
+    {
+      id: 5,
+      name: "Sałatka z tuńczykiem",
+      desc: "z ogórkiem, pomidorem, kukurydzą, groszkiem i sosem czosnkowym",
+      image: salad,
+      sous: "vinaigrette",
+      price: 21.5,
     },
   ],
 };
