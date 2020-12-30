@@ -9,15 +9,14 @@ import {
   Button,
 } from "react-bootstrap";
 import { ToastContext } from "../contexts/ToastContext";
-import { NewItemContext } from "../contexts/NewItemContext";
 import { CartContext } from "../contexts/CartContext";
+import { formatter } from "../utils/formatter";
 import { withStyles } from "@material-ui/styles";
 import styles from "../styles/mainNavbarStyles";
 
 function MainNavbar(props) {
   const { cart } = useContext(CartContext);
   const { show, toggleShow } = useContext(ToastContext);
-  const { newItem } = useContext(NewItemContext);
 
   const { classes } = props;
 
@@ -31,25 +30,26 @@ function MainNavbar(props) {
       collapseOnSelect
     >
       <Container style={{ position: "relative" }} fluid="lg">
-        {newItem && (
-          <div
-            aria-live="polite"
-            aria-atomic="true"
-            style={{
-              position: "absolute",
-              right: "31px",
-              top: "90px",
-            }}
-          >
-            <Toast show={show} onClose={toggleShow} delay={3000} autohide>
-              <Toast.Header>
-                <span style={{ color: "black", fontSize: "15px" }}>
-                  {newItem && `+1 ${newItem.name}`}
-                </span>
-              </Toast.Header>
-            </Toast>
-          </div>
-        )}
+        <div
+          aria-live="polite"
+          aria-atomic="true"
+          style={{
+            position: "absolute",
+            right: "31px",
+            top: "90px",
+          }}
+        >
+          <Toast show={show} onClose={toggleShow} delay={3000} autohide>
+            <Toast.Header>
+              <span style={{ color: "black", fontSize: "15px" }}>
+                {cart.length !== 0 &&
+                  `+1 ${cart[cart.length - 1].name} ${formatter.format(
+                    cart[cart.length - 1].price
+                  )}zł`}
+              </span>
+            </Toast.Header>
+          </Toast>
+        </div>
         <Navbar.Brand href="#home">
           <img className={classes.logo} srcSet={logo} alt="riccardo-logo" />
         </Navbar.Brand>
