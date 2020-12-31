@@ -70,8 +70,8 @@ function MainNavbar(props) {
               <NavDropdown.Item href="#nalesnikisalt">
                 Naleśniki na słono
               </NavDropdown.Item>
-              <NavDropdown.Item href="#sosy">Sosy</NavDropdown.Item>
               <NavDropdown.Item href="#startery">Startery</NavDropdown.Item>
+              <NavDropdown.Item href="#sosy">Sosy</NavDropdown.Item>
               <NavDropdown.Item href="#Napoje">Napoje</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="#about">O nas</Nav.Link>

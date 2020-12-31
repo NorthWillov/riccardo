@@ -7,6 +7,10 @@ import potatoPancakes from "../images/lunches/potatoPancakes.jpg";
 import riccardo from "../images/lunches/riccardo.png";
 import camembert from "../images/lunches/camembert.jpg";
 import fries from "../images/lunches/fries.jpg";
+import ketchup from "../images/lunches/ketchup.jpg";
+import tomatoSouse from "../images/lunches/tomatoSouse.jpeg";
+import garlicSouse from "../images/lunches/garlicSouse.jpg";
+import halfedSouse from "../images/lunches/halfedSouse.jpg";
 
 export const MENU = {
   pizzas: [
@@ -747,5 +751,13 @@ export const MENU = {
       image: fries,
       price: 7,
     },
+  ],
+
+  souses: [
+    { id: 1, name: "Ketchup", image: ketchup, price: 1 },
+    { id: 2, name: "Sos pomidorowy", image: tomatoSouse, price: 1 },
+    { id: 3, name: "Sos pomidorowy 🌶 (ostry)", image: tomatoSouse, price: 1 },
+    { id: 4, name: "Sos czosnkowy", image: garlicSouse, price: 1 },
+    { id: 5, name: "Sos pół na pół", image: halfedSouse, price: 1 },
   ],
 };
