@@ -1,24 +1,28 @@
 {
   "files": {
     "main.css": "/riccardo/static/css/main.f6e96558.chunk.css",
-    "main.js": "/riccardo/static/js/main.bb940023.chunk.js",
-    "main.js.map": "/riccardo/static/js/main.bb940023.chunk.js.map",
+    "main.js": "/riccardo/static/js/main.c5826405.chunk.js",
+    "main.js.map": "/riccardo/static/js/main.c5826405.chunk.js.map",
     "runtime-main.js": "/riccardo/static/js/runtime-main.582b2f6f.js",
     "runtime-main.js.map": "/riccardo/static/js/runtime-main.582b2f6f.js.map",
     "static/css/2.1a02f21c.chunk.css": "/riccardo/static/css/2.1a02f21c.chunk.css",
-    "static/js/2.a7260552.chunk.js": "/riccardo/static/js/2.a7260552.chunk.js",
-    "static/js/2.a7260552.chunk.js.map": "/riccardo/static/js/2.a7260552.chunk.js.map",
+    "static/js/2.5822c8ec.chunk.js": "/riccardo/static/js/2.5822c8ec.chunk.js",
+    "static/js/2.5822c8ec.chunk.js.map": "/riccardo/static/js/2.5822c8ec.chunk.js.map",
     "static/js/3.96e79618.chunk.js": "/riccardo/static/js/3.96e79618.chunk.js",
     "static/js/3.96e79618.chunk.js.map": "/riccardo/static/js/3.96e79618.chunk.js.map",
     "index.html": "/riccardo/index.html",
     "static/css/2.1a02f21c.chunk.css.map": "/riccardo/static/css/2.1a02f21c.chunk.css.map",
     "static/css/main.f6e96558.chunk.css.map": "/riccardo/static/css/main.f6e96558.chunk.css.map",
-    "static/js/2.a7260552.chunk.js.LICENSE.txt": "/riccardo/static/js/2.a7260552.chunk.js.LICENSE.txt",
+    "static/js/2.5822c8ec.chunk.js.LICENSE.txt": "/riccardo/static/js/2.5822c8ec.chunk.js.LICENSE.txt",
+    "static/media/camembert.276492fc.jpg": "/riccardo/static/media/camembert.276492fc.jpg",
     "static/media/family.942d2709.jpg": "/riccardo/static/media/family.942d2709.jpg",
+    "static/media/fries.85419467.jpg": "/riccardo/static/media/fries.85419467.jpg",
     "static/media/logo.85aa02c7.png": "/riccardo/static/media/logo.85aa02c7.png",
     "static/media/lunch.b6c1b6bd.jpg": "/riccardo/static/media/lunch.b6c1b6bd.jpg",
     "static/media/office.3cc651db.jpg": "/riccardo/static/media/office.3cc651db.jpg",
     "static/media/pancake.67983f01.jpg": "/riccardo/static/media/pancake.67983f01.jpg",
+    "static/media/potatoPancakes.d3b4f58a.jpg": "/riccardo/static/media/potatoPancakes.d3b4f58a.jpg",
+    "static/media/riccardo.8e8f7fa2.png": "/riccardo/static/media/riccardo.8e8f7fa2.png",
     "static/media/salad.4e0ddd74.jpg": "/riccardo/static/media/salad.4e0ddd74.jpg",
     "static/media/spaghetti.6818ee96.jpg": "/riccardo/static/media/spaghetti.6818ee96.jpg",
     "static/media/students.eb855f97.jpg": "/riccardo/static/media/students.eb855f97.jpg",
@@ -27,8 +31,8 @@
   "entrypoints": [
     "static/js/runtime-main.582b2f6f.js",
     "static/css/2.1a02f21c.chunk.css",
-    "static/js/2.a7260552.chunk.js",
+    "static/js/2.5822c8ec.chunk.js",
     "static/css/main.f6e96558.chunk.css",
-    "static/js/main.bb940023.chunk.js"
+    "static/js/main.c5826405.chunk.js"
   ]
 }
