@@ -5,20 +5,20 @@ import { Row, Col, Button, Card } from "react-bootstrap";
 import { withStyles } from "@material-ui/styles";
 import styles from "../styles/lunchesListStyles";
 
-function PancakesSweetList(props) {
+function PancakesSaltList(props) {
   const { classes } = props;
 
-  const handlePancakeSweetPick = (pancake) => {
-    props.handlePancakeSweetModalOpen(pancake);
+  const handlePancakeSaltPick = (pancake) => {
+    props.handlePancakeSaltModalOpen(pancake);
   };
 
   return (
     <>
-      <h3 className="title pt-5 mb-4" id="nalesnikisweet">
-        Naleśniki na słodko:
+      <h3 className="title pt-5 mb-4" id="nalesnikisalt">
+        Naleśniki na słono:
       </h3>
       <Row>
-        {MENU.pancakes.sweet.map((pancake) => (
+        {MENU.pancakes.salt.map((pancake) => (
           <React.Fragment key={pancake.name}>
             <Col sm={6} md={6} lg={4} xl={3}>
               <Card className="mb-3">
@@ -31,12 +31,6 @@ function PancakesSweetList(props) {
                   <Card.Title>
                     {pancake.id}. {pancake.name}
                   </Card.Title>
-                  <Card.Subtitle
-                    className="mb-2 text-muted"
-                    style={{ fontSize: "12px" }}
-                  >
-                    {pancake.desc}
-                  </Card.Subtitle>
                 </Card.Body>
                 <Card.Footer>
                   <div className={classes.checkout}>
@@ -45,7 +39,7 @@ function PancakesSweetList(props) {
                     </p>
                     <Button
                       variant="outline-dark"
-                      onClick={() => handlePancakeSweetPick(pancake)}
+                      onClick={() => handlePancakeSaltPick(pancake)}
                     >
                       Wybierz
                     </Button>
@@ -60,4 +54,4 @@ function PancakesSweetList(props) {
   );
 }
 
-export default withStyles(styles)(PancakesSweetList);
+export default withStyles(styles)(PancakesSaltList);

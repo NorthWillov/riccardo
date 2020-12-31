@@ -674,5 +674,35 @@ export const MENU = {
         price: 17,
       },
     ],
+    salt: [
+      {
+        id: 1,
+        name: "Naleśnik kurczak w sosie curry 2 szt.",
+        image: pancake,
+        sous: "joghurt",
+        price: 21.4,
+      },
+      {
+        id: 2,
+        name: "Naleśnik szynka, pieczarki, ser 2 szt.",
+        image: pancake,
+        sous: "joghurt",
+        price: 20.4,
+      },
+      {
+        id: 3,
+        name: "Naleśnik ze szpinakiem i fetą 2 szt.",
+        image: pancake,
+        sous: "joghurt",
+        price: 19.4,
+      },
+      {
+        id: 4,
+        name: "Naleśnik kurczak, cukinia i ser camembert 2 szt.",
+        image: pancake,
+        sous: "joghurt",
+        price: 22,
+      },
+    ],
   },
 };
