@@ -2,6 +2,7 @@ import lunch from "../images/lunches/lunch.jpg";
 import spaghetti from "../images/lunches/spaghetti.jpg";
 import salad from "../images/lunches/salad.jpg";
 import pancake from "../images/lunches/pancake.jpg";
+import sweetpancake from "../images/lunches/sweetpancake.jpg";
 
 export const MENU = {
   pizzas: [
@@ -635,7 +636,7 @@ export const MENU = {
         id: 1,
         name: "Naleśniki z mascarpone 2 szt.",
         desc: "z owocami sezonowymi lub konfiturą owocową",
-        image: pancake,
+        image: sweetpancake,
         way: "z owocami sezonowymi",
         adds: "bita śmietana",
         price: 19,
@@ -644,7 +645,7 @@ export const MENU = {
         id: 2,
         name: "Naleśniki czekoladowo-bananowe 2 szt.",
         desc: "z nutellą i bananami",
-        image: pancake,
+        image: sweetpancake,
         adds: "bita śmietana",
         price: 19,
       },
@@ -652,7 +653,7 @@ export const MENU = {
         id: 3,
         name: "Naleśniki z twarożkiem i śmietaną 2 szt.",
         desc: "",
-        image: pancake,
+        image: sweetpancake,
         adds: "bita śmietana",
         price: 18,
       },
@@ -660,7 +661,7 @@ export const MENU = {
         id: 4,
         name: "Naleśniki Rafaello 2 szt.",
         desc: "z mascarpone i wiórkami kokosowymi",
-        image: pancake,
+        image: sweetpancake,
         adds: "bita śmietana",
         price: 19.4,
       },
@@ -668,7 +669,7 @@ export const MENU = {
         id: 5,
         name: "Naleśniki z dżemem 2 szt.",
         desc: "truskawkowym lub wiśniowym",
-        image: pancake,
+        image: sweetpancake,
         jam: "dżem truskawkowy",
         adds: "bita śmietana",
         price: 17,
@@ -676,28 +677,28 @@ export const MENU = {
     ],
     salt: [
       {
-        id: 1,
+        id: 6,
         name: "Naleśnik kurczak w sosie curry 2 szt.",
         image: pancake,
         sous: "joghurt",
         price: 21.4,
       },
       {
-        id: 2,
+        id: 7,
         name: "Naleśnik szynka, pieczarki, ser 2 szt.",
         image: pancake,
         sous: "joghurt",
         price: 20.4,
       },
       {
-        id: 3,
+        id: 8,
         name: "Naleśnik ze szpinakiem i fetą 2 szt.",
         image: pancake,
         sous: "joghurt",
         price: 19.4,
       },
       {
-        id: 4,
+        id: 9,
         name: "Naleśnik kurczak, cukinia i ser camembert 2 szt.",
         image: pancake,
         sous: "joghurt",

@@ -6,7 +6,7 @@ import { ToastContext } from "../contexts/ToastContext";
 import { withStyles } from "@material-ui/styles";
 import styles from "../styles/lunchesOrderModalStyles";
 
-function PancakesSweetOrderModal(props) {
+function PancakesOrderModal(props) {
   const [pancakeAddition, setPancakeAddition] = useState({});
 
   const { cart, setCart } = useContext(CartContext);
@@ -54,6 +54,22 @@ function PancakesSweetOrderModal(props) {
               <h4>{pancake.name}</h4>
               <p style={{ color: "#6c757d" }}>{pancake.desc}</p>
 
+              {pancake.id > 4 && (
+                <Form.Group controlId="exampleForm.ControlSelect1">
+                  <Form.Label>sposób podania naleśnika:</Form.Label>
+                  <Form.Control
+                    name="sous"
+                    as="select"
+                    onChange={handleInputClick}
+                  >
+                    <option value="joghurt">
+                      sos na bazie jogurtu naturalnego z odrobina czosnku
+                    </option>
+                    <option value="pomidirowy">sos pomidirowy</option>
+                  </Form.Control>
+                </Form.Group>
+              )}
+
               {pancake.id === 1 && (
                 <Form.Group controlId="exampleForm.ControlSelect1">
                   <Form.Label>sposób podania naleśnika:</Form.Label>
@@ -84,18 +100,22 @@ function PancakesSweetOrderModal(props) {
                 </Form.Group>
               )}
 
-              <Form.Group controlId="exampleForm.ControlSelect1">
-                <Form.Label>dodatek do naleśników:</Form.Label>
-                <Form.Control
-                  name="adds"
-                  as="select"
-                  onChange={handleInputClick}
-                >
-                  <option value="bita_smietana">bita śmietana</option>
-                  <option value="polewa_czekoladowa">polewa czekoladowa</option>
-                  <option value="cukier_puder">cukier puder</option>
-                </Form.Control>
-              </Form.Group>
+              {pancake.id <= 4 && (
+                <Form.Group controlId="exampleForm.ControlSelect1">
+                  <Form.Label>dodatek do naleśników:</Form.Label>
+                  <Form.Control
+                    name="adds"
+                    as="select"
+                    onChange={handleInputClick}
+                  >
+                    <option value="bita_smietana">bita śmietana</option>
+                    <option value="polewa_czekoladowa">
+                      polewa czekoladowa
+                    </option>
+                    <option value="cukier_puder">cukier puder</option>
+                  </Form.Control>
+                </Form.Group>
+              )}
             </Form>
 
             <div className={classes.checkout}>
@@ -146,4 +166,4 @@ function PancakesSweetOrderModal(props) {
   );
 }
 
-export default withStyles(styles)(PancakesSweetOrderModal);
+export default withStyles(styles)(PancakesOrderModal);

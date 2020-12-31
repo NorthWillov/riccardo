@@ -12,7 +12,7 @@ import PancakesSaltList from "./PancakesSaltList";
 import PizzaOrderModal from "./PizzaOrderModal";
 import SaladsOrderModal from "./SaladsOrderModal";
 import LunchesOrderModal from "./LunchesOrderModal";
-import PancakesSweetOrderModal from "./PancakesSweetOrderModal";
+import PancakesOrderModal from "./PancakesOrderModal";
 import { CurrIngredientsContext } from "../contexts/CurrIngredientsContext";
 import { NewItemContext } from "../contexts/NewItemContext";
 import { ToastContext } from "../contexts/ToastContext";
@@ -22,7 +22,7 @@ function Landing(props) {
   const [lunchModalShow, setLunchModalShow] = useState(false);
   const [pizzaModalShow, setPizzaModalShow] = useState(false);
   const [saladModalShow, setSaladModalShow] = useState(false);
-  const [pancakeSweetModalShow, setPancakeSweetModalShow] = useState(false);
+  const [pancakeModalShow, setPancakeModalShow] = useState(false);
 
   const { newItem, setNewItem } = useContext(NewItemContext);
   const { setCurrIngredients } = useContext(CurrIngredientsContext);
@@ -46,10 +46,10 @@ function Landing(props) {
     setNewItem(item);
     setSaladModalShow(true);
   };
-  const handlePancakeSweetModalOpen = (item) => {
+  const handlePancakeModalOpen = (item) => {
     show && toggleShow();
     setNewItem(item);
-    setPancakeSweetModalShow(true);
+    setPancakeModalShow(true);
   };
 
   return (
@@ -103,13 +103,9 @@ function Landing(props) {
 
       <SaladsList handleSaladModalOpen={handleSaladModalOpen} />
 
-      <PancakesSweetList
-        handlePancakeSweetModalOpen={handlePancakeSweetModalOpen}
-      />
+      <PancakesSweetList handlePancakeModalOpen={handlePancakeModalOpen} />
 
-      <PancakesSaltList
-        handlePancakeSweetModalOpen={handlePancakeSweetModalOpen}
-      />
+      <PancakesSaltList handlePancakeModalOpen={handlePancakeModalOpen} />
 
       {newItem && (
         <>
@@ -127,10 +123,10 @@ function Landing(props) {
             show={saladModalShow}
             onHide={() => setSaladModalShow(false)}
           />
-          <PancakesSweetOrderModal
+          <PancakesOrderModal
             pancake={newItem}
-            show={pancakeSweetModalShow}
-            onHide={() => setPancakeSweetModalShow(false)}
+            show={pancakeModalShow}
+            onHide={() => setPancakeModalShow(false)}
           />
         </>
       )}

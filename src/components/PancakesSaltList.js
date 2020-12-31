@@ -9,7 +9,7 @@ function PancakesSaltList(props) {
   const { classes } = props;
 
   const handlePancakeSaltPick = (pancake) => {
-    props.handlePancakeSaltModalOpen(pancake);
+    props.handlePancakeModalOpen(pancake);
   };
 
   return (
