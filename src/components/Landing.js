@@ -9,6 +9,7 @@ import MakaronsList from "./MakaronsList";
 import SaladsList from "./SaladsList";
 import PancakesSweetList from "./PancakesSweetList";
 import PancakesSaltList from "./PancakesSaltList";
+import StartersList from "./StartersList";
 import PizzaOrderModal from "./PizzaOrderModal";
 import SaladsOrderModal from "./SaladsOrderModal";
 import LunchesOrderModal from "./LunchesOrderModal";
@@ -106,6 +107,8 @@ function Landing(props) {
       <PancakesSweetList handlePancakeModalOpen={handlePancakeModalOpen} />
 
       <PancakesSaltList handlePancakeModalOpen={handlePancakeModalOpen} />
+
+      <StartersList />
 
       {newItem && (
         <>

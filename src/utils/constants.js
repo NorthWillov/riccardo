@@ -3,6 +3,10 @@ import spaghetti from "../images/lunches/spaghetti.jpg";
 import salad from "../images/lunches/salad.jpg";
 import pancake from "../images/lunches/pancake.jpg";
 import sweetpancake from "../images/lunches/sweetpancake.jpg";
+import potatoPancakes from "../images/lunches/potatoPancakes.jpg";
+import riccardo from "../images/lunches/riccardo.png";
+import camembert from "../images/lunches/camembert.jpg";
+import fries from "../images/lunches/fries.jpg";
 
 export const MENU = {
   pizzas: [
@@ -706,4 +710,42 @@ export const MENU = {
       },
     ],
   },
+
+  starters: [
+    {
+      id: 1,
+      name: "Placuszki ziemniaczane z sosem grzybowym",
+      desc: "4 szt.",
+      image: potatoPancakes,
+      price: 18.5,
+    },
+    {
+      id: 2,
+      name: "Placuszki ziemniaczane ze śmietaną i cukrem",
+      desc: "4 szt.",
+      image: potatoPancakes,
+      price: 15,
+    },
+    {
+      id: 3,
+      name: "Przekąska Riccardo",
+      desc: "grillowana cukinia, pomidor, ser mozzarella, sos vinaigrette",
+      image: riccardo,
+      price: 15,
+    },
+    {
+      id: 4,
+      name: "Zapiekany camembert",
+      desc: "z żurawiną",
+      image: camembert,
+      price: 14,
+    },
+    {
+      id: 5,
+      name: "Frytki",
+      desc: "200g",
+      image: fries,
+      price: 7,
+    },
+  ],
 };
