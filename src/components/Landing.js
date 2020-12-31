@@ -11,6 +11,7 @@ import PancakesSweetList from "./PancakesSweetList";
 import PizzaOrderModal from "./PizzaOrderModal";
 import SaladsOrderModal from "./SaladsOrderModal";
 import LunchesOrderModal from "./LunchesOrderModal";
+import PancakesSweetOrderModal from "./PancakesSweetOrderModal";
 import { CurrIngredientsContext } from "../contexts/CurrIngredientsContext";
 import { NewItemContext } from "../contexts/NewItemContext";
 import { ToastContext } from "../contexts/ToastContext";
@@ -20,6 +21,7 @@ function Landing(props) {
   const [lunchModalShow, setLunchModalShow] = useState(false);
   const [pizzaModalShow, setPizzaModalShow] = useState(false);
   const [saladModalShow, setSaladModalShow] = useState(false);
+  const [pancakeSweetModalShow, setPancakeSweetModalShow] = useState(false);
 
   const { newItem, setNewItem } = useContext(NewItemContext);
   const { setCurrIngredients } = useContext(CurrIngredientsContext);
@@ -42,6 +44,11 @@ function Landing(props) {
     show && toggleShow();
     setNewItem(item);
     setSaladModalShow(true);
+  };
+  const handlePancakeSweetModalOpen = (item) => {
+    show && toggleShow();
+    setNewItem(item);
+    setPancakeSweetModalShow(true);
   };
 
   return (
@@ -95,7 +102,9 @@ function Landing(props) {
 
       <SaladsList handleSaladModalOpen={handleSaladModalOpen} />
 
-      <PancakesSweetList />
+      <PancakesSweetList
+        handlePancakeSweetModalOpen={handlePancakeSweetModalOpen}
+      />
 
       {newItem && (
         <>
@@ -112,6 +121,11 @@ function Landing(props) {
             salad={newItem}
             show={saladModalShow}
             onHide={() => setSaladModalShow(false)}
+          />
+          <PancakesSweetOrderModal
+            pancake={newItem}
+            show={pancakeSweetModalShow}
+            onHide={() => setPancakeSweetModalShow(false)}
           />
         </>
       )}

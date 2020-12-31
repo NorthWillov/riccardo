@@ -14,7 +14,7 @@ function PancakesSweetList(props) {
 
   return (
     <>
-      <h3 className="title pt-5 mb-4" id="salatki">
+      <h3 className="title pt-5 mb-4" id="nalesnikisweet">
         Sałatki:
       </h3>
       <Row>
