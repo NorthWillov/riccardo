@@ -1,6 +1,7 @@
 import lunch from "../images/lunches/lunch.jpg";
 import spaghetti from "../images/lunches/spaghetti.jpg";
 import salad from "../images/lunches/salad.jpg";
+import pancake from "../images/lunches/pancake.jpg";
 
 export const MENU = {
   pizzas: [
@@ -581,6 +582,7 @@ export const MENU = {
       price: 24.5,
     },
   ],
+
   salads: [
     {
       id: 1,
@@ -626,4 +628,51 @@ export const MENU = {
       price: 21.5,
     },
   ],
+
+  pancakes: {
+    sweet: [
+      {
+        id: 1,
+        name: "Naleśniki z mascarpone 2 szt.",
+        desc: "z owocami sezonowymi lub konfiturą owocową",
+        image: pancake,
+        way: "z owocami sezonowymi",
+        adds: "bita śmietana",
+        price: 19,
+      },
+      {
+        id: 2,
+        name: "Naleśniki czekoladowo-bananowe 2 szt.",
+        desc: "z nutellą i bananami",
+        image: pancake,
+        adds: "bita śmietana",
+        price: 19,
+      },
+      {
+        id: 3,
+        name: "Naleśniki z twarożkiem i śmietaną 2 szt.",
+        desc: "",
+        image: pancake,
+        adds: "bita śmietana",
+        price: 18,
+      },
+      {
+        id: 4,
+        name: "Naleśniki Rafaello 2 szt.",
+        desc: "z mascarpone i wiórkami kokosowymi",
+        image: pancake,
+        adds: "bita śmietana",
+        price: 19.4,
+      },
+      {
+        id: 5,
+        name: "Naleśniki z dżemem 2 szt.",
+        desc: "truskawkowym lub wiśniowym",
+        image: pancake,
+        jam: "dżem truskawkowy",
+        adds: "bita śmietana",
+        price: 17,
+      },
+    ],
+  },
 };

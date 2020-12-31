@@ -64,7 +64,12 @@ function MainNavbar(props) {
               <NavDropdown.Item href="#makarony">Makarony</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#salatki">Sałatki</NavDropdown.Item>
-              <NavDropdown.Item href="#nalesniki">Naleśniki</NavDropdown.Item>
+              <NavDropdown.Item href="#nalesnikisweet">
+                Naleśniki na słodko
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#nalesnikisalt">
+                Naleśniki na słono
+              </NavDropdown.Item>
               <NavDropdown.Item href="#sosy">Sosy</NavDropdown.Item>
               <NavDropdown.Item href="#startery">Startery</NavDropdown.Item>
               <NavDropdown.Item href="#Napoje">Napoje</NavDropdown.Item>
