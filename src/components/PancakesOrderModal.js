@@ -65,7 +65,7 @@ function PancakesOrderModal(props) {
                     <option value="joghurt">
                       sos na bazie jogurtu naturalnego z odrobina czosnku
                     </option>
-                    <option value="pomidirowy">sos pomidirowy</option>
+                    <option value="pomidorowy">sos pomidorowy</option>
                   </Form.Control>
                 </Form.Group>
               )}

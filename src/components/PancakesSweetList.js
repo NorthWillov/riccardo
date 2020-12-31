@@ -27,7 +27,10 @@ function PancakesSweetList(props) {
                   src={pancake.image}
                   alt={pancake.name}
                 />
-                <Card.Body className={classes.CardBody}>
+                <Card.Body
+                  className={classes.CardBody}
+                  style={{ height: "120px" }}
+                >
                   <Card.Title>
                     {pancake.id}. {pancake.name}
                   </Card.Title>
