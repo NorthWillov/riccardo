@@ -11,6 +11,7 @@ import PancakesSweetList from "./PancakesSweetList";
 import PancakesSaltList from "./PancakesSaltList";
 import StartersList from "./StartersList";
 import SousesList from "./SousesList";
+import DrinksList from "./DrinksList";
 import PizzaOrderModal from "./PizzaOrderModal";
 import SaladsOrderModal from "./SaladsOrderModal";
 import LunchesOrderModal from "./LunchesOrderModal";
@@ -112,6 +113,8 @@ function Landing(props) {
       <StartersList />
 
       <SousesList />
+
+      <DrinksList />
 
       {newItem && (
         <>

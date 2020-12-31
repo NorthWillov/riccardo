@@ -11,6 +11,13 @@ import ketchup from "../images/lunches/ketchup.jpg";
 import tomatoSouse from "../images/lunches/tomatoSouse.jpeg";
 import garlicSouse from "../images/lunches/garlicSouse.jpg";
 import halfedSouse from "../images/lunches/halfedSouse.jpg";
+import coke from "../images/lunches/coke.jpg";
+import appleJuice from "../images/lunches/appleJuice.jpg";
+import fanta from "../images/lunches/fanta.jpg";
+import orangeJuice from "../images/lunches/orangeJuice.jpg";
+import sprite from "../images/lunches/sprite.jpg";
+import tea from "../images/lunches/tea.jpg";
+import water from "../images/lunches/water.jpg";
 
 export const MENU = {
   pizzas: [
@@ -759,5 +766,41 @@ export const MENU = {
     { id: 3, name: "Sos pomidorowy 🌶 (ostry)", image: tomatoSouse, price: 1 },
     { id: 4, name: "Sos czosnkowy", image: garlicSouse, price: 1 },
     { id: 5, name: "Sos pół na pół", image: halfedSouse, price: 1 },
+  ],
+
+  drinks: [
+    { id: 1, name: "Coca-Cola 0,5l", image: coke, price: 5.5 },
+    { id: 2, name: "Fanta 0,5l", image: fanta, price: 5.5 },
+    { id: 3, name: "Sprite 0,5l", image: sprite, price: 5.5 },
+    {
+      id: 4,
+      name: "Woda mineralna gazowana 0,5l",
+      image: water,
+      price: 3,
+    },
+    {
+      id: 5,
+      name: "Woda mineralna niegazowana 0,5l",
+      image: water,
+      price: 3,
+    },
+    {
+      id: 6,
+      name: "Fuzetea cytrynowa 0,5l",
+      image: tea,
+      price: 5.5,
+    },
+    {
+      id: 7,
+      name: "Sok Cappy pomarańczowy 0,33l",
+      image: orangeJuice,
+      price: 4.5,
+    },
+    {
+      id: 8,
+      name: "Sok Cappy jabłkowy 0,33l",
+      image: appleJuice,
+      price: 4.5,
+    },
   ],
 };

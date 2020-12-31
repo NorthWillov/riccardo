@@ -72,7 +72,7 @@ function MainNavbar(props) {
               </NavDropdown.Item>
               <NavDropdown.Item href="#startery">Startery</NavDropdown.Item>
               <NavDropdown.Item href="#sosy">Sosy</NavDropdown.Item>
-              <NavDropdown.Item href="#Napoje">Napoje</NavDropdown.Item>
+              <NavDropdown.Item href="#napoje">Napoje</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="#about">O nas</Nav.Link>
             <Nav.Link href="#promocje">Promocje</Nav.Link>
