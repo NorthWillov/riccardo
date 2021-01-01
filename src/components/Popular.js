@@ -6,7 +6,7 @@ import { withStyles } from "@material-ui/styles";
 import { v4 as uuidv4 } from "uuid";
 import styles from "../styles/popularStyles";
 
-const popularItemsId = [1, 3, 11, 14];
+const popularItemsId = [1, 3, 14, 22];
 
 function Popular(props) {
   const { handlePizzaClick, classes } = props;

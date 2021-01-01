@@ -17,9 +17,9 @@ function PizzasList(props) {
         {MENU.pizzas.map((pizza) => (
           <React.Fragment key={pizza.name}>
             <Col sm={6} md={6} lg={4} xl={3}>
-              <Card className="mb-3">
+              <Card className={`mb-3 ${classes.Card}`}>
                 <Card.Img
-                  className="pl-3"
+                  className="pl-3 pt-3"
                   variant="top"
                   src={pizza.image}
                   alt={pizza.name}

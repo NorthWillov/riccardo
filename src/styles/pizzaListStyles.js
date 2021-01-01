@@ -9,6 +9,10 @@ const styles = {
     margin: "0",
     fontWeight: "700",
   },
+  Card: {
+    border: "1px solid grey",
+    borderRadius: "0.5rem",
+  },
   CardBody: {
     height: "135px",
   },
