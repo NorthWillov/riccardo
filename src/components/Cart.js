@@ -56,7 +56,12 @@ function Cart(props) {
                         return item.ingredients.includes(i) ? "" : i;
                       })}
                     </p>
-                    <p>Dodaj: {item.extras.map((e) => e.name)}</p>
+                    <p>
+                      Dodaj:{" "}
+                      {item.extras.map((e, idx) =>
+                        item.extras[idx + 1] ? e.name + "," : e.name
+                      )}
+                    </p>
                   </td>
                   <td>
                     <div className={classes.productCount}>
@@ -65,7 +70,7 @@ function Cart(props) {
                         type="text"
                         readOnly
                         className={classes.numberProduct}
-                        value="1"
+                        value={item.quantity}
                       />
                       <button className={classes.buttonCount}>+</button>
                     </div>

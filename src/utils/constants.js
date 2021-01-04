@@ -24,6 +24,7 @@ export const MENU = {
     {
       id: 1,
       name: "Margherita",
+      type: "pizza",
       price: {
         "20cm": 9.5,
         "28cm": 16.9,
@@ -36,6 +37,7 @@ export const MENU = {
     {
       id: 2,
       name: "Massima",
+      type: "pizza",
       price: {
         "20cm": 14.5,
         "28cm": 17.9,
@@ -48,6 +50,7 @@ export const MENU = {
     {
       id: 3,
       name: "Capricciosa",
+      type: "pizza",
       price: {
         "20cm": 14.5,
         "28cm": 20.9,
@@ -60,6 +63,7 @@ export const MENU = {
     {
       id: 4,
       name: "Bambino",
+      type: "pizza",
       price: {
         "20cm": 15.5,
         "28cm": 20.9,
@@ -72,6 +76,7 @@ export const MENU = {
     {
       id: 5,
       name: "Salami",
+      type: "pizza",
       price: {
         "20cm": 15.5,
         "28cm": 20.9,
@@ -84,6 +89,7 @@ export const MENU = {
     {
       id: 6,
       name: "Tono",
+      type: "pizza",
       price: {
         "20cm": 16.5,
         "28cm": 20.9,
@@ -96,6 +102,7 @@ export const MENU = {
     {
       id: 7,
       name: "Gamberetto",
+      type: "pizza",
       price: {
         "20cm": 16.5,
         "28cm": 22.9,
@@ -108,6 +115,7 @@ export const MENU = {
     {
       id: 8,
       name: "Wegetariana",
+      type: "pizza",
       price: {
         "20cm": 16.5,
         "28cm": 21.9,
@@ -129,6 +137,7 @@ export const MENU = {
     {
       id: 9,
       name: "Wiosenna",
+      type: "pizza",
       price: {
         "20cm": 16.5,
         "28cm": 21.9,
@@ -141,6 +150,7 @@ export const MENU = {
     {
       id: 10,
       name: "Broccoli",
+      type: "pizza",
       price: {
         "20cm": 16.5,
         "28cm": 21.9,
@@ -153,6 +163,7 @@ export const MENU = {
     {
       id: 11,
       name: "Pepperone 🌶",
+      type: "pizza",
       price: {
         "20cm": 16.5,
         "28cm": 22.5,
@@ -172,6 +183,7 @@ export const MENU = {
     {
       id: 12,
       name: "Forte 🌶",
+      type: "pizza",
       price: {
         "20cm": 16.5,
         "28cm": 23.5,
@@ -190,6 +202,7 @@ export const MENU = {
     {
       id: 13,
       name: "Wiejska 🌶",
+      type: "pizza",
       price: {
         "20cm": 16.5,
         "28cm": 23.5,
@@ -202,6 +215,7 @@ export const MENU = {
     {
       id: 14,
       name: "Saporito",
+      type: "pizza",
       price: {
         "20cm": 16.5,
         "28cm": 23.5,
@@ -222,6 +236,7 @@ export const MENU = {
     {
       id: 15,
       name: "Szpinakowa",
+      type: "pizza",
       price: {
         "20cm": 16.5,
         "28cm": 23.5,
@@ -241,6 +256,7 @@ export const MENU = {
     {
       id: 16,
       name: "Frutti di Mare",
+      type: "pizza",
       price: {
         "20cm": 16.5,
         "28cm": 23.5,
@@ -253,6 +269,7 @@ export const MENU = {
     {
       id: 17,
       name: "Jalapeño 🌶",
+      type: "pizza",
       price: {
         "20cm": 17.5,
         "28cm": 23.5,
@@ -272,6 +289,7 @@ export const MENU = {
     {
       id: 18,
       name: "Calzone (Pierog)",
+      type: "pizza",
       size: "28cm",
       dough: "średnie",
       price: 23.5,
@@ -282,6 +300,7 @@ export const MENU = {
     {
       id: 19,
       name: "Miscela",
+      type: "pizza",
       price: {
         "20cm": 16.5,
         "28cm": 23.5,
@@ -294,6 +313,7 @@ export const MENU = {
     {
       id: 20,
       name: "Salmone",
+      type: "pizza",
       price: {
         "20cm": 16.5,
         "28cm": 23.5,
@@ -306,6 +326,7 @@ export const MENU = {
     {
       id: 21,
       name: "Ricco",
+      type: "pizza",
       price: {
         "20cm": 16.5,
         "28cm": 23.5,
@@ -326,6 +347,7 @@ export const MENU = {
     {
       id: 22,
       name: "Fantazja",
+      type: "pizza",
       price: {
         "20cm": 18.5,
         "28cm": 25.5,
@@ -338,6 +360,7 @@ export const MENU = {
     {
       id: 23,
       name: "Riccardo",
+      type: "pizza",
       price: {
         "20cm": 17.5,
         "28cm": 25.5,
@@ -357,6 +380,7 @@ export const MENU = {
     {
       id: 24,
       name: "Wołowina",
+      type: "pizza",
       price: {
         "20cm": 17.5,
         "28cm": 25.5,
@@ -376,6 +400,7 @@ export const MENU = {
     {
       id: 25,
       name: "Bekonowe Jaja",
+      type: "pizza",
       price: {
         "20cm": 16.5,
         "28cm": 21.9,

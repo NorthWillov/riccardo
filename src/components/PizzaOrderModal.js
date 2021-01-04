@@ -68,7 +68,7 @@ function PizzaOrderModal(props) {
       newIngredient = { ...newIngredient, id: uuidv4() };
       setFantazjaExtras({
         ...fantazjaExtras,
-        [e.target.name]: newIngredient.name,
+        [e.target.name]: newIngredient,
       });
     } else {
       setFantazjaExtras({
@@ -92,15 +92,15 @@ function PizzaOrderModal(props) {
     let newPosItem = {};
 
     if (newItem.id === 18) {
-      newPosItem = { ...newItem, extras };
+      newPosItem = { ...newItem, quantity: 1, extras };
     } else {
       newPosItem = {
         ...newItem,
         ingredients: currIngredients,
-        type: "pizza",
         size,
         dough,
         extras: newItem.id === 22 ? Object.values(fantazjaExtras) : extras,
+        quantity: 1,
         price:
           (size === "20cm" && newItem.price["20cm"] + extrasSumPrice) ||
           (size === "28cm" && newItem.price["28cm"] + extrasSumPrice) ||
@@ -147,6 +147,7 @@ function PizzaOrderModal(props) {
             <div>
               <Modal.Title>{newItem.name}</Modal.Title>
               <p>{newItem.id === 18 ? "28cm, średnie" : `${size}, ${dough}`}</p>
+
               {newItem.id === 22 ? (
                 <PizzaOrderModalFantazjaCase
                   extras={extras}
