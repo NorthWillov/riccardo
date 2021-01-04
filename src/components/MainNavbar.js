@@ -11,6 +11,7 @@ import {
 import { ToastContext } from "../contexts/ToastContext";
 import { CartContext } from "../contexts/CartContext";
 import { formatter } from "../utils/formatter";
+import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/styles";
 import styles from "../styles/mainNavbarStyles";
 
@@ -79,14 +80,15 @@ function MainNavbar(props) {
             <Nav.Link href="#contact">Kontakt</Nav.Link>
           </Nav>
           <Nav>
-            <Button
-              onClick={() => console.log(cart)}
-              className="mr-3 ml-2"
-              style={{ maxWidth: "120px" }}
-              variant="dark"
-            >
-              Koszyk {cart.length === 0 ? "" : `| ${cart.length} `}
-            </Button>
+            <Link to="/riccardo/cart">
+              <Button
+                className="mr-3 ml-2"
+                style={{ maxWidth: "120px" }}
+                variant="dark"
+              >
+                Koszyk {cart.length === 0 ? "" : `| ${cart.length} `}
+              </Button>
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

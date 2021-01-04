@@ -1,5 +1,4 @@
 import React from "react";
-import MainNavbar from "./MainNavbar";
 import Routes from "./Routes";
 import { CartProvider } from "../contexts/CartContext";
 import { ToastProvider } from "../contexts/ToastContext";
@@ -15,7 +14,6 @@ function App() {
         <NewItemProvider>
           <CurrIngredientsProvider>
             <div className="App" id="home">
-              <MainNavbar />
               <Container fluid="lg">
                 <Routes />
               </Container>

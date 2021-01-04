@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import MainNavbar from "./MainNavbar";
 import PizzasList from "./PizzasList";
 import LunchesList from "./LunchesList";
 import MakaronsList from "./MakaronsList";
@@ -56,6 +57,8 @@ function Landing(props) {
 
   return (
     <>
+      <MainNavbar />
+
       <Promotions />
 
       <Popular handlePizzaClick={handlePizzaClick} />

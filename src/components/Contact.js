@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 function Contact(props) {
   return (
-    <div
+    <section
       id="contact"
       className="mb-5 mt-5 "
       style={{
@@ -32,7 +32,7 @@ function Contact(props) {
           </Col>
         </Row>
       </Container>
-    </div>
+    </section>
   );
 }
 
