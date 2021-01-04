@@ -5,8 +5,12 @@ function Contact(props) {
   return (
     <div
       id="contact"
-      className="mb-5 mt-5"
-      style={{ backgroundColor: "#d4d5d9", borderRadius: "0.5rem" }}
+      className="mb-5 mt-5 "
+      style={{
+        backgroundColor: "#d4d5d9",
+        borderRadius: "0.5rem",
+        scrollMarginTop: "90px",
+      }}
     >
       <Container>
         <h3 className="pt-4 mb-4">Kontakt:</h3>

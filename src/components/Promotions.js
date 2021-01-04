@@ -6,7 +6,7 @@ import familyImg from "../images/family.jpg";
 
 function Promotions(props) {
   return (
-    <div id="promocje" style={{ scrollMarginTop: "90px" }}>
+    <div id="promocje" style={{ scrollMarginTop: "150px" }}>
       <h3 className="title pb-4">Promocje:</h3>
       <Carousel>
         <Carousel.Item interval={5000}>

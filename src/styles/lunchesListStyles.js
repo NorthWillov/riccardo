@@ -1,6 +1,6 @@
 const styles = {
   root: {
-    scrollMarginTop: "90px",
+    scrollMarginTop: "150px",
   },
   checkout: {
     display: "flex",

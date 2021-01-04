@@ -7,6 +7,7 @@ function About(props) {
       className="pt-4 mt-5 mb-4"
       id="about"
       style={{
+        scrollMarginTop: "150px",
         backgroundColor: "#6a798c",
         borderRadius: "0.5rem",
         color: "#fff",
