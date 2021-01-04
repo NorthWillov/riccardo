@@ -14,7 +14,8 @@ function MakaronsList(props) {
   const { classes } = props;
 
   const handleMakaronPick = (makaron) => {
-    setCart([...cart, makaron]);
+    let newMakaron = { ...makaron, quantity: 1 };
+    setCart([...cart, newMakaron]);
     !show && toggleShow();
   };
 

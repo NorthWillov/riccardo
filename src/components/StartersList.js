@@ -14,7 +14,8 @@ function StartersList(props) {
   const { classes } = props;
 
   const handleStarterPick = (starter) => {
-    setCart([...cart, starter]);
+    let newStarter = { ...starter, quantity: 1 };
+    setCart([...cart, newStarter]);
     !show && toggleShow();
   };
 

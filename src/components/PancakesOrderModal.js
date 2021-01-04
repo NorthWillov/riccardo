@@ -20,7 +20,7 @@ function PancakesOrderModal(props) {
 
   const handleClick = (pancake) => {
     onHide();
-    let newPancake = { ...pancake, ...pancakeAddition };
+    let newPancake = { ...pancake, ...pancakeAddition, quantity: 1 };
     setCart([...cart, newPancake]);
     setPancakeAddition({});
     toggleShow();
@@ -54,7 +54,7 @@ function PancakesOrderModal(props) {
               <h4>{pancake.name}</h4>
               <p style={{ color: "#6c757d" }}>{pancake.desc}</p>
 
-              {pancake.id > 4 && (
+              {pancake.id > 5 && (
                 <Form.Group controlId="exampleForm.ControlSelect1">
                   <Form.Label>sposób podania naleśnika:</Form.Label>
                   <Form.Control
@@ -100,7 +100,7 @@ function PancakesOrderModal(props) {
                 </Form.Group>
               )}
 
-              {pancake.id <= 4 && (
+              {pancake.id <= 5 && (
                 <Form.Group controlId="exampleForm.ControlSelect1">
                   <Form.Label>dodatek do naleśników:</Form.Label>
                   <Form.Control

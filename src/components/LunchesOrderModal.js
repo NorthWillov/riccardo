@@ -20,7 +20,7 @@ function LunchesOrderModal(props) {
 
   const handleClick = (lunch) => {
     onHide();
-    let newLunch = { ...lunch, ...lunchAddition };
+    let newLunch = { ...lunch, ...lunchAddition, quantity: 1 };
     setCart([...cart, newLunch]);
     setLunchAddition({});
     toggleShow();

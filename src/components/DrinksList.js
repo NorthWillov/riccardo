@@ -14,7 +14,8 @@ function DrinksList(props) {
   const { classes } = props;
 
   const handleDrinkPick = (drink) => {
-    setCart([...cart, drink]);
+    let newDrink = { ...drink, quantity: 1 };
+    setCart([...cart, newDrink]);
     !show && toggleShow();
   };
 

@@ -20,7 +20,7 @@ function SaladsOrderModal(props) {
 
   const handleClick = (salad) => {
     onHide();
-    let newSalad = { ...salad, ...saladAddition };
+    let newSalad = { ...salad, ...saladAddition, quantity: 1 };
     setCart([...cart, newSalad]);
     setSaladAddition({});
     toggleShow();

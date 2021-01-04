@@ -14,7 +14,8 @@ function SousesList(props) {
   const { classes } = props;
 
   const handleSousPick = (sous) => {
-    setCart([...cart, sous]);
+    let newSous = { ...sous, quantity: 1 };
+    setCart([...cart, newSous]);
     !show && toggleShow();
   };
 

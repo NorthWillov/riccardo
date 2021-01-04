@@ -448,6 +448,7 @@ export const MENU = {
     {
       id: 2,
       name: "Schab z grilowanym boczkiem",
+      type: "lunch",
       price: 24.5,
       image: lunch,
       first: "ziemniaki opiekane",
@@ -456,6 +457,7 @@ export const MENU = {
     {
       id: 3,
       name: "Pierś z grilowanym boczkiem",
+      type: "lunch",
       price: 24.5,
       image: lunch,
       first: "ziemniaki opiekane",
@@ -464,6 +466,7 @@ export const MENU = {
     {
       id: 4,
       name: "Karkówka z grilla",
+      type: "lunch",
       price: 23.9,
       image: lunch,
       first: "ziemniaki opiekane",
@@ -472,6 +475,7 @@ export const MENU = {
     {
       id: 5,
       name: "Dorsz (filet)",
+      type: "lunch",
       price: 28.5,
       image: lunch,
       first: "ziemniaki opiekane",
@@ -480,6 +484,7 @@ export const MENU = {
     {
       id: 6,
       name: "Schabowy",
+      type: "lunch",
       price: 23.9,
       image: lunch,
       first: "ziemniaki opiekane",
@@ -488,6 +493,7 @@ export const MENU = {
     {
       id: 7,
       name: "Pierś z kurczaka",
+      type: "lunch",
       price: 23.9,
       image: lunch,
       first: "ziemniaki opiekane",
@@ -496,6 +502,7 @@ export const MENU = {
     {
       id: 8,
       name: "Szwajcar (pierś lub schab z serem)",
+      type: "lunch",
       price: 24.9,
       image: lunch,
       meat: "schab",
@@ -505,6 +512,7 @@ export const MENU = {
     {
       id: 9,
       name: "Zrazy wieprzowe",
+      type: "lunch",
       price: 25.5,
       image: lunch,
       first: "ziemniaki opiekane",
@@ -513,6 +521,7 @@ export const MENU = {
     {
       id: 10,
       name: "Pierś hawajska",
+      type: "lunch",
       price: 24.9,
       image: lunch,
       first: "ziemniaki opiekane",
@@ -521,6 +530,7 @@ export const MENU = {
     {
       id: 11,
       name: "Placek po węgiersku 🌶",
+      type: "lunch",
       price: 24.9,
       image: lunch,
       second: "duszona kapusta",
@@ -528,6 +538,7 @@ export const MENU = {
     {
       id: 12,
       name: "Schab chłopa",
+      type: "lunch",
       price: 24.9,
       image: lunch,
       first: "ziemniaki opiekane",
@@ -536,6 +547,7 @@ export const MENU = {
     {
       id: 13,
       name: "De volaille",
+      type: "lunch",
       price: 24.9,
       image: lunch,
       first: "ziemniaki opiekane",
@@ -544,6 +556,7 @@ export const MENU = {
     {
       id: 14,
       name: "Pierś z pieczarkami i serem",
+      type: "lunch",
       price: 24.9,
       image: lunch,
       first: "ziemniaki opiekane",
@@ -552,6 +565,7 @@ export const MENU = {
     {
       id: 15,
       name: "Warzywa zasmażane z kurczakiem",
+      type: "lunch",
       price: 20.9,
       image: lunch,
       first: "ziemniaki opiekane",
@@ -559,6 +573,7 @@ export const MENU = {
     {
       id: 16,
       name: "Pierś z jajkiem sadzonym",
+      type: "lunch",
       price: 23.9,
       image: lunch,
       first: "ziemniaki opiekane",
@@ -567,58 +582,68 @@ export const MENU = {
     {
       id: 17,
       name: "Pierś w sosie śmietanowo-serowym",
+      type: "lunch",
       price: 24.9,
       image: lunch,
       first: "ziemniaki opiekane",
       second: "duszona kapusta",
     },
   ],
+
   makarons: [
     {
       id: 1,
       name: "Spaghetti Carbonarra",
+      type: "makaron",
       image: spaghetti,
       price: 21,
     },
     {
       id: 2,
       name: "Spaghetti Bolognese",
+      type: "makaron",
       image: spaghetti,
       price: 21,
     },
     {
       id: 3,
       name: "Makaron Papparadelle z kurczakiem",
+      type: "makaron",
       image: spaghetti,
       price: 23.5,
     },
     {
       id: 4,
       name: "Makaron Pappardelle z krewetkami",
+      type: "makaron",
       image: spaghetti,
       price: 24.5,
     },
     {
       id: 5,
       name: "Makaron z pesto bazyliowym z kurczakiemi",
+      type: "makaron",
       image: spaghetti,
       price: 22.5,
     },
     {
       id: 6,
       name: "Makaron z pesto bazyliowym z krewetkami",
+      type: "makaron",
       image: spaghetti,
       price: 23.5,
     },
     {
       id: 7,
       name: "Makaron ze szpinakiem i kurczakiem",
+      type: "makaron",
       image: spaghetti,
       price: 22.5,
     },
     {
       id: 8,
       name: "Makaron ze szpinakiem i krewetkami",
+      type: "makaron",
       image: spaghetti,
       price: 24.5,
     },
@@ -628,6 +653,7 @@ export const MENU = {
     {
       id: 1,
       name: "Sałatka Cezar",
+      type: "salad",
       desc: "z jajkiem oraz chrupiącym boczkiem i sosem musztardowym",
       image: salad,
       sous: "vinaigrette",
@@ -636,6 +662,7 @@ export const MENU = {
     {
       id: 2,
       name: "Sałatka Grecka",
+      type: "salad",
       desc:
         "podstawowa, z kurczakiem, z krewetkami lub z wędzonym łososiem, polecamy sos vinaigrette",
       image: salad,
@@ -646,6 +673,7 @@ export const MENU = {
     {
       id: 3,
       name: "Sałatka Kolorowa",
+      type: "salad",
       desc:
         "mix sałat z kurczak w ziołach, pomarańcza, grejpfrut, orzechy i sosem vinaigrette",
       image: salad,
@@ -655,6 +683,7 @@ export const MENU = {
     {
       id: 4,
       name: "Sałatka Brokułowa",
+      type: "salad",
       desc: "z brokułami, jajkiem, pomidorem i sosem czosnkowym",
       image: salad,
       sous: "vinaigrette",
@@ -663,6 +692,7 @@ export const MENU = {
     {
       id: 5,
       name: "Sałatka z tuńczykiem",
+      type: "salad",
       desc: "z ogórkiem, pomidorem, kukurydzą, groszkiem i sosem czosnkowym",
       image: salad,
       sous: "vinaigrette",
@@ -675,6 +705,7 @@ export const MENU = {
       {
         id: 1,
         name: "Naleśniki z mascarpone 2 szt.",
+        type: "sweetPancake",
         desc: "z owocami sezonowymi lub konfiturą owocową",
         image: sweetpancake,
         way: "z owocami sezonowymi",
@@ -684,6 +715,7 @@ export const MENU = {
       {
         id: 2,
         name: "Naleśniki czekoladowo-bananowe 2 szt.",
+        type: "sweetPancake",
         desc: "z nutellą i bananami",
         image: sweetpancake,
         adds: "bita śmietana",
@@ -692,6 +724,7 @@ export const MENU = {
       {
         id: 3,
         name: "Naleśniki z twarożkiem i śmietaną 2 szt.",
+        type: "sweetPancake",
         desc: "",
         image: sweetpancake,
         adds: "bita śmietana",
@@ -700,6 +733,7 @@ export const MENU = {
       {
         id: 4,
         name: "Naleśniki Rafaello 2 szt.",
+        type: "sweetPancake",
         desc: "z mascarpone i wiórkami kokosowymi",
         image: sweetpancake,
         adds: "bita śmietana",
@@ -708,6 +742,7 @@ export const MENU = {
       {
         id: 5,
         name: "Naleśniki z dżemem 2 szt.",
+        type: "sweetPancake",
         desc: "truskawkowym lub wiśniowym",
         image: sweetpancake,
         jam: "dżem truskawkowy",
@@ -719,6 +754,7 @@ export const MENU = {
       {
         id: 6,
         name: "Naleśnik kurczak w sosie curry 2 szt.",
+        type: "saltPancake",
         image: pancake,
         sous: "joghurt",
         price: 21.4,
@@ -726,6 +762,7 @@ export const MENU = {
       {
         id: 7,
         name: "Naleśnik szynka, pieczarki, ser 2 szt.",
+        type: "saltPancake",
         image: pancake,
         sous: "joghurt",
         price: 20.4,
@@ -733,6 +770,7 @@ export const MENU = {
       {
         id: 8,
         name: "Naleśnik ze szpinakiem i fetą 2 szt.",
+        type: "saltPancake",
         image: pancake,
         sous: "joghurt",
         price: 19.4,
@@ -740,6 +778,7 @@ export const MENU = {
       {
         id: 9,
         name: "Naleśnik kurczak, cukinia i ser camembert 2 szt.",
+        type: "saltPancake",
         image: pancake,
         sous: "joghurt",
         price: 22,
