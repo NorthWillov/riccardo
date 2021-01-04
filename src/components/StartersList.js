@@ -19,7 +19,7 @@ function StartersList(props) {
   };
 
   return (
-    <div id="startery" className={classes.root}>
+    <section id="startery">
       <h3 className="pt-5 mb-4">Startery:</h3>
       <Row>
         {MENU.starters.map((starter) => (
@@ -77,7 +77,7 @@ function StartersList(props) {
           </React.Fragment>
         ))}
       </Row>
-    </div>
+    </section>
   );
 }
 

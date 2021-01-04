@@ -26,7 +26,7 @@ function MainNavbar(props) {
       bg="light"
       variant="light"
       expand="lg"
-      sticky="top"
+      fixed="top"
       collapseOnSelect
     >
       <Container style={{ position: "relative" }} fluid="lg">

@@ -19,7 +19,7 @@ function MakaronsList(props) {
   };
 
   return (
-    <div className={classes.root} id="makarony">
+    <section id="makarony">
       <h3 className="pt-5 mb-4">Makarony:</h3>
       <Row>
         {MENU.makarons.map((makaron) => (
@@ -68,7 +68,7 @@ function MakaronsList(props) {
           </React.Fragment>
         ))}
       </Row>
-    </div>
+    </section>
   );
 }
 

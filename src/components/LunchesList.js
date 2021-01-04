@@ -13,7 +13,7 @@ function LunchesList(props) {
   };
 
   return (
-    <div className={classes.root} id="zestawy">
+    <section id="zestawy">
       <h3 className="title pt-5 mb-4">Zestawy obiadowe:</h3>
       <Row>
         {MENU.lunches.map((lunch) => (
@@ -44,7 +44,7 @@ function LunchesList(props) {
           </React.Fragment>
         ))}
       </Row>
-    </div>
+    </section>
   );
 }
 

@@ -9,7 +9,7 @@ function PizzasList(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root} id="pizzas">
+    <section id="pizzas">
       <h3 className="title pt-5 mb-4">Pizzy:</h3>
       <Row>
         {MENU.pizzas.map((pizza) => (
@@ -59,7 +59,7 @@ function PizzasList(props) {
           </React.Fragment>
         ))}
       </Row>
-    </div>
+    </section>
   );
 }
 

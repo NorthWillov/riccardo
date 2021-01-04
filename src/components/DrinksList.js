@@ -19,7 +19,7 @@ function DrinksList(props) {
   };
 
   return (
-    <div id="napoje" className={classes.root}>
+    <section id="napoje">
       <h3 className="pt-5 mb-4">Napoje:</h3>
       <Row>
         {MENU.drinks.map((drink) => (
@@ -67,7 +67,7 @@ function DrinksList(props) {
           </React.Fragment>
         ))}
       </Row>
-    </div>
+    </section>
   );
 }
 

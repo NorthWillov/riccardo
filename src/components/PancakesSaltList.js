@@ -13,7 +13,7 @@ function PancakesSaltList(props) {
   };
 
   return (
-    <div className={classes.root} id="nalesnikisalt">
+    <section id="nalesnikisalt">
       <h3 className="title pt-5 mb-4">Naleśniki na słono:</h3>
       <Row>
         {MENU.pancakes.salt.map((pancake) => (
@@ -48,7 +48,7 @@ function PancakesSaltList(props) {
           </React.Fragment>
         ))}
       </Row>
-    </div>
+    </section>
   );
 }
 

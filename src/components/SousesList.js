@@ -19,7 +19,7 @@ function SousesList(props) {
   };
 
   return (
-    <div id="sosy" className={classes.root}>
+    <section id="sosy">
       <h3 className="pt-5 mb-4">Sosy:</h3>
       <Row>
         {MENU.souses.map((sous) => (
@@ -67,7 +67,7 @@ function SousesList(props) {
           </React.Fragment>
         ))}
       </Row>
-    </div>
+    </section>
   );
 }
 
