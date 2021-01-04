@@ -19,7 +19,7 @@ function StartersList(props) {
   };
 
   return (
-    <div id="startery">
+    <div id="startery" className={classes.root}>
       <h3 className="pt-5 mb-4">Startery:</h3>
       <Row>
         {MENU.starters.map((starter) => (

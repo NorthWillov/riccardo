@@ -13,10 +13,8 @@ function PancakesSweetList(props) {
   };
 
   return (
-    <>
-      <h3 className="title pt-5 mb-4" id="nalesnikisweet">
-        Naleśniki na słodko:
-      </h3>
+    <div className={classes.root} id="nalesnikisweet">
+      <h3 className="title pt-5 mb-4">Naleśniki na słodko:</h3>
       <Row>
         {MENU.pancakes.sweet.map((pancake) => (
           <React.Fragment key={pancake.name}>
@@ -59,7 +57,7 @@ function PancakesSweetList(props) {
           </React.Fragment>
         ))}
       </Row>
-    </>
+    </div>
   );
 }
 

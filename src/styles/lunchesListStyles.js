@@ -1,4 +1,7 @@
 const styles = {
+  root: {
+    scrollMarginTop: "90px",
+  },
   checkout: {
     display: "flex",
     justifyContent: "space-between",

@@ -9,10 +9,8 @@ function PizzasList(props) {
   const { classes } = props;
 
   return (
-    <>
-      <h3 className="title pt-5 mb-4" id="pizzas">
-        Pizzy:
-      </h3>
+    <div className={classes.root} id="pizzas">
+      <h3 className="title pt-5 mb-4">Pizzy:</h3>
       <Row>
         {MENU.pizzas.map((pizza) => (
           <React.Fragment key={pizza.name}>
@@ -23,6 +21,7 @@ function PizzasList(props) {
                   variant="top"
                   src={pizza.image}
                   alt={pizza.name}
+                  onClick={() => props.handlePizzaClick(pizza)}
                 />
                 <Card.Body className={classes.CardBody}>
                   <Card.Title>
@@ -60,7 +59,7 @@ function PizzasList(props) {
           </React.Fragment>
         ))}
       </Row>
-    </>
+    </div>
   );
 }
 

@@ -1,4 +1,7 @@
 const styles = {
+  root: {
+    scrollMarginTop: "90px",
+  },
   checkout: {
     display: "flex",
     justifyContent: "space-between",
@@ -10,7 +13,6 @@ const styles = {
     fontWeight: "700",
   },
   Card: {
-    border: "1px solid grey",
     borderRadius: "0.5rem",
   },
   CardBody: {

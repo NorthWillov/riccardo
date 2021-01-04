@@ -19,7 +19,7 @@ function MakaronsList(props) {
   };
 
   return (
-    <div id="makarony">
+    <div className={classes.root} id="makarony">
       <h3 className="pt-5 mb-4">Makarony:</h3>
       <Row>
         {MENU.makarons.map((makaron) => (

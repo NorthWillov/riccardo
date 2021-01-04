@@ -13,10 +13,8 @@ function SaladsList(props) {
   };
 
   return (
-    <>
-      <h3 className="title pt-5 mb-4" id="salatki">
-        Sałatki:
-      </h3>
+    <div className={classes.root} id="salatki">
+      <h3 className="title pt-5 mb-4">Sałatki:</h3>
       <Row>
         {MENU.salads.map((salad) => (
           <React.Fragment key={salad.name}>
@@ -52,7 +50,7 @@ function SaladsList(props) {
           </React.Fragment>
         ))}
       </Row>
-    </>
+    </div>
   );
 }
 

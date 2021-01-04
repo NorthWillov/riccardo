@@ -1,8 +1,4 @@
 import React, { useContext, useState } from "react";
-import { Carousel } from "react-bootstrap";
-import officeImg from "../images/office.jpg";
-import studentsImg from "../images/students.jpg";
-import familyImg from "../images/family.jpg";
 import PizzasList from "./PizzasList";
 import LunchesList from "./LunchesList";
 import MakaronsList from "./MakaronsList";
@@ -16,6 +12,8 @@ import PizzaOrderModal from "./PizzaOrderModal";
 import SaladsOrderModal from "./SaladsOrderModal";
 import LunchesOrderModal from "./LunchesOrderModal";
 import PancakesOrderModal from "./PancakesOrderModal";
+import About from "./About";
+import Promotions from "./Promotions";
 import { CurrIngredientsContext } from "../contexts/CurrIngredientsContext";
 import { NewItemContext } from "../contexts/NewItemContext";
 import { ToastContext } from "../contexts/ToastContext";
@@ -57,44 +55,7 @@ function Landing(props) {
 
   return (
     <>
-      <Carousel>
-        <Carousel.Item interval={5000}>
-          <img
-            className="d-block w-100"
-            src={officeImg}
-            alt="Rabaty dla firm"
-          />
-          <Carousel.Caption>
-            <h3 className="mb-0">Rabaty dla firm</h3>
-            <p>
-              -5% na wszystkie dania. Przy większych zamówieniach negocjujemy
-              ceny.
-            </p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item interval={5000}>
-          <img
-            className="d-block w-100"
-            src={studentsImg}
-            alt="Studenci jedzą taniej"
-          />
-          <Carousel.Caption>
-            <h3>Studenci jedzą taniej</h3>
-            <p>-5% na wszystkie dania</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item interval={5000}>
-          <img
-            className="d-block w-100"
-            src={familyImg}
-            alt="Rodzinne obiadki"
-          />
-          <Carousel.Caption>
-            <h3>Rodzinne obiadki</h3>
-            <p>-5% przy zamówieniu powyżej 70 zł (w lokalu)</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
+      <Promotions />
 
       <Popular handlePizzaClick={handlePizzaClick} />
 
@@ -115,6 +76,8 @@ function Landing(props) {
       <SousesList />
 
       <DrinksList />
+
+      <About />
 
       {newItem && (
         <>

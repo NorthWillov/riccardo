@@ -19,7 +19,7 @@ function DrinksList(props) {
   };
 
   return (
-    <div id="napoje">
+    <div id="napoje" className={classes.root}>
       <h3 className="pt-5 mb-4">Napoje:</h3>
       <Row>
         {MENU.drinks.map((drink) => (

@@ -13,10 +13,8 @@ function LunchesList(props) {
   };
 
   return (
-    <>
-      <h3 className="title pt-5 mb-4" id="zestawy">
-        Zestawy obiadowe:
-      </h3>
+    <div className={classes.root} id="zestawy">
+      <h3 className="title pt-5 mb-4">Zestawy obiadowe:</h3>
       <Row>
         {MENU.lunches.map((lunch) => (
           <React.Fragment key={lunch.name}>
@@ -46,7 +44,7 @@ function LunchesList(props) {
           </React.Fragment>
         ))}
       </Row>
-    </>
+    </div>
   );
 }
 

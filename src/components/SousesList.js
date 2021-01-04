@@ -19,7 +19,7 @@ function SousesList(props) {
   };
 
   return (
-    <div id="sosy">
+    <div id="sosy" className={classes.root}>
       <h3 className="pt-5 mb-4">Sosy:</h3>
       <Row>
         {MENU.souses.map((sous) => (
