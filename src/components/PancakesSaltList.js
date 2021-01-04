@@ -21,6 +21,7 @@ function PancakesSaltList(props) {
             <Col sm={6} md={6} lg={4} xl={3}>
               <Card className="mb-3">
                 <Card.Img
+                  onClick={() => handlePancakeSaltPick(pancake)}
                   variant="top"
                   src={pancake.image}
                   alt={pancake.name}

@@ -20,7 +20,12 @@ function LunchesList(props) {
           <React.Fragment key={lunch.name}>
             <Col sm={6} md={6} lg={4} xl={3}>
               <Card className="mb-3">
-                <Card.Img variant="top" src={lunch.image} alt={lunch.name} />
+                <Card.Img
+                  onClick={() => handleLunchPick(lunch)}
+                  variant="top"
+                  src={lunch.image}
+                  alt={lunch.name}
+                />
                 <Card.Body className={classes.CardBody}>
                   <Card.Title>
                     {lunch.id}. {lunch.name}

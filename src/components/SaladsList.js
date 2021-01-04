@@ -20,7 +20,12 @@ function SaladsList(props) {
           <React.Fragment key={salad.name}>
             <Col sm={6} md={6} lg={4} xl={3}>
               <Card className="mb-3">
-                <Card.Img variant="top" src={salad.image} alt={salad.name} />
+                <Card.Img
+                  onClick={() => handleSaladPick(salad)}
+                  variant="top"
+                  src={salad.image}
+                  alt={salad.name}
+                />
                 <Card.Body className={classes.CardBody}>
                   <Card.Title>
                     {salad.id}. {salad.name}
