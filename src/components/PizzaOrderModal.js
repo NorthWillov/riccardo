@@ -97,6 +97,7 @@ function PizzaOrderModal(props) {
       newPosItem = {
         ...newItem,
         ingredients: currIngredients,
+        type: "pizza",
         size,
         dough,
         extras: newItem.id === 22 ? Object.values(fantazjaExtras) : extras,
