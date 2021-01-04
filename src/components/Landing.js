@@ -14,6 +14,7 @@ import LunchesOrderModal from "./LunchesOrderModal";
 import PancakesOrderModal from "./PancakesOrderModal";
 import About from "./About";
 import Promotions from "./Promotions";
+import Contact from "./Contact";
 import { CurrIngredientsContext } from "../contexts/CurrIngredientsContext";
 import { NewItemContext } from "../contexts/NewItemContext";
 import { ToastContext } from "../contexts/ToastContext";
@@ -78,6 +79,8 @@ function Landing(props) {
       <DrinksList />
 
       <About />
+
+      <Contact />
 
       {newItem && (
         <>
