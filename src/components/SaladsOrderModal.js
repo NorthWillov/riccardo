@@ -54,7 +54,7 @@ function SaladsOrderModal(props) {
               <h4>{salad.name}</h4>
               <p style={{ color: "#6c757d" }}>{salad.desc}</p>
 
-              {salad.id === 2 && (
+              {salad.id === 51 && (
                 <Form.Group controlId="exampleForm.ControlSelect1">
                   <Form.Label>sposób podania sałatki:</Form.Label>
                   <Form.Control

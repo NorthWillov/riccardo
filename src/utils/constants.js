@@ -446,7 +446,7 @@ export const MENU = {
 
   lunches: [
     {
-      id: 2,
+      id: 26,
       name: "Schab z grilowanym boczkiem",
       type: "lunch",
       price: 24.5,
@@ -455,7 +455,7 @@ export const MENU = {
       second: "duszona kapusta",
     },
     {
-      id: 3,
+      id: 27,
       name: "Pierś z grilowanym boczkiem",
       type: "lunch",
       price: 24.5,
@@ -464,7 +464,7 @@ export const MENU = {
       second: "duszona kapusta",
     },
     {
-      id: 4,
+      id: 28,
       name: "Karkówka z grilla",
       type: "lunch",
       price: 23.9,
@@ -473,7 +473,7 @@ export const MENU = {
       second: "duszona kapusta",
     },
     {
-      id: 5,
+      id: 29,
       name: "Dorsz (filet)",
       type: "lunch",
       price: 28.5,
@@ -482,7 +482,7 @@ export const MENU = {
       second: "duszona kapusta",
     },
     {
-      id: 6,
+      id: 30,
       name: "Schabowy",
       type: "lunch",
       price: 23.9,
@@ -491,7 +491,7 @@ export const MENU = {
       second: "duszona kapusta",
     },
     {
-      id: 7,
+      id: 31,
       name: "Pierś z kurczaka",
       type: "lunch",
       price: 23.9,
@@ -500,7 +500,7 @@ export const MENU = {
       second: "duszona kapusta",
     },
     {
-      id: 8,
+      id: 32,
       name: "Szwajcar (pierś lub schab z serem)",
       type: "lunch",
       price: 24.9,
@@ -510,7 +510,7 @@ export const MENU = {
       second: "duszona kapusta",
     },
     {
-      id: 9,
+      id: 33,
       name: "Zrazy wieprzowe",
       type: "lunch",
       price: 25.5,
@@ -519,7 +519,7 @@ export const MENU = {
       second: "duszona kapusta",
     },
     {
-      id: 10,
+      id: 34,
       name: "Pierś hawajska",
       type: "lunch",
       price: 24.9,
@@ -528,7 +528,7 @@ export const MENU = {
       second: "duszona kapusta",
     },
     {
-      id: 11,
+      id: 35,
       name: "Placek po węgiersku 🌶",
       type: "lunch",
       price: 24.9,
@@ -536,7 +536,7 @@ export const MENU = {
       second: "duszona kapusta",
     },
     {
-      id: 12,
+      id: 36,
       name: "Schab chłopa",
       type: "lunch",
       price: 24.9,
@@ -545,7 +545,7 @@ export const MENU = {
       second: "duszona kapusta",
     },
     {
-      id: 13,
+      id: 37,
       name: "De volaille",
       type: "lunch",
       price: 24.9,
@@ -554,7 +554,7 @@ export const MENU = {
       second: "duszona kapusta",
     },
     {
-      id: 14,
+      id: 38,
       name: "Pierś z pieczarkami i serem",
       type: "lunch",
       price: 24.9,
@@ -563,7 +563,7 @@ export const MENU = {
       second: "duszona kapusta",
     },
     {
-      id: 15,
+      id: 39,
       name: "Warzywa zasmażane z kurczakiem",
       type: "lunch",
       price: 20.9,
@@ -571,7 +571,7 @@ export const MENU = {
       first: "ziemniaki opiekane",
     },
     {
-      id: 16,
+      id: 40,
       name: "Pierś z jajkiem sadzonym",
       type: "lunch",
       price: 23.9,
@@ -580,7 +580,7 @@ export const MENU = {
       second: "duszona kapusta",
     },
     {
-      id: 17,
+      id: 41,
       name: "Pierś w sosie śmietanowo-serowym",
       type: "lunch",
       price: 24.9,
@@ -592,56 +592,56 @@ export const MENU = {
 
   makarons: [
     {
-      id: 1,
+      id: 42,
       name: "Spaghetti Carbonarra",
       type: "makaron",
       image: spaghetti,
       price: 21,
     },
     {
-      id: 2,
+      id: 43,
       name: "Spaghetti Bolognese",
       type: "makaron",
       image: spaghetti,
       price: 21,
     },
     {
-      id: 3,
+      id: 44,
       name: "Makaron Papparadelle z kurczakiem",
       type: "makaron",
       image: spaghetti,
       price: 23.5,
     },
     {
-      id: 4,
+      id: 45,
       name: "Makaron Pappardelle z krewetkami",
       type: "makaron",
       image: spaghetti,
       price: 24.5,
     },
     {
-      id: 5,
+      id: 46,
       name: "Makaron z pesto bazyliowym z kurczakiemi",
       type: "makaron",
       image: spaghetti,
       price: 22.5,
     },
     {
-      id: 6,
+      id: 47,
       name: "Makaron z pesto bazyliowym z krewetkami",
       type: "makaron",
       image: spaghetti,
       price: 23.5,
     },
     {
-      id: 7,
+      id: 48,
       name: "Makaron ze szpinakiem i kurczakiem",
       type: "makaron",
       image: spaghetti,
       price: 22.5,
     },
     {
-      id: 8,
+      id: 49,
       name: "Makaron ze szpinakiem i krewetkami",
       type: "makaron",
       image: spaghetti,
@@ -651,7 +651,7 @@ export const MENU = {
 
   salads: [
     {
-      id: 1,
+      id: 50,
       name: "Sałatka Cezar",
       type: "salad",
       desc: "z jajkiem oraz chrupiącym boczkiem i sosem musztardowym",
@@ -660,7 +660,7 @@ export const MENU = {
       price: 22.5,
     },
     {
-      id: 2,
+      id: 51,
       name: "Sałatka Grecka",
       type: "salad",
       desc:
@@ -671,7 +671,7 @@ export const MENU = {
       meat: "podstawowa",
     },
     {
-      id: 3,
+      id: 52,
       name: "Sałatka Kolorowa",
       type: "salad",
       desc:
@@ -681,7 +681,7 @@ export const MENU = {
       price: 21.5,
     },
     {
-      id: 4,
+      id: 53,
       name: "Sałatka Brokułowa",
       type: "salad",
       desc: "z brokułami, jajkiem, pomidorem i sosem czosnkowym",
@@ -690,7 +690,7 @@ export const MENU = {
       price: 19.4,
     },
     {
-      id: 5,
+      id: 54,
       name: "Sałatka z tuńczykiem",
       type: "salad",
       desc: "z ogórkiem, pomidorem, kukurydzą, groszkiem i sosem czosnkowym",
@@ -703,7 +703,7 @@ export const MENU = {
   pancakes: {
     sweet: [
       {
-        id: 1,
+        id: 55,
         name: "Naleśniki z mascarpone 2 szt.",
         type: "sweetPancake",
         desc: "z owocami sezonowymi lub konfiturą owocową",
@@ -713,7 +713,7 @@ export const MENU = {
         price: 19,
       },
       {
-        id: 2,
+        id: 56,
         name: "Naleśniki czekoladowo-bananowe 2 szt.",
         type: "sweetPancake",
         desc: "z nutellą i bananami",
@@ -722,7 +722,7 @@ export const MENU = {
         price: 19,
       },
       {
-        id: 3,
+        id: 57,
         name: "Naleśniki z twarożkiem i śmietaną 2 szt.",
         type: "sweetPancake",
         desc: "",
@@ -731,7 +731,7 @@ export const MENU = {
         price: 18,
       },
       {
-        id: 4,
+        id: 58,
         name: "Naleśniki Rafaello 2 szt.",
         type: "sweetPancake",
         desc: "z mascarpone i wiórkami kokosowymi",
@@ -740,7 +740,7 @@ export const MENU = {
         price: 19.4,
       },
       {
-        id: 5,
+        id: 59,
         name: "Naleśniki z dżemem 2 szt.",
         type: "sweetPancake",
         desc: "truskawkowym lub wiśniowym",
@@ -752,7 +752,7 @@ export const MENU = {
     ],
     salt: [
       {
-        id: 6,
+        id: 60,
         name: "Naleśnik kurczak w sosie curry 2 szt.",
         type: "saltPancake",
         image: pancake,
@@ -760,7 +760,7 @@ export const MENU = {
         price: 21.4,
       },
       {
-        id: 7,
+        id: 61,
         name: "Naleśnik szynka, pieczarki, ser 2 szt.",
         type: "saltPancake",
         image: pancake,
@@ -768,7 +768,7 @@ export const MENU = {
         price: 20.4,
       },
       {
-        id: 8,
+        id: 62,
         name: "Naleśnik ze szpinakiem i fetą 2 szt.",
         type: "saltPancake",
         image: pancake,
@@ -776,7 +776,7 @@ export const MENU = {
         price: 19.4,
       },
       {
-        id: 9,
+        id: 63,
         name: "Naleśnik kurczak, cukinia i ser camembert 2 szt.",
         type: "saltPancake",
         image: pancake,
@@ -788,35 +788,35 @@ export const MENU = {
 
   starters: [
     {
-      id: 1,
+      id: 64,
       name: "Placuszki ziemniaczane z sosem grzybowym",
       desc: "4 szt.",
       image: potatoPancakes,
       price: 18.5,
     },
     {
-      id: 2,
+      id: 65,
       name: "Placuszki ziemniaczane ze śmietaną i cukrem",
       desc: "4 szt.",
       image: potatoPancakes,
       price: 15,
     },
     {
-      id: 3,
+      id: 66,
       name: "Przekąska Riccardo",
       desc: "grillowana cukinia, pomidor, ser mozzarella, sos vinaigrette",
       image: riccardo,
       price: 15,
     },
     {
-      id: 4,
+      id: 67,
       name: "Zapiekany camembert",
       desc: "z żurawiną",
       image: camembert,
       price: 14,
     },
     {
-      id: 5,
+      id: 68,
       name: "Frytki",
       desc: "200g",
       image: fries,
@@ -825,43 +825,43 @@ export const MENU = {
   ],
 
   souses: [
-    { id: 1, name: "Ketchup", image: ketchup, price: 1 },
-    { id: 2, name: "Sos pomidorowy", image: tomatoSouse, price: 1 },
-    { id: 3, name: "Sos pomidorowy 🌶 (ostry)", image: tomatoSouse, price: 1 },
-    { id: 4, name: "Sos czosnkowy", image: garlicSouse, price: 1 },
-    { id: 5, name: "Sos pół na pół", image: halfedSouse, price: 1 },
+    { id: 69, name: "Ketchup", image: ketchup, price: 1 },
+    { id: 70, name: "Sos pomidorowy", image: tomatoSouse, price: 1 },
+    { id: 71, name: "Sos pomidorowy 🌶 (ostry)", image: tomatoSouse, price: 1 },
+    { id: 72, name: "Sos czosnkowy", image: garlicSouse, price: 1 },
+    { id: 73, name: "Sos pół na pół", image: halfedSouse, price: 1 },
   ],
 
   drinks: [
-    { id: 1, name: "Coca-Cola 0,5l", image: coke, price: 5.5 },
-    { id: 2, name: "Fanta 0,5l", image: fanta, price: 5.5 },
-    { id: 3, name: "Sprite 0,5l", image: sprite, price: 5.5 },
+    { id: 74, name: "Coca-Cola 0,5l", image: coke, price: 5.5 },
+    { id: 75, name: "Fanta 0,5l", image: fanta, price: 5.5 },
+    { id: 76, name: "Sprite 0,5l", image: sprite, price: 5.5 },
     {
-      id: 4,
+      id: 77,
       name: "Woda mineralna gazowana 0,5l",
       image: water,
       price: 3,
     },
     {
-      id: 5,
+      id: 78,
       name: "Woda mineralna niegazowana 0,5l",
       image: water,
       price: 3,
     },
     {
-      id: 6,
+      id: 79,
       name: "Fuzetea cytrynowa 0,5l",
       image: tea,
       price: 5.5,
     },
     {
-      id: 7,
+      id: 80,
       name: "Sok Cappy pomarańczowy 0,33l",
       image: orangeJuice,
       price: 4.5,
     },
     {
-      id: 8,
+      id: 81,
       name: "Sok Cappy jabłkowy 0,33l",
       image: appleJuice,
       price: 4.5,

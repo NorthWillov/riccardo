@@ -54,7 +54,7 @@ function PancakesOrderModal(props) {
               <h4>{pancake.name}</h4>
               <p style={{ color: "#6c757d" }}>{pancake.desc}</p>
 
-              {pancake.id > 5 && (
+              {pancake.id > 59 && (
                 <Form.Group controlId="exampleForm.ControlSelect1">
                   <Form.Label>sposób podania naleśnika:</Form.Label>
                   <Form.Control
@@ -70,7 +70,7 @@ function PancakesOrderModal(props) {
                 </Form.Group>
               )}
 
-              {pancake.id === 1 && (
+              {pancake.id === 55 && (
                 <Form.Group controlId="exampleForm.ControlSelect1">
                   <Form.Label>sposób podania naleśnika:</Form.Label>
                   <Form.Control
@@ -86,7 +86,7 @@ function PancakesOrderModal(props) {
                 </Form.Group>
               )}
 
-              {pancake.id === 5 && (
+              {pancake.id === 59 && (
                 <Form.Group controlId="exampleForm.ControlSelect1">
                   <Form.Label>rodzaj dżemu:</Form.Label>
                   <Form.Control
@@ -100,7 +100,7 @@ function PancakesOrderModal(props) {
                 </Form.Group>
               )}
 
-              {pancake.id <= 5 && (
+              {pancake.id <= 59 && (
                 <Form.Group controlId="exampleForm.ControlSelect1">
                   <Form.Label>dodatek do naleśników:</Form.Label>
                   <Form.Control

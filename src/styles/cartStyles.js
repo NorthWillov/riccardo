@@ -21,6 +21,9 @@ const styles = {
     "&:active": {
       backgroundColor: "#1565C0",
     },
+    "&:disabled": {
+      backgroundColor: "lightgrey",
+    },
   },
   numberProduct: {
     display: "inlineBlock",

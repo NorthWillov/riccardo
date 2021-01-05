@@ -53,7 +53,7 @@ function LunchesOrderModal(props) {
             <Form>
               <h4>{lunch.name}</h4>
 
-              {lunch.id === 8 && (
+              {lunch.id === 32 && (
                 <Form.Group controlId="exampleForm.ControlSelect1">
                   <Form.Label>rodzaj mięsa:</Form.Label>
                   <Form.Control
@@ -67,7 +67,7 @@ function LunchesOrderModal(props) {
                 </Form.Group>
               )}
 
-              {lunch.id !== 11 && (
+              {lunch.id !== 35 && (
                 <Form.Group controlId="exampleForm.ControlSelect1">
                   <Form.Label>dodatek do dania:</Form.Label>
                   <Form.Control
@@ -86,7 +86,7 @@ function LunchesOrderModal(props) {
                 </Form.Group>
               )}
 
-              {lunch.id !== 15 && (
+              {lunch.id !== 39 && (
                 <Form.Group controlId="exampleForm.ControlSelect2">
                   <Form.Label>dodatek warzywny:</Form.Label>
                   <Form.Control
