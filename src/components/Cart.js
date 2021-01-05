@@ -27,7 +27,7 @@ function Cart(props) {
   };
 
   const removeItem = (item) => {
-    const updatedCart = cart.filter((i) => i.id !== item.id);
+    const updatedCart = cart.filter((i) => i.uniqId !== item.uniqId);
     setCart(updatedCart);
   };
 

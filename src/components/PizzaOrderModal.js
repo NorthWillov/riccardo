@@ -92,10 +92,11 @@ function PizzaOrderModal(props) {
     let newPosItem = {};
 
     if (newItem.id === 18) {
-      newPosItem = { ...newItem, quantity: 1, extras };
+      newPosItem = { ...newItem, quantity: 1, extras, uniqId: uuidv4() };
     } else {
       newPosItem = {
         ...newItem,
+        uniqId: uuidv4(),
         ingredients: currIngredients,
         size,
         dough,
