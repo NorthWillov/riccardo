@@ -3,6 +3,7 @@ import { formatter } from "../utils/formatter";
 import { Modal, Row, Col, Button, Form } from "react-bootstrap";
 import { CartContext } from "../contexts/CartContext";
 import { ToastContext } from "../contexts/ToastContext";
+import { v4 as uuidv4 } from "uuid";
 import { withStyles } from "@material-ui/styles";
 import styles from "../styles/lunchesOrderModalStyles";
 
@@ -20,7 +21,12 @@ function SaladsOrderModal(props) {
 
   const handleClick = (salad) => {
     onHide();
-    let newSalad = { ...salad, ...saladAddition, quantity: 1 };
+    let newSalad = {
+      ...salad,
+      ...saladAddition,
+      quantity: 1,
+      uniqId: uuidv4(),
+    };
     setCart([...cart, newSalad]);
     setSaladAddition({});
     toggleShow();

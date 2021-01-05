@@ -4,6 +4,7 @@ import { ToastContext } from "../contexts/ToastContext";
 import { MENU } from "../utils/constants";
 import { formatter } from "../utils/formatter";
 import { Row, Col, Button, Card } from "react-bootstrap";
+import { v4 as uuidv4 } from "uuid";
 import { withStyles } from "@material-ui/styles";
 import styles from "../styles/lunchesListStyles";
 
@@ -14,7 +15,7 @@ function DrinksList(props) {
   const { classes } = props;
 
   const handleDrinkPick = (drink) => {
-    let newDrink = { ...drink, quantity: 1 };
+    let newDrink = { ...drink, quantity: 1, uniqId: uuidv4() };
     setCart([...cart, newDrink]);
     !show && toggleShow();
   };

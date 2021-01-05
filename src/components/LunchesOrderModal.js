@@ -4,6 +4,7 @@ import { Modal, Row, Col, Button, Form } from "react-bootstrap";
 import { CartContext } from "../contexts/CartContext";
 import { ToastContext } from "../contexts/ToastContext";
 import { withStyles } from "@material-ui/styles";
+import { v4 as uuidv4 } from "uuid";
 import styles from "../styles/lunchesOrderModalStyles";
 
 function LunchesOrderModal(props) {
@@ -20,7 +21,12 @@ function LunchesOrderModal(props) {
 
   const handleClick = (lunch) => {
     onHide();
-    let newLunch = { ...lunch, ...lunchAddition, quantity: 1 };
+    let newLunch = {
+      ...lunch,
+      ...lunchAddition,
+      quantity: 1,
+      uniqId: uuidv4(),
+    };
     setCart([...cart, newLunch]);
     setLunchAddition({});
     toggleShow();
