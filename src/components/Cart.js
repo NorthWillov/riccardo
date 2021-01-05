@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
 import { MENU } from "../utils/constants";
 import { Table } from "react-bootstrap";
+import { formatter } from "../utils/formatter";
 import { withStyles } from "@material-ui/styles";
 import styles from "../styles/cartStyles";
 
@@ -38,53 +39,71 @@ function Cart(props) {
         <tbody>
           {cart.map((item, idx) => (
             <tr key={idx}>
-              <td>{idx + 1}</td>
               <td>
-                <img style={{ width: "50px" }} src={item.image} alt="product" />
-                <h6>{item.name}</h6>
-                {item.type === "pizza" && (
-                  <>
-                    <p>{item.size}</p>
-                    <p>{item.dough}</p>
-                    <p>
-                      Bez:
-                      {MENU.pizzas[item.id - 1].ingredients.map((i) => {
-                        return item.ingredients.includes(i) ? "" : i;
-                      })}
-                    </p>
-                    <p>
-                      Dodaj:{" "}
-                      {item.extras.map((e, idx) =>
-                        item.extras[idx + 1] ? e.name + "," : e.name
-                      )}
-                    </p>
-                  </>
-                )}
-                {item.type === "lunch" && (
-                  <>
-                    <p>{item.meat}</p>
-                    <p>{item.first}</p>
-                    <p>{item.second}</p>
-                  </>
-                )}
-                {item.type === "salad" && (
-                  <>
-                    <p>{item.meat}</p>
-                    <p>{item.sous}</p>
-                  </>
-                )}
-                {item.type === "sweetPancake" && (
-                  <>
-                    <p>{item.way}</p>
-                    <p>{item.jam}</p>
-                    <p>{item.adds}</p>
-                  </>
-                )}
-                {item.type === "saltPancake" && (
-                  <>
-                    <p>{item.sous}</p>
-                  </>
-                )}
+                <div className={classes.itemCard}>
+                  <div className="mr-3">
+                    <img
+                      style={{ width: "100px", borderRadius: "0.5rem" }}
+                      src={item.image}
+                      alt="product"
+                    />
+                  </div>
+                  <div>
+                    <h6>{item.name}</h6>
+                    {item.type === "pizza" && (
+                      <>
+                        <p>
+                          {item.size}, {item.dough}
+                        </p>
+                        {MENU.pizzas[item.id - 1].ingredients !==
+                          item.ingredients && (
+                          <p>
+                            Bez:{" "}
+                            {MENU.pizzas[item.id - 1].ingredients.map((i) => {
+                              return item.ingredients.includes(i)
+                                ? ""
+                                : i + " ";
+                            })}
+                          </p>
+                        )}
+
+                        {item.extras.length !== 0 && (
+                          <p>
+                            Dodaj:{" "}
+                            {item.extras.map((e, idx) =>
+                              item.extras[idx + 1] ? e.name + "," : e.name
+                            )}
+                          </p>
+                        )}
+                      </>
+                    )}
+                    {item.type === "lunch" && (
+                      <>
+                        {item.meat && <p>mięso: {item.meat}</p>}
+                        <p>{item.first}</p>
+                        <p>{item.second}</p>
+                      </>
+                    )}
+                    {item.type === "salad" && (
+                      <>
+                        <p>{item.meat}</p>
+                        <p>{item.sous}</p>
+                      </>
+                    )}
+                    {item.type === "sweetPancake" && (
+                      <>
+                        <p>{item.way}</p>
+                        <p>{item.jam}</p>
+                        <p>{item.adds}</p>
+                      </>
+                    )}
+                    {item.type === "saltPancake" && (
+                      <>
+                        <p>{item.sous}</p>
+                      </>
+                    )}
+                  </div>
+                </div>
               </td>
               <td>
                 <div className={classes.productCount}>
@@ -110,15 +129,17 @@ function Cart(props) {
                 </div>
               </td>
               <td>
-                <h5>{item.price * item.quantity} PLN</h5>
+                <h5 className={classes.productPrice}>
+                  {formatter.format(item.price * item.quantity)}PLN
+                </h5>
               </td>
               <td>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  className="bi bi-trash2-fill"
+                  width="35"
+                  height="35"
+                  fill="black"
+                  className={`${classes.trashIcon} bi bi-trash2-fill`}
                   viewBox="0 0 16 16"
                   onClick={() => removeItem(item)}
                 >
