@@ -35,25 +35,19 @@ const styles = {
   },
   buttonCount: {
     width: "30px",
-    height: "28px",
     margin: "0 15px 0 15px",
-    backgroundColor: "#2196F3",
     color: "white",
     fontSize: "24px",
     lineHeight: "20px",
-    textAlign: "center",
     border: "none",
     borderRadius: "0.5rem",
     outline: "none",
-    "&:active": {
-      backgroundColor: "#1565C0",
-    },
     "&:disabled": {
       backgroundColor: "lightgrey",
     },
   },
   numberProduct: {
-    width: "46px",
+    width: "60px",
     height: "30px",
     fontSize: "24px",
     border: "1px solid silver",

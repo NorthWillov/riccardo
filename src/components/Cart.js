@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { CartContext } from "../contexts/CartContext";
 import { MENU } from "../utils/constants";
-import { Table, Button } from "react-bootstrap";
+import { Table, Button, Form } from "react-bootstrap";
 import { formatter } from "../utils/formatter";
 import { withStyles } from "@material-ui/styles";
 import styles from "../styles/cartStyles";
@@ -16,14 +16,14 @@ function Cart(props) {
 
   const incrementQuantity = (item) => {
     const updatedCart = cart.map((i) =>
-      i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
+      i.uniqId === item.uniqId ? { ...i, quantity: i.quantity + 1 } : i
     );
     setCart(updatedCart);
   };
 
   const decrementQuantity = (item) => {
     const updatedCart = cart.map((i) =>
-      i.id === item.id ? { ...i, quantity: i.quantity - 1 } : i
+      i.uniqId === item.uniqId ? { ...i, quantity: i.quantity - 1 } : i
     );
     setCart(updatedCart);
   };
@@ -39,7 +39,7 @@ function Cart(props) {
       (product) => (counter = counter + product.price * product.quantity)
     );
     setSum(formatter.format(counter));
-  });
+  }, [cart]);
 
   return (
     <div className={classes.root}>
@@ -119,25 +119,30 @@ function Cart(props) {
               </td>
               <td>
                 <div className={classes.productCount}>
-                  <button
+                  <Button
                     onClick={() => decrementQuantity(item)}
                     disabled={item.quantity <= 1}
                     className={classes.buttonCount}
+                    variant="primary"
+                    size="sm"
                   >
                     -
-                  </button>
-                  <input
+                  </Button>
+                  <Form.Control
                     type="text"
-                    readOnly
+                    placeholder={item.quantity}
                     className={classes.numberProduct}
-                    value={item.quantity}
+                    readOnly
                   />
-                  <button
+
+                  <Button
                     onClick={() => incrementQuantity(item)}
+                    variant="primary"
+                    size="sm"
                     className={classes.buttonCount}
                   >
                     +
-                  </button>
+                  </Button>
                 </div>
               </td>
               <td>
