@@ -1,1 +1,1 @@
-Update for http://riccardopizzeria.pl
+Update for http://riccardopizzeria.pl (not finished)

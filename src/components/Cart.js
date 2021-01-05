@@ -8,8 +8,15 @@ import styles from "../styles/cartStyles";
 function Cart(props) {
   const { classes } = props;
 
-  const { cart } = useContext(CartContext);
+  const { cart, setCart } = useContext(CartContext);
   console.log(cart);
+
+  const incrementQuantity = (item) => {
+    const updatedCart = cart.map((i) =>
+      i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
+    );
+    setCart(updatedCart);
+  };
 
   return (
     <div>
@@ -76,11 +83,16 @@ function Cart(props) {
                     className={classes.numberProduct}
                     value={item.quantity}
                   />
-                  <button className={classes.buttonCount}>+</button>
+                  <button
+                    onClick={() => incrementQuantity(item)}
+                    className={classes.buttonCount}
+                  >
+                    +
+                  </button>
                 </div>
               </td>
               <td>
-                <h5>{item.price} PLN</h5>
+                <h5>{item.price * item.quantity} PLN</h5>
               </td>
               <td>
                 <svg
