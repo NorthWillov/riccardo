@@ -7,7 +7,11 @@ function Routes(props) {
   return (
     <Switch>
       <Route exact path="/riccardo" render={() => <Landing />} />
-      <Route exact path="/riccardo/cart" render={() => <Cart />} />
+      <Route
+        exact
+        path="/riccardo/cart"
+        render={(routeProps) => <Cart {...routeProps} />}
+      />
       <Redirect to="/riccardo" />
     </Switch>
   );

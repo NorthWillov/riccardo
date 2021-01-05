@@ -1,12 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { CartContext } from "../contexts/CartContext";
 import { MENU } from "../utils/constants";
-import { Table } from "react-bootstrap";
+import { Table, Button } from "react-bootstrap";
 import { formatter } from "../utils/formatter";
 import { withStyles } from "@material-ui/styles";
 import styles from "../styles/cartStyles";
 
 function Cart(props) {
+  const [sum, setSum] = useState(0);
+
   const { classes } = props;
 
   const { cart, setCart } = useContext(CartContext);
@@ -31,11 +33,21 @@ function Cart(props) {
     setCart(updatedCart);
   };
 
-  return (
-    <div>
-      <h1>CART:</h1>
+  useEffect(() => {
+    let counter = 0;
+    cart.map(
+      (product) => (counter = counter + product.price * product.quantity)
+    );
+    setSum(formatter.format(counter));
+  });
 
-      <Table responsive>
+  return (
+    <div className={classes.root}>
+      <h1 className="mt-5 mb-5">Koszyk:</h1>
+
+      {cart.length === 0 && <h6>Koszyk jest pusty :(</h6>}
+
+      <Table size="sm" responsive>
         <tbody>
           {cart.map((item, idx) => (
             <tr key={idx}>
@@ -136,8 +148,8 @@ function Cart(props) {
               <td>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="35"
-                  height="35"
+                  width="30"
+                  height="30"
                   fill="black"
                   className={`${classes.trashIcon} bi bi-trash2-fill`}
                   viewBox="0 0 16 16"
@@ -150,6 +162,32 @@ function Cart(props) {
           ))}
         </tbody>
       </Table>
+      <h4 className={classes.sumToPay}>Do zapłaty: {sum}PLN</h4>
+      <div className={classes.finalBtns}>
+        <Button
+          variant="outline-secondary"
+          onClick={() => props.history.push("back")}
+          className="mr-3"
+        >
+          <svg
+            width="1em"
+            height="1em"
+            viewBox="0 0 16 16"
+            className="bi bi-arrow-left-short"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+            />
+          </svg>
+          Wroć
+        </Button>
+        <Button variant="success" type="button">
+          Zamawiam
+        </Button>
+      </div>
     </div>
   );
 }

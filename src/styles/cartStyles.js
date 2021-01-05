@@ -1,4 +1,8 @@
 const styles = {
+  root: {
+    maxWidth: "650px",
+    margin: "0 auto",
+  },
   itemCard: {
     display: "flex",
     alignItems: "center",
@@ -56,6 +60,12 @@ const styles = {
     borderRadius: "0.5rem",
     textAlign: "center",
   },
+  finalBtns: {
+    display: "flex",
+    justifyContent: "space-between",
+    marginTop: "30px",
+  },
+  sumToPay: { display: "flex", justifyContent: "flex-end", marginTop: "30px" },
 };
 
 export default styles;
