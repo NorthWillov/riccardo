@@ -47,7 +47,7 @@ function Cart(props) {
 
       {cart.length === 0 && <h6>Koszyk jest pusty :(</h6>}
 
-      <Table size="sm" responsive>
+      <Table responsive>
         <tbody>
           {cart.map((item, idx) => (
             <tr key={idx}>

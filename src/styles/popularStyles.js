@@ -1,4 +1,8 @@
 const styles = {
+  image: {
+    borderRadius: "1rem",
+    paddingRight: "5px",
+  },
   popularCard: {
     cursor: "pointer",
     padding: "10px",

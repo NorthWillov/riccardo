@@ -6,7 +6,7 @@ import { withStyles } from "@material-ui/styles";
 import { v4 as uuidv4 } from "uuid";
 import styles from "../styles/popularStyles";
 
-const popularItemsId = [1, 3, 14, 22];
+const popularItemsId = [1, 3, 14, 21];
 
 function Popular(props) {
   const { handlePizzaClick, classes } = props;
@@ -23,7 +23,11 @@ function Popular(props) {
               >
                 <Row noGutters="true">
                   <Col md={5}>
-                    <Card.Img src={pizza.image} alt="pizza" />
+                    <Card.Img
+                      className={classes.image}
+                      src={pizza.image}
+                      alt="pizza"
+                    />
                   </Col>
                   <Col md={7} style={{ display: "flex" }}>
                     <Card.Body className={classes.cardBodyPopular}>

@@ -17,7 +17,6 @@ function PizzasList(props) {
             <Col sm={6} md={6} lg={4} xl={3}>
               <Card className={`mb-3 ${classes.Card}`}>
                 <Card.Img
-                  className="pl-3 pt-3"
                   variant="top"
                   src={pizza.image}
                   alt={pizza.name}

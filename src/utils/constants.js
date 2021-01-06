@@ -1,3 +1,10 @@
+import pizza_wege from "../images/pizza_wege.png";
+import pizza_saporito from "../images/pizza_saporito.png";
+import pizza_ricco from "../images/pizza_ricco.png";
+import lunch_schabChlopa from "../images/lunches/lunch_schabChlopa.png";
+import lunch_zrazy from "../images/lunches/lunch_zrazy.png";
+import makaron_carbonarra from "../images/lunches/makaron_carbonarra.png";
+import salad_grecka from "../images/lunches/salad_grecka.png";
 import lunch from "../images/lunches/lunch.jpg";
 import spaghetti from "../images/lunches/spaghetti.jpg";
 import salad from "../images/lunches/salad.jpg";
@@ -131,8 +138,7 @@ export const MENU = {
         "kukurydza",
         "pomidory",
       ],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza_wege,
     },
     {
       id: 9,
@@ -230,8 +236,7 @@ export const MENU = {
         "ogórek",
         "oregano",
       ],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza_saporito,
     },
     {
       id: 15,
@@ -341,8 +346,7 @@ export const MENU = {
         "kukurydza",
         "cebula",
       ],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza_ricco,
     },
     {
       id: 22,
@@ -514,7 +518,7 @@ export const MENU = {
       name: "Zrazy wieprzowe",
       type: "lunch",
       price: 25.5,
-      image: lunch,
+      image: lunch_zrazy,
       first: "ziemniaki opiekane",
       second: "duszona kapusta",
     },
@@ -540,7 +544,7 @@ export const MENU = {
       name: "Schab chłopa",
       type: "lunch",
       price: 24.9,
-      image: lunch,
+      image: lunch_schabChlopa,
       first: "ziemniaki opiekane",
       second: "duszona kapusta",
     },
@@ -595,7 +599,7 @@ export const MENU = {
       id: 42,
       name: "Spaghetti Carbonarra",
       type: "makaron",
-      image: spaghetti,
+      image: makaron_carbonarra,
       price: 21,
     },
     {
@@ -665,7 +669,7 @@ export const MENU = {
       type: "salad",
       desc:
         "podstawowa, z kurczakiem, z krewetkami lub z wędzonym łososiem, polecamy sos vinaigrette",
-      image: salad,
+      image: salad_grecka,
       sous: "vinaigrette",
       price: 23.5,
       meat: "podstawowa",

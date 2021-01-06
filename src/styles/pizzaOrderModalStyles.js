@@ -3,6 +3,7 @@ const styles = {
     width: "100%",
     alignSelf: "center",
     justifyContent: "center",
+    borderRadius: "1rem",
   },
   modalPrice: {
     fontSize: "28px",
