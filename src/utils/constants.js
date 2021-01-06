@@ -1,3 +1,4 @@
+import pizza from "../images/pizza.jpg";
 import pizza_wege from "../images/pizza_wege.png";
 import pizza_saporito from "../images/pizza_saporito.png";
 import pizza_ricco from "../images/pizza_ricco.png";
@@ -38,8 +39,7 @@ export const MENU = {
         "50cm": 32.5,
       },
       ingredients: ["sos", "ser", "oregano"],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza,
     },
     {
       id: 2,
@@ -51,8 +51,7 @@ export const MENU = {
         "50cm": 34.5,
       },
       ingredients: ["sos", "ser", "pieczarki", "cebula"],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza,
     },
     {
       id: 3,
@@ -64,8 +63,7 @@ export const MENU = {
         "50cm": 40.5,
       },
       ingredients: ["sos", "ser", "szynka", "pieczarki"],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza,
     },
     {
       id: 4,
@@ -77,8 +75,7 @@ export const MENU = {
         "50cm": 40.5,
       },
       ingredients: ["sos", "ser", "szynka", "ananas"],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza,
     },
     {
       id: 5,
@@ -90,8 +87,7 @@ export const MENU = {
         "50cm": 41.9,
       },
       ingredients: ["sos", "ser", "salami", "papryka", "ogórek"],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza,
     },
     {
       id: 6,
@@ -103,8 +99,7 @@ export const MENU = {
         "50cm": 42.5,
       },
       ingredients: ["sos", "ser", "tuńczyk", "czerwona cebula", "feta"],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza,
     },
     {
       id: 7,
@@ -116,8 +111,7 @@ export const MENU = {
         "50cm": 43.5,
       },
       ingredients: ["sos", "ser", "szynka", "krewetki", "ananas"],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza,
     },
     {
       id: 8,
@@ -150,8 +144,7 @@ export const MENU = {
         "50cm": 43.5,
       },
       ingredients: ["sos", "ser", "brokuły", "cukinia", "krewetki", "czosnek"],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza,
     },
     {
       id: 10,
@@ -163,8 +156,7 @@ export const MENU = {
         "50cm": 43.5,
       },
       ingredients: ["sos", "ser", "brokuły", "pomidor", "feta", "parmezan"],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza,
     },
     {
       id: 11,
@@ -183,8 +175,7 @@ export const MENU = {
         "pieczarki",
         "cebula",
       ],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza,
     },
     {
       id: 12,
@@ -202,8 +193,7 @@ export const MENU = {
         "kiełbasa pepperoni",
         "papryka jalapeño",
       ],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza,
     },
     {
       id: 13,
@@ -215,8 +205,7 @@ export const MENU = {
         "50cm": 44.5,
       },
       ingredients: ["sos", "ser", "kiełbasa", "cebula", "pieczarki", "tabasco"],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza,
     },
     {
       id: 14,
@@ -255,8 +244,7 @@ export const MENU = {
         "pomidory suszone",
         "parmezan",
       ],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza,
     },
     {
       id: 16,
@@ -268,8 +256,7 @@ export const MENU = {
         "50cm": 49.5,
       },
       ingredients: ["sos", "ser", "owoce morze", "kapary", "czosnek", "oliwki"],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza,
     },
     {
       id: 17,
@@ -288,8 +275,7 @@ export const MENU = {
         "papryka jalapeño",
         "czosnek",
       ],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza,
     },
     {
       id: 18,
@@ -299,8 +285,7 @@ export const MENU = {
       dough: "średnie",
       price: 23.5,
       ingredients: ["sos", "ser", "kurczak", "szynka", "pieczarki"],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza,
     },
     {
       id: 19,
@@ -312,8 +297,7 @@ export const MENU = {
         "50cm": 45.5,
       },
       ingredients: ["sos", "ser", "pieczarki", "szynka", "bekon", "oliwki"],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza,
     },
     {
       id: 20,
@@ -325,8 +309,7 @@ export const MENU = {
         "50cm": 46.9,
       },
       ingredients: ["sos", "ser", "łosoś wędzony", "ruccola", "parmezan"],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza,
     },
     {
       id: 21,
@@ -358,8 +341,7 @@ export const MENU = {
         "50cm": 50.9,
       },
       ingredients: ["sos", "ser"],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza,
     },
     {
       id: 23,
@@ -378,8 +360,7 @@ export const MENU = {
         "cebula",
         "ser pleśniowy",
       ],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza,
     },
     {
       id: 24,
@@ -398,8 +379,7 @@ export const MENU = {
         "czerwona cebula",
         "ogórek kiszony",
       ],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza,
     },
     {
       id: 25,
@@ -411,8 +391,7 @@ export const MENU = {
         "50cm": 43.9,
       },
       ingredients: ["sos", "ser", "bekon", "szczypior", "jaja"],
-      image:
-        "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
+      image: pizza,
     },
   ],
 
