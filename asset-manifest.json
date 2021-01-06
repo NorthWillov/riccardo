@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/riccardo/static/css/main.f6e96558.chunk.css",
-    "main.js": "/riccardo/static/js/main.98d4aa38.chunk.js",
-    "main.js.map": "/riccardo/static/js/main.98d4aa38.chunk.js.map",
+    "main.js": "/riccardo/static/js/main.6fa767c9.chunk.js",
+    "main.js.map": "/riccardo/static/js/main.6fa767c9.chunk.js.map",
     "runtime-main.js": "/riccardo/static/js/runtime-main.582b2f6f.js",
     "runtime-main.js.map": "/riccardo/static/js/runtime-main.582b2f6f.js.map",
     "static/css/2.1a02f21c.chunk.css": "/riccardo/static/css/2.1a02f21c.chunk.css",
@@ -25,12 +25,19 @@
     "static/media/ketchup.1955b13e.jpg": "/riccardo/static/media/ketchup.1955b13e.jpg",
     "static/media/logo.85aa02c7.png": "/riccardo/static/media/logo.85aa02c7.png",
     "static/media/lunch.b6c1b6bd.jpg": "/riccardo/static/media/lunch.b6c1b6bd.jpg",
+    "static/media/lunch_schabChlopa.df7ab390.png": "/riccardo/static/media/lunch_schabChlopa.df7ab390.png",
+    "static/media/lunch_zrazy.4d0fde6c.png": "/riccardo/static/media/lunch_zrazy.4d0fde6c.png",
+    "static/media/makaron_carbonarra.9ed8a052.png": "/riccardo/static/media/makaron_carbonarra.9ed8a052.png",
     "static/media/office.3cc651db.jpg": "/riccardo/static/media/office.3cc651db.jpg",
     "static/media/orangeJuice.0bb6a3d2.jpg": "/riccardo/static/media/orangeJuice.0bb6a3d2.jpg",
     "static/media/pancake.67983f01.jpg": "/riccardo/static/media/pancake.67983f01.jpg",
+    "static/media/pizza_ricco.acc952a4.png": "/riccardo/static/media/pizza_ricco.acc952a4.png",
+    "static/media/pizza_saporito.627cbe0c.png": "/riccardo/static/media/pizza_saporito.627cbe0c.png",
+    "static/media/pizza_wege.17ef254c.png": "/riccardo/static/media/pizza_wege.17ef254c.png",
     "static/media/potatoPancakes.d3b4f58a.jpg": "/riccardo/static/media/potatoPancakes.d3b4f58a.jpg",
     "static/media/riccardo.8e8f7fa2.png": "/riccardo/static/media/riccardo.8e8f7fa2.png",
     "static/media/salad.4e0ddd74.jpg": "/riccardo/static/media/salad.4e0ddd74.jpg",
+    "static/media/salad_grecka.d795b72d.png": "/riccardo/static/media/salad_grecka.d795b72d.png",
     "static/media/spaghetti.6818ee96.jpg": "/riccardo/static/media/spaghetti.6818ee96.jpg",
     "static/media/sprite.f51abe91.jpg": "/riccardo/static/media/sprite.f51abe91.jpg",
     "static/media/students.eb855f97.jpg": "/riccardo/static/media/students.eb855f97.jpg",
@@ -44,6 +51,6 @@
     "static/css/2.1a02f21c.chunk.css",
     "static/js/2.d393c768.chunk.js",
     "static/css/main.f6e96558.chunk.css",
-    "static/js/main.98d4aa38.chunk.js"
+    "static/js/main.6fa767c9.chunk.js"
   ]
 }
