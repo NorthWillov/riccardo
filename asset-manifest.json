@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/riccardo/static/css/main.f6e96558.chunk.css",
-    "main.js": "/riccardo/static/js/main.6fa767c9.chunk.js",
-    "main.js.map": "/riccardo/static/js/main.6fa767c9.chunk.js.map",
+    "main.js": "/riccardo/static/js/main.8fc4247b.chunk.js",
+    "main.js.map": "/riccardo/static/js/main.8fc4247b.chunk.js.map",
     "runtime-main.js": "/riccardo/static/js/runtime-main.582b2f6f.js",
     "runtime-main.js.map": "/riccardo/static/js/runtime-main.582b2f6f.js.map",
     "static/css/2.1a02f21c.chunk.css": "/riccardo/static/css/2.1a02f21c.chunk.css",
@@ -31,6 +31,7 @@
     "static/media/office.3cc651db.jpg": "/riccardo/static/media/office.3cc651db.jpg",
     "static/media/orangeJuice.0bb6a3d2.jpg": "/riccardo/static/media/orangeJuice.0bb6a3d2.jpg",
     "static/media/pancake.67983f01.jpg": "/riccardo/static/media/pancake.67983f01.jpg",
+    "static/media/pizza.372ab93f.jpg": "/riccardo/static/media/pizza.372ab93f.jpg",
     "static/media/pizza_ricco.acc952a4.png": "/riccardo/static/media/pizza_ricco.acc952a4.png",
     "static/media/pizza_saporito.627cbe0c.png": "/riccardo/static/media/pizza_saporito.627cbe0c.png",
     "static/media/pizza_wege.17ef254c.png": "/riccardo/static/media/pizza_wege.17ef254c.png",
@@ -51,6 +52,6 @@
     "static/css/2.1a02f21c.chunk.css",
     "static/js/2.d393c768.chunk.js",
     "static/css/main.f6e96558.chunk.css",
-    "static/js/main.6fa767c9.chunk.js"
+    "static/js/main.8fc4247b.chunk.js"
   ]
 }
