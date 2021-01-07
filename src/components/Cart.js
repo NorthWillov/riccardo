@@ -173,6 +173,7 @@ function Cart(props) {
           variant="outline-secondary"
           onClick={() => props.history.push("back")}
           className="mr-3"
+          size="lg"
         >
           <svg
             width="1em"
@@ -189,8 +190,18 @@ function Cart(props) {
           </svg>
           Wroć
         </Button>
-        <Button variant="success" type="button">
-          Zamawiam
+        <Button
+          onClick={() =>
+            alert(
+              "****** HEY, THIS WEBSITE IS IN PROGRESS ****** TO ORDER A PIZZA USE OUR OLD WEBSITE http://riccardopizzeria.pl THANK YOU FOR UNDERSTANDING"
+            )
+          }
+          size="lg"
+          disabled={cart.length === 0}
+          variant="success"
+          type="button"
+        >
+          Zamawiam!
         </Button>
       </div>
     </div>

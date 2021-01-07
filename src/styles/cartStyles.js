@@ -2,6 +2,7 @@ const styles = {
   root: {
     maxWidth: "650px",
     margin: "0 auto",
+    marginBottom: "50px",
   },
   itemCard: {
     display: "flex",
