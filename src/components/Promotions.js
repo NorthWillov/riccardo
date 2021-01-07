@@ -16,8 +16,8 @@ function Promotions(props) {
             alt="Rabaty dla firm"
           />
           <Carousel.Caption>
-            <h3 className="mb-0">Rabaty dla firm</h3>
-            <p>
+            <h3 style={{ marginBottom: "0" }}>Rabaty dla firm</h3>
+            <p style={{ marginBottom: "0" }}>
               -5% na wszystkie dania. Przy większych zamówieniach negocjujemy
               ceny.
             </p>
@@ -30,8 +30,8 @@ function Promotions(props) {
             alt="Studenci jedzą taniej"
           />
           <Carousel.Caption>
-            <h3>Studenci jedzą taniej</h3>
-            <p>-5% na wszystkie dania</p>
+            <h3 style={{ marginBottom: "0" }}>Studenci jedzą taniej</h3>
+            <p style={{ marginBottom: "0" }}>-5% na wszystkie dania</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={5000}>
@@ -41,8 +41,10 @@ function Promotions(props) {
             alt="Rodzinne obiadki"
           />
           <Carousel.Caption>
-            <h3>Rodzinne obiadki</h3>
-            <p>-5% przy zamówieniu powyżej 70 zł (w lokalu)</p>
+            <h3 style={{ marginBottom: "0" }}>Rodzinne obiadki</h3>
+            <p style={{ marginBottom: "0" }}>
+              -5% przy zamówieniu powyżej 70 zł (w lokalu)
+            </p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
