@@ -14,19 +14,22 @@ function PizzasList(props) {
       <Row>
         {MENU.pizzas.map((pizza) => (
           <React.Fragment key={pizza.name}>
-            <Col sm={6} md={6} lg={4} xl={3}>
+            <Col xs={6} md={4} lg={4} xl={3}>
               <Card className={`mb-3 ${classes.Card}`}>
                 <Card.Img
+                  style={{ cursor: "pointer" }}
                   variant="top"
                   src={pizza.image}
                   alt={pizza.name}
                   onClick={() => props.handlePizzaClick(pizza)}
                 />
                 <Card.Body className={classes.CardBody}>
-                  <Card.Title>
+                  <Card.Title className={classes.title}>
                     {pizza.id}. {pizza.name}
                   </Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted">
+                  <Card.Subtitle
+                    className={`mb-2 text-muted ${classes.subtitle}`}
+                  >
                     {pizza.id !== 22
                       ? pizza.ingredients.map((i, idx) => (
                           <span key={i}>
@@ -38,16 +41,18 @@ function PizzasList(props) {
                 </Card.Body>
                 <Card.Footer>
                   <div className={classes.checkout}>
-                    <p className={classes.checkoutPrice}>
+                    <span className={classes.checkoutPrice}>
                       od{" "}
                       {pizza.id === 18
                         ? formatter.format(pizza.price)
                         : formatter.format(pizza.price["20cm"])}
-                      pln
-                    </p>
+                      zł
+                    </span>
                     <Button
                       onClick={() => props.handlePizzaClick(pizza)}
                       variant="outline-dark"
+                      size="sm"
+                      className="ml-2"
                     >
                       Wybierz
                     </Button>
