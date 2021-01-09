@@ -18,7 +18,7 @@ function LunchesList(props) {
       <Row>
         {MENU.lunches.map((lunch) => (
           <React.Fragment key={lunch.name}>
-            <Col sm={6} md={6} lg={4} xl={3}>
+            <Col xs={6} md={4} lg={4} xl={3}>
               <Card className="mb-3">
                 <Card.Img
                   onClick={() => handleLunchPick(lunch)}
@@ -27,18 +27,20 @@ function LunchesList(props) {
                   alt={lunch.name}
                 />
                 <Card.Body className={classes.CardBody}>
-                  <Card.Title>
+                  <Card.Title className={classes.title}>
                     {lunch.id}. {lunch.name}
                   </Card.Title>
                 </Card.Body>
-                <Card.Footer>
+                <Card.Footer style={{ padding: "12px" }}>
                   <div className={classes.checkout}>
                     <p className={classes.checkoutPrice}>
-                      {formatter.format(lunch.price)}pln
+                      {formatter.format(lunch.price)}zł
                     </p>
                     <Button
                       variant="outline-dark"
                       onClick={() => handleLunchPick(lunch)}
+                      size="sm"
+                      className="ml-1"
                     >
                       Wybierz
                     </Button>

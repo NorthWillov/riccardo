@@ -39,7 +39,7 @@ function PizzasList(props) {
                       : "sos, ser, +5 własnych składników do wyboru"}
                   </Card.Subtitle>
                 </Card.Body>
-                <Card.Footer>
+                <Card.Footer style={{ padding: "12px" }}>
                   <div className={classes.checkout}>
                     <span className={classes.checkoutPrice}>
                       od{" "}

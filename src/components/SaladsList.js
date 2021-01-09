@@ -18,7 +18,7 @@ function SaladsList(props) {
       <Row>
         {MENU.salads.map((salad) => (
           <React.Fragment key={salad.name}>
-            <Col sm={6} md={6} lg={4} xl={3}>
+            <Col xs={6} md={4} lg={4} xl={3}>
               <Card className="mb-3">
                 <Card.Img
                   onClick={() => handleSaladPick(salad)}
@@ -27,7 +27,7 @@ function SaladsList(props) {
                   alt={salad.name}
                 />
                 <Card.Body className={classes.CardBody}>
-                  <Card.Title>
+                  <Card.Title className={classes.title}>
                     {salad.id}. {salad.name}
                   </Card.Title>
                   <Card.Subtitle
@@ -37,14 +37,16 @@ function SaladsList(props) {
                     {salad.desc}
                   </Card.Subtitle>
                 </Card.Body>
-                <Card.Footer>
+                <Card.Footer style={{ padding: "12px" }}>
                   <div className={classes.checkout}>
                     <p className={classes.checkoutPrice}>
-                      {formatter.format(salad.price)}pln
+                      {formatter.format(salad.price)}zł
                     </p>
                     <Button
                       variant="outline-dark"
                       onClick={() => handleSaladPick(salad)}
+                      size="sm"
+                      className="ml-2"
                     >
                       Wybierz
                     </Button>

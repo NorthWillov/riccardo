@@ -18,7 +18,7 @@ function PancakesSaltList(props) {
       <Row>
         {MENU.pancakes.salt.map((pancake) => (
           <React.Fragment key={pancake.name}>
-            <Col sm={6} md={6} lg={4} xl={3}>
+            <Col xs={6} md={4} lg={4} xl={3}>
               <Card className="mb-3">
                 <Card.Img
                   onClick={() => handlePancakeSaltPick(pancake)}
@@ -27,18 +27,20 @@ function PancakesSaltList(props) {
                   alt={pancake.name}
                 />
                 <Card.Body className={classes.CardBody}>
-                  <Card.Title>
+                  <Card.Title className={classes.title}>
                     {pancake.id}. {pancake.name}
                   </Card.Title>
                 </Card.Body>
-                <Card.Footer>
+                <Card.Footer style={{ padding: "12px" }}>
                   <div className={classes.checkout}>
                     <p className={classes.checkoutPrice}>
-                      {formatter.format(pancake.price)}pln
+                      {formatter.format(pancake.price)}zł
                     </p>
                     <Button
                       variant="outline-dark"
                       onClick={() => handlePancakeSaltPick(pancake)}
+                      size="sm"
+                      className="ml-2"
                     >
                       Wybierz
                     </Button>

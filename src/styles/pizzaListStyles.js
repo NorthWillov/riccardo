@@ -27,6 +27,9 @@ const styles = {
   },
   CardBody: {
     padding: "15px 5px 10px 10px",
+    "@media (min-width: 767.98px)": {
+      height: "135px",
+    },
   },
 };
 

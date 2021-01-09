@@ -18,7 +18,7 @@ function PancakesSweetList(props) {
       <Row>
         {MENU.pancakes.sweet.map((pancake) => (
           <React.Fragment key={pancake.name}>
-            <Col sm={6} md={6} lg={4} xl={3}>
+            <Col xs={6} md={4} lg={4} xl={3}>
               <Card className="mb-3">
                 <Card.Img
                   onClick={() => handlePancakeSweetPick(pancake)}
@@ -30,7 +30,7 @@ function PancakesSweetList(props) {
                   className={classes.CardBody}
                   style={{ height: "120px" }}
                 >
-                  <Card.Title>
+                  <Card.Title className={classes.title}>
                     {pancake.id}. {pancake.name}
                   </Card.Title>
                   <Card.Subtitle
@@ -40,14 +40,16 @@ function PancakesSweetList(props) {
                     {pancake.desc}
                   </Card.Subtitle>
                 </Card.Body>
-                <Card.Footer>
+                <Card.Footer style={{ padding: "12px" }}>
                   <div className={classes.checkout}>
                     <p className={classes.checkoutPrice}>
-                      {formatter.format(pancake.price)}pln
+                      {formatter.format(pancake.price)}zł
                     </p>
                     <Button
                       variant="outline-dark"
                       onClick={() => handlePancakeSweetPick(pancake)}
+                      size="sm"
+                      className="ml-2"
                     >
                       Wybierz
                     </Button>
