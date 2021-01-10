@@ -82,7 +82,7 @@ function MainNavbar(props) {
           <Nav>
             <Link to="/riccardo/cart">
               <Button
-                className="mr-3 ml-2"
+                className={`mr-3 ml-2 ${classes.cart}`}
                 style={{ maxWidth: "120px" }}
                 variant="dark"
               >

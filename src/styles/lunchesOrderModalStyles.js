@@ -4,6 +4,9 @@ const styles = {
     alignSelf: "center",
     justifyContent: "center",
     borderRadius: "1rem",
+    "@media (max-width: 991px)": {
+      marginBottom: "20px",
+    },
   },
   modalPrice: {
     fontSize: "28px",

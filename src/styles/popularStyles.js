@@ -2,6 +2,9 @@ const styles = {
   image: {
     borderRadius: "1rem",
     paddingRight: "5px",
+    "@media (max-width: 767.98px)": {
+      marginBottom: "10px",
+    },
   },
   popularCard: {
     cursor: "pointer",
