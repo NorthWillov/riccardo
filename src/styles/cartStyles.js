@@ -4,6 +4,12 @@ const styles = {
     margin: "0 auto",
     marginBottom: "50px",
   },
+  item: {
+    backgroundColor: "#f8f9fc",
+    borderRadius: "0.5rem",
+    padding: "10px",
+    marginTop: "10px",
+  },
   itemCard: {
     display: "flex",
     alignItems: "center",
@@ -16,6 +22,10 @@ const styles = {
     "& h6": {
       margin: "0",
     },
+  },
+  itemCheckout: {
+    display: "flex",
+    justifyContent: "space-between",
   },
   productCount: {
     display: "flex",
@@ -30,10 +40,6 @@ const styles = {
     width: "100px",
     marginTop: "25px",
   },
-  trashIcon: {
-    marginTop: "20px",
-    cursor: "pointer",
-  },
   buttonCount: {
     width: "30px",
     margin: "0 15px 0 15px",
@@ -43,9 +49,6 @@ const styles = {
     border: "none",
     borderRadius: "0.5rem",
     outline: "none",
-    "&:disabled": {
-      backgroundColor: "lightgrey",
-    },
   },
   numberProduct: {
     width: "60px",
