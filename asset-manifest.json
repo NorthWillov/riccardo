@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/riccardo/static/css/main.f6e96558.chunk.css",
-    "main.js": "/riccardo/static/js/main.c05ea83f.chunk.js",
-    "main.js.map": "/riccardo/static/js/main.c05ea83f.chunk.js.map",
+    "main.js": "/riccardo/static/js/main.54c981fc.chunk.js",
+    "main.js.map": "/riccardo/static/js/main.54c981fc.chunk.js.map",
     "runtime-main.js": "/riccardo/static/js/runtime-main.582b2f6f.js",
     "runtime-main.js.map": "/riccardo/static/js/runtime-main.582b2f6f.js.map",
     "static/css/2.1a02f21c.chunk.css": "/riccardo/static/css/2.1a02f21c.chunk.css",
@@ -15,6 +15,7 @@
     "static/css/main.f6e96558.chunk.css.map": "/riccardo/static/css/main.f6e96558.chunk.css.map",
     "static/js/2.d393c768.chunk.js.LICENSE.txt": "/riccardo/static/js/2.d393c768.chunk.js.LICENSE.txt",
     "static/media/appleJuice.5b1982e3.jpg": "/riccardo/static/media/appleJuice.5b1982e3.jpg",
+    "static/media/bologness.297cf5fd.png": "/riccardo/static/media/bologness.297cf5fd.png",
     "static/media/camembert.276492fc.jpg": "/riccardo/static/media/camembert.276492fc.jpg",
     "static/media/coke.4f38de4d.jpg": "/riccardo/static/media/coke.4f38de4d.jpg",
     "static/media/family.942d2709.jpg": "/riccardo/static/media/family.942d2709.jpg",
@@ -31,10 +32,19 @@
     "static/media/office.3cc651db.jpg": "/riccardo/static/media/office.3cc651db.jpg",
     "static/media/orangeJuice.0bb6a3d2.jpg": "/riccardo/static/media/orangeJuice.0bb6a3d2.jpg",
     "static/media/pancake.67983f01.jpg": "/riccardo/static/media/pancake.67983f01.jpg",
+    "static/media/pancakes_czekban.23bdcf55.png": "/riccardo/static/media/pancakes_czekban.23bdcf55.png",
+    "static/media/pancakes_szpinakfeta.7c3109dd.png": "/riccardo/static/media/pancakes_szpinakfeta.7c3109dd.png",
+    "static/media/piershawajska.ef8da32c.png": "/riccardo/static/media/piershawajska.ef8da32c.png",
     "static/media/pizza.372ab93f.jpg": "/riccardo/static/media/pizza.372ab93f.jpg",
+    "static/media/pizza_bambino.13aa1e6e.png": "/riccardo/static/media/pizza_bambino.13aa1e6e.png",
+    "static/media/pizza_bekonowejaja.17373127.png": "/riccardo/static/media/pizza_bekonowejaja.17373127.png",
+    "static/media/pizza_forte.6e2286f4.png": "/riccardo/static/media/pizza_forte.6e2286f4.png",
+    "static/media/pizza_jalapeno.40a667d6.png": "/riccardo/static/media/pizza_jalapeno.40a667d6.png",
     "static/media/pizza_ricco.acc952a4.png": "/riccardo/static/media/pizza_ricco.acc952a4.png",
     "static/media/pizza_saporito.627cbe0c.png": "/riccardo/static/media/pizza_saporito.627cbe0c.png",
+    "static/media/pizza_tono.34ea7909.png": "/riccardo/static/media/pizza_tono.34ea7909.png",
     "static/media/pizza_wege.17ef254c.png": "/riccardo/static/media/pizza_wege.17ef254c.png",
+    "static/media/pizza_wiosenna.0e22a288.png": "/riccardo/static/media/pizza_wiosenna.0e22a288.png",
     "static/media/potatoPancakes.d3b4f58a.jpg": "/riccardo/static/media/potatoPancakes.d3b4f58a.jpg",
     "static/media/riccardo.8e8f7fa2.png": "/riccardo/static/media/riccardo.8e8f7fa2.png",
     "static/media/salad.4e0ddd74.jpg": "/riccardo/static/media/salad.4e0ddd74.jpg",
@@ -52,6 +62,6 @@
     "static/css/2.1a02f21c.chunk.css",
     "static/js/2.d393c768.chunk.js",
     "static/css/main.f6e96558.chunk.css",
-    "static/js/main.c05ea83f.chunk.js"
+    "static/js/main.54c981fc.chunk.js"
   ]
 }
