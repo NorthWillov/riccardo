@@ -2,14 +2,24 @@ import pizza from "../images/pizza.jpg";
 import pizza_wege from "../images/pizza_wege.png";
 import pizza_saporito from "../images/pizza_saporito.png";
 import pizza_ricco from "../images/pizza_ricco.png";
+import pizza_bambino from "../images/pizza_bambino.png";
+import pizza_tono from "../images/pizza_tono.png";
+import pizza_wiosenna from "../images/pizza_wiosenna.png";
+import pizza_forte from "../images/pizza_forte.png";
+import pizza_jalapeno from "../images/pizza_jalapeno.png";
+import pizza_bekonowejaja from "../images/pizza_bekonowejaja.png";
 import lunch_schabChlopa from "../images/lunches/lunch_schabChlopa.png";
+import piershawajska from "../images/lunches/piershawajska.png";
 import lunch_zrazy from "../images/lunches/lunch_zrazy.png";
 import makaron_carbonarra from "../images/lunches/makaron_carbonarra.png";
+import bologness from "../images/lunches/bologness.png";
 import salad_grecka from "../images/lunches/salad_grecka.png";
 import lunch from "../images/lunches/lunch.jpg";
 import spaghetti from "../images/lunches/spaghetti.jpg";
 import salad from "../images/lunches/salad.jpg";
 import pancake from "../images/lunches/pancake.jpg";
+import pancakes_czekban from "../images/lunches/pancakes_czekban.png";
+import pancakes_szpinakfeta from "../images/lunches/pancakes_szpinakfeta.png";
 import sweetpancake from "../images/lunches/sweetpancake.jpg";
 import potatoPancakes from "../images/lunches/potatoPancakes.jpg";
 import riccardo from "../images/lunches/riccardo.png";
@@ -75,7 +85,7 @@ export const MENU = {
         "50cm": 40.5,
       },
       ingredients: ["sos", "ser", "szynka", "ananas"],
-      image: pizza,
+      image: pizza_bambino,
     },
     {
       id: 5,
@@ -91,7 +101,7 @@ export const MENU = {
     },
     {
       id: 6,
-      name: "Tono",
+      name: "Tonno",
       type: "pizza",
       price: {
         "20cm": 16.5,
@@ -99,7 +109,7 @@ export const MENU = {
         "50cm": 42.5,
       },
       ingredients: ["sos", "ser", "tuńczyk", "czerwona cebula", "feta"],
-      image: pizza,
+      image: pizza_tono,
     },
     {
       id: 7,
@@ -144,7 +154,7 @@ export const MENU = {
         "50cm": 43.5,
       },
       ingredients: ["sos", "ser", "brokuły", "cukinia", "krewetki", "czosnek"],
-      image: pizza,
+      image: pizza_wiosenna,
     },
     {
       id: 10,
@@ -193,7 +203,7 @@ export const MENU = {
         "kiełbasa pepperoni",
         "papryka jalapeño",
       ],
-      image: pizza,
+      image: pizza_forte,
     },
     {
       id: 13,
@@ -275,7 +285,7 @@ export const MENU = {
         "papryka jalapeño",
         "czosnek",
       ],
-      image: pizza,
+      image: pizza_jalapeno,
     },
     {
       id: 18,
@@ -391,7 +401,7 @@ export const MENU = {
         "50cm": 43.9,
       },
       ingredients: ["sos", "ser", "bekon", "szczypior", "jaja"],
-      image: pizza,
+      image: pizza_bekonowejaja,
     },
   ],
 
@@ -506,7 +516,7 @@ export const MENU = {
       name: "Pierś hawajska",
       type: "lunch",
       price: 24.9,
-      image: lunch,
+      image: piershawajska,
       first: "ziemniaki opiekane",
       second: "duszona kapusta",
     },
@@ -585,7 +595,7 @@ export const MENU = {
       id: 43,
       name: "Spaghetti Bolognese",
       type: "makaron",
-      image: spaghetti,
+      image: bologness,
       price: 21,
     },
     {
@@ -700,7 +710,7 @@ export const MENU = {
         name: "Naleśniki czekoladowo-bananowe 2 szt.",
         type: "sweetPancake",
         desc: "z nutellą i bananami",
-        image: sweetpancake,
+        image: pancakes_czekban,
         adds: "bita śmietana",
         price: 19,
       },
@@ -754,7 +764,7 @@ export const MENU = {
         id: 62,
         name: "Naleśnik ze szpinakiem i fetą 2 szt.",
         type: "saltPancake",
-        image: pancake,
+        image: pancakes_szpinakfeta,
         sous: "joghurt",
         price: 19.4,
       },
