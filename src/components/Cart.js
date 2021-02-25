@@ -70,8 +70,7 @@ function Cart(props) {
                   </p>
                   {MENU.pizzas[item.id - 1].ingredients !==
                     item.ingredients && (
-                    <p>
-                      Bez:{" "}
+                    <p className={classes.withoutIngr}>
                       {MENU.pizzas[item.id - 1].ingredients.map((i) => {
                         return item.ingredients.includes(i) ? "" : i + " ";
                       })}

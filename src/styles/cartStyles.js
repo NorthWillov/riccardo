@@ -5,7 +5,7 @@ const styles = {
     marginBottom: "50px",
   },
   item: {
-    backgroundColor: "#f8f9fc",
+    backgroundColor: "#e4e8e9",
     borderRadius: "0.5rem",
     padding: "10px",
     marginTop: "10px",
@@ -22,6 +22,9 @@ const styles = {
     "& h6": {
       margin: "0",
     },
+  },
+  withoutIngr: {
+    textDecoration: "line-through",
   },
   itemCheckout: {
     display: "flex",
